@@ -1,0 +1,24 @@
+<?php
+	$avg = $this->star_average;
+	$avgWidth = $avg/5;
+	$percent = round((float)$avgWidth * 100 ) . '%';
+    $product = Mage::getModel('catalog/product')->load($this->product_id);
+?>
+<style>
+    #julienreviews-product-summary {
+        border: 2px solid #007ED1;
+        padding: 10px;
+        margin: 10px;
+    }
+    .template-path {
+        color: #008AFF;
+    }
+</style>
+<div id="julienreviews-product-summary">
+    <div class="template-path">alliance_julienreviews/product/badge.phtml</div>
+    <div class="rating-box">
+    	<div class="rating" style="width:<?php echo $percent; ?>"></div>
+    </div>
+
+    <a href="<?php echo $product->getProductUrl(); ?>#julienreviews-main-display"><?php echo $this->review_count ?> reviews</a> / <a href="<?php echo $this->write_link ?>">Add Your Review</a>
+</div>

@@ -1,0 +1,406 @@
+/* Forms */
+
+.contactform,
+.appointmentform {
+	max-width: 1024px;
+	margin: 0 auto 26px auto;
+}
+
+.contactform h2,
+.appointmentform h2 {
+	color: #4f4f4f;
+	border: none;
+	font-size: 24px;
+	padding: 0 0 26px 0;
+	background: none;
+}
+
+#contactusForm,
+#formSuccess {
+	float: left;
+	width: 545px;
+}
+
+#appointment-form,
+.appointment-success {
+	float: left;
+	border-right: 1px solid #dbdbdb;
+	width: 61%; /* 635px; */
+	padding-right: 8.7%; /* 90px; */
+	font-size: 14px;
+}
+
+#appointment-form .appt-button {
+	padding-left: 27%;
+	padding-bottom: 20px;	
+}
+
+#appointment-form .appt-notice {
+	padding-left: 27%;
+	padding-bottom: 20px;
+	font-size: 16px;	
+}
+
+#appointment-form .appt-top {
+	padding: 0 0 26px 0;
+	border-bottom: 1px dotted #dbdbdb;
+	margin-bottom: 14px;
+}
+
+#appointment-form .label-top {
+	padding-top: 12px;
+}
+
+#appointment-form .appt-bottom {
+	border-bottom: 1px dotted #dbdbdb;
+}
+
+#appointment-form .appt-bottom label {
+	padding-top: 22px !important;
+}
+
+#contactusForm label,
+#appointment-form label {
+	clear: both;
+	float: left;
+	width: 27%; /* 150px; */
+	text-align: right;
+	padding: 22px 3% 0 0;
+	font-size: 15px;
+	line-height: 20px;
+	height: 40px;
+	font-weight: normal;
+	white-space: nowrap;
+}
+
+#contactusForm input[type="text"], 
+#contactusForm textarea,
+#appointment-form input[type="text"], 
+#appointment-form input[type="email"], 
+#appointment-form textarea  {
+	float: left;
+	border: none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	background: #eeeeee;
+	height: 40px;
+	line-height: 40px;
+	width: 185px;
+	margin-top: 12px;
+	font-size: 14px;
+	color: #4f4f4f;
+	text-transform: none;
+}
+
+#appointment-form input[type="text"], 
+#appointment-form input[type="email"] {
+	padding-left: .5%;
+	padding-right: .5%;
+	width: 72.5%;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#contactusForm select,
+#appointment-form select,
+.shopping-bottom .shipping select,
+.add-to-cart select,
+.cart-table .qty select, 
+.onestepcheckout-index-index select {
+	border: none !important;
+	color: #4f4f4f;
+	cursor: pointer;
+	background: #eeeeee url(../images/dropdown-down.png) no-repeat right center;
+	text-transform: uppercase;
+	-webkit-appearance: none; 
+	-moz-appearance: none;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	font-weight: normal;
+	padding: 10px 35px 10px 10px;
+	text-indent: 0.01px; /* Removes default arrow from firefox*/
+	text-overflow: ""; 
+	font-weight: lighter;
+	font-size: 14px;
+	width: 72.5%;
+}
+
+#contactusForm select::-ms-expand,
+#appointment-form select::-ms-expand,
+.shopping-bottom .shipping select::-ms-expand,
+.add-to-cart select::-ms-expand,
+.cart-table .qty select::-ms-expand,
+.onestepcheckout-index-index select::-ms-expand  { 
+	display: none; 
+}
+
+#contactusForm select:-moz-focusring,
+#appointment-form select:-moz-focusring,
+.shopping-bottom .shipping select:-moz-focusring,
+.add-to-cart select:-moz-focusring,
+.cart-table .qty select:-moz-focusring,
+.onestepcheckout-index-index select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #4f4f4f;
+}  
+
+#appointment-form select {
+	width: 72.5%;
+}
+
+#appointment-form .appt-bottom select {
+	margin-top: 12px;
+}
+
+#appointment-form #appt-phone {
+	width: 35%;
+}
+
+#appointment-form #appt-date,
+#appointment-form #appt-time {
+	width: 23%;
+	margin-bottom: 20px;
+}
+
+#appointment-form #appt-time {
+	width: 68.5%;
+}
+
+#appointment-form .appt-date-box,
+#appointment-form .appt-time-box {
+	float: left;
+	position: relative;
+	width: 100%;
+}
+
+#appointment-form .appt-time-box {
+	width: 50%;
+}
+
+#appointment-form .appt-date-box .validation-advice,
+#appointment-form .appt-time-box .validation-advice {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+#appointment-form .appt-time-box .validation-advice {
+	margin-left: 29%;
+}
+
+#appointment-form label.appt-time {
+	clear: none;
+	float: left;
+	width: 30%;;
+	padding-left: 9px;
+}
+
+#contactusForm .contactwho label {
+	padding-top: 0;
+}
+
+#contactusForm #temail {
+	width: 69%;
+}
+
+#contactusForm #tmessages {
+	width: 100%;
+	height: 150px;
+	line-height: 20px;
+	margin:  5px 0 0 0;
+}
+
+#contactusForm .contactmessages .validation-advice  {
+	margin-left: 0 !important;
+}
+
+#contactusForm .contact-privacy,
+#appointment-form .contact-privacy {
+	clear: both;
+	font-size: 11px;
+	text-align: right;
+	line-height: 16px;
+	padding-top: 14px;
+}
+
+#appointment-form .contact-privacy {
+	padding-right: 4px;
+}
+
+#contactusForm #contactsubmit,
+#appointment-form .appt-submit {
+	font-size: 12px !important;
+	padding: 10px 60px;
+	float: right;
+}
+
+#contactusForm #contactsubmit:hover,
+#appointment-form .appt-submit:hover {
+	opacity: 0.7;
+}
+
+#contactusForm .full-width {
+	clear: both;
+	width: 100%;
+	text-align: left;
+}
+
+#contactusForm em,
+#appointment-form em {
+	color: #ef4923;
+	padding-right: 4px;
+}
+
+#contactusForm .validation-advice {
+	display: block;
+	font-size: 11px;
+	margin-left: 27%;
+	padding: 2px 0 0 0;
+}
+
+#appointment-form .validation-advice {
+	display: block;
+	font-size: 11px;
+	margin-left: 27%;
+	padding: 2px 0 0 0;
+}
+
+#contactRight,
+#appointmentRight {
+	float: right;
+	width: 38.7%;
+	border-left: 1px solid #dbdbdb;
+	color: #4f4f4f;
+	font-size: 12px;
+	line-height: 24px;
+}
+
+#appointmentRight {
+	border: none;
+}
+
+#appointmentRight a,
+.appointment-success a {
+	text-decoration: none;
+}
+
+#appointmentRight .contact-top, 
+#contactRight .contact-top {
+	padding: 0 0 26px 45px;
+	margin-top: -26px;	
+	border-bottom: 1px solid #dbdbdb;
+}
+
+#appointmentRight .contact-top {
+	margin-top: 0;
+	font-size: 16px;
+}
+
+#appointmentRight .contact-bottom, 
+#contactRight .contact-bottom {
+	padding-left: 45px;
+}
+
+#appointmentRight h5, 
+#contactRight h5 {
+	clear: both;
+	color: #ef4923;
+	font-size: 14px;
+	padding: 26px 0 10px 0;
+}
+
+#appointmentRight a, 
+#contactRight a {
+	color: #4f4f4f;
+	text-decoration: none;
+}
+
+#appointmentRight .contact-person, 
+#contactRight .contact-person {
+	background: url(../images/icon-person.png) no-repeat left center;
+	padding-left: 27px;
+}
+
+#appointmentRight .contact-email, 
+#contactRight .contact-email {
+	background: url(../images/icon-mail.png) no-repeat left center;
+	padding-left: 27px;
+}
+
+#appointmentRight .contact-tel,
+#contactRight .contact-tel {
+	background: url(../images/icon-tel.png) no-repeat left center;
+	padding-left: 27px;
+}
+
+#appointmentRight .contact-more,
+#contactRight .contact-more {
+	float: right;
+	margin-top: -33px;
+}
+
+#appointmentRight .contact-bottom .contact-email,
+#appointmentRight .contact-bottom .contact-tel, 
+#contactRight .contact-bottom .contact-email,
+#contactRight .contact-bottom .contact-tel {
+	clear: both;
+	float: left;
+}
+
+#appointmentRight .contact-more a, 
+#contactRight .contact-more a {
+	display: block;
+	background: #d4d4d4;
+	color: #fff;
+	font-size: 11px;
+	line-height: 15px;
+	width: 58px;
+	text-align: center;
+	padding: 14px 0;
+}
+
+#appointmentRight .contact-more a:hover, 
+#contactRight .contact-more a:hover {
+	background: #ef4923;
+}
+
+.go-back a {
+	clear: both;
+	float: left;
+	cursor: pointer;
+	text-decoration: none;
+	color: #4f4f4f;
+	font-size: 12px;
+}
+
+.go-back a:hover {
+	color: #ef4923;
+}	
+
+
+.appointmentform .checkbox1,
+.appointmentform .checkbox2,
+.appointmentform .checkbox3,
+.appointmentform .checkbox4,
+.appointmentform .checkbox5 {
+	width: 110px;
+}
+
+.appointmentform .checkbox6 {
+	width: 27%;
+}
+
+.appointmentform .checkbox7 {
+	padding-left: 27%;
+	width: 100%;
+}
+
+.appointmentform .checkbox7 .validation-advice {
+	margin: 0 !important;
+}

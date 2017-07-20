@@ -1,0 +1,79 @@
+<?php
+// *** Configuration *** //
+$baseImageWidth = 505;
+$baseImageHeight = null;
+
+$thumbImageWdth = 80;
+$thumbImageHeight = 80;
+// *** Configuration *** //
+?>
+
+<?php echo $this->getChildHtml('destinations.nav');?>
+<div class="destination-body clearfix">
+	<div class="destination-staff">
+		<div class="block-left">
+			<?php echo $this->getChildHtml('destinations.attributes');?>
+		</div>
+		
+		<div class="block-right">
+			<div class="staff-view">
+				<?php
+				$staff = $this->getCurrentStaff();
+				?>
+				<div class="staff-left" style="background: url(<?php echo $this->getStaffMainImage($baseImageWidth, $baseImageHeight);?>);">
+					<?php if ($staff->getShortDescription()!="") { ?>
+						<div class="staff-quote"><?php echo $staff->getShortDescription(); ?></div>
+					<?php } ?>
+				</div>
+				<div class="staff-right">
+					<div class="staff-name"><?php echo $this->stripTags($staff->getName(), null, true);?></div>
+					<div class="staff-title"><?php echo $this->stripTags($staff->getStaffTitle(), null, true);?></div>
+					<div class="staff-bio"><?php echo $staff->getDescription();?></div>
+					<?php
+					/*
+					$icons = $this->getStaffIcons();
+					foreach($icons as $oneIcon) {
+					?>
+					<div class="person-icon"><img src="<?php echo $oneIcon?>" width="50" /></div>
+					<?php
+					}
+					*/
+					?>
+					<div class="staff-specialties">
+						<h3><span>SPECIALTIES</span></h3>
+						<?php echo $staff->getStaffSpecialities(); ?>
+						<ul><?php
+						$specialities = $this->getStaffSpecialities();
+						foreach($specialities as $attributeCode => $oneAttribute) {
+							foreach($oneAttribute as $oneSpeciality) {
+						?>
+							<li><?php echo $oneSpeciality;?></li>
+						<?php
+							}
+						}
+						?></ul>
+					</div>
+				</div>
+			</div>
+			<div class="staff-work">
+			<?php
+			$images = $this->getStaffImages($thumbImageWdth, $thumbImageHeight);
+			if(! empty($images)) {
+			?>		
+				<ul>
+					<li>
+						<div class="staff-work-view">VIEW MY WORK</div>
+						<!-- <div class="staff-work-link"><a href="" target="_blank">PINTEREST</a></div> -->
+						<!-- <div class="staff-work-link"><a href="" target="_blank">FLICKR</a></div> -->
+					</li>
+					<?php
+					foreach($images as $oneImage) {
+					?>
+					<li class="popup-gallery"><a href="<?php echo $oneImage['big']?>" title="<?php echo $oneImage['label']?>"><img src="<?php echo $oneImage['thumb']?>" width="<?php echo $thumbImageWdth;?>" /></a></li>
+					<?php }?>
+				</ul>
+			<?php }?>
+			</div>
+		</div>
+	</div>
+</div>

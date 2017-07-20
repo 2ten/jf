@@ -1,0 +1,375 @@
+/* Styles for Meet Julian page */
+
+.meet-julien {
+	padding-bottom: 116px;
+	overflow-x: hidden;
+}
+
+.meet-julien .breadcrumbs {
+	display: none;
+}
+
+.meet-julien h1 span,
+.meet-julien h1:before,
+.meet-julien h1:after,
+.meet-julien h1.drkgrey:before, 
+.meet-julien h1.drkgrey:after {
+	padding: 0;
+	min-width: 0;
+	background: none;
+	border: none;
+}
+
+.jf-timeline h1,
+.jf-philosophy h1 {
+	padding-left: 20px;
+}
+
+.meet-julien .full-width {
+	background-image: url(../images/meet-julien-1.jpg);
+	height: 847px; 
+	background-size: cover;
+	background-position: center center;
+	overflow: hidden;
+}
+
+.meet-julien .jf-intro {
+	position: relative;
+	max-width: 1450px;
+	min-width: 1024px;
+	margin: 0 auto;
+	height: 847px;
+}
+
+.meet-julien .jf-intro-center {
+	position: absolute;
+	width: 100%;
+    padding-bottom: 68.97%;
+}
+
+/* position action boxes; all other box code is in global.css */
+
+.meet-julien .static-block.pos-2 {
+	display: none;
+}
+
+.meet-julien .action-pos-1 {
+	top: 23%;
+	right: 27.31%;
+}
+
+.meet-julien .action-pos-2 {
+	top: 40%;
+	left: 3.79%;
+}
+
+.meet-julien .action-pos-3 {
+	top: 40%;
+	right: 3.79%;
+}
+
+.meet-julien .action-pos-4 {
+	top: 57%;
+	right: 39.1%;
+}
+
+.meet-julien .action-pos-1 .center,
+.meet-julien .action-pos-2 .center,
+.meet-julien .action-pos-4 .center {
+	top: 43%;
+}
+	
+.meet-julien .jf-about {
+	clear: both;
+	width: 1154px;
+	margin: 68px auto 0 auto;
+}
+
+.meet-julien .jf-about .txt {
+	float: left;
+	width: 643px;
+	padding: 35px 72px 50px 0;
+	text-align: justify;
+}
+
+
+.meet-julien .tagline {
+	font-size: 17px;
+	padding: 0 0 18px 27px;
+	margin-top: -14px;
+	color: #4f4f4f;	
+}
+
+.meet-julien .jf-about .image {
+	float: left;
+	width: 511px;
+}
+
+/*
+.meet-julien .jf-about .image img {
+	border: 6px solid #fff; 
+	-moz-box-shadow: 0px 3px 10px 0px rgba(122, 122, 122, 0.16);
+	-webkit-box-shadow:0px 3px 10px 0px rgba(122, 122, 122, 0.16);
+	box-shadow: 0px 3px 10px 0px rgba(122, 122, 122, 0.16);
+} */
+
+.meet-julien .jf-group {
+	clear: both;
+	background-image: url(../images/meet-julien-group.jpg);
+	/* height: 572px; */
+	background-size: cover;
+	background-position: center center;
+}
+
+.meet-julien .jf-group-container {
+	width: 1154px;
+	margin: 0 auto;
+	padding: 68px 0 50px 0;
+}
+
+.meet-julien .jf-group .txt {
+	float: right;
+	width: 637px;
+	text-align: justify;
+	color: #fff;
+	padding-bottom: 50px;
+}
+
+.jf-timeline {
+	clear: both;
+}
+
+.jf-timeline .timeline-header {
+	width: 1154px;
+	margin: 50px auto 0 auto;
+}
+
+.jf-timeline .grid-container {
+	width: auto;
+	margin: 0 auto;
+	text-align: center;
+	max-width: 1200px;
+}
+
+.jf-timeline .item {	
+	display: inline-block;
+	position: relative;
+	width: 188px;
+	height: 188px;
+	cursor: pointer;
+	padding: 9px;
+}
+
+
+.jf-timeline .image {
+	position: relative;
+	border: 6px solid #fff;
+	width: 170px;
+	height: 170px;
+	overflow: hidden; 
+	-moz-box-shadow: 0px 3px 10px 0px rgba(122, 122, 122, 0.16);
+	-webkit-box-shadow:0px 3px 10px 0px rgba(122, 122, 122, 0.16);
+	box-shadow: 0px 3px 10px 0px rgba(122, 122, 122, 0.16);
+	background-position-x: 0;
+	background-position-y: -170px;
+	z-index: 1;
+}
+
+
+.jf-timeline .image:hover {
+	background-position-y: 0;
+}
+
+/* this was for the dark image on hover
+.jf-timeline .image:after {
+    content:'\A';
+    position:absolute;
+    width:100%; height:100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.75);
+    opacity:0;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.jf-timeline .image:hover:after {
+    opacity:1;
+}  */
+
+.jf-timeline .date {
+	position: absolute;
+	top: 41px;
+	left: 41px;
+	width: 76px;
+	height: 76px;
+	background: #ef4923;
+	color: #fff;
+	font-size: 19px;
+	line-height: 76px;
+	text-align: center;
+    background:rgba(239,73,35,1);
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    z-index: 2;
+}
+
+.jf-timeline .image:hover > .date {
+	background:rgba(200,200,200,0.8);
+}
+
+.jf-timeline .clicked .image:after {
+	background: none;
+}
+
+.jf-timeline .clicked .date {
+	display: none;
+}
+
+.jf-timeline .quote {
+	width: 100%;
+	position: relative;
+	height: auto;
+	clear: left;
+	padding: 32px 0;
+	text-align: center;
+	font-size: 13px;
+}
+
+.jf-timeline .quote .date {
+	position: static;
+	margin: 0 auto 12px auto;
+}
+
+.jf-timeline .quote p {
+	margin: 0;
+	padding: 0;
+}
+
+.jf-timeline .quote-container {
+	display: none;
+	clear: left;
+}
+
+
+.jf-timeline #item-1968 .image {
+	background-image: url(../images/timeline/1968.png);
+}
+.jf-timeline #item-1987 .image {
+	background-image: url(../images/timeline/1987.jpg);
+}
+.jf-timeline #item-1992 .image {
+	background-image: url(../images/timeline/1992.jpg);
+}
+.jf-timeline #item-1994 .image {
+	background-image: url(../images/timeline/1994.png);
+}
+.jf-timeline #item-2001 .image {
+	background-image: url(../images/timeline/2001.png);
+}
+.jf-timeline #item-2001b .image {
+	background-image: url(../images/timeline/2001b.jpg);
+}
+.jf-timeline #item-2004 .image {
+	background-image: url(../images/timeline/2004.jpg);
+}
+.jf-timeline #item-2006 .image {
+	background-image: url(../images/timeline/2006.jpg);
+}
+.jf-timeline #item-2007 .image {
+	background-image: url(../images/timeline/2007.jpg);
+}
+.jf-timeline #item-2007b .image {
+	background-image: url(../images/timeline/2007b.jpg);
+}
+.jf-timeline #item-2008 .image {
+	background-image: url(../images/timeline/2008.jpg);
+}
+.jf-timeline #item-2009 .image {
+	background-image: url(../images/timeline/2009.jpg);
+}
+.jf-timeline #item-2010 .image {
+	background-image: url(../images/timeline/2010.jpg);
+}
+.jf-timeline #item-2011 .image {
+	background-image: url(../images/timeline/2011.jpg);
+}
+.jf-timeline #item-2012 .image {
+	background-image: url(../images/timeline/2012.jpg);
+}
+.jf-timeline #item-2013 .image {
+	background-image: url(../images/timeline/2013.png);
+}
+.jf-timeline #item-2014 .image {
+	background-image: url(../images/timeline/2014.jpg);
+}
+.jf-timeline #item-2014b .image {
+	background-image: url(../images/timeline/2014b.jpg);
+}
+
+.meet-julien .jf-philosophy .txt {
+	clear: both;
+	width: 1154px;
+	margin: 68px auto 20px auto;
+}
+
+/* overrides for accordian */
+.pcss3-accordion {
+	border: none;
+	box-shadow: none;
+	max-width: 1132px;
+	margin: 0 auto;
+}
+
+.pcss3-accordion-item {
+	box-shadow: none;
+}
+
+.pcss3-accordion-item:first-child {
+	width: 50%;
+}
+
+.pcss3-accordion5 .pcss3-accordion-item {
+	left: 25%;	
+}
+
+.pcss3-accordion-caption {
+	bottom: auto;
+	top: 30px;
+	left: auto;
+	right: 30px;
+	width: 60%;
+	background: #ef4923;
+	text-align: left;
+}
+
+.pcss3-accordion-caption dt {
+	margin: 0;
+	font: 18px/140% 'Gotham SSm A', 'Gotham SSm B', Arial, Helvetica, sans-serif; 
+	font-weight: lighter;
+}
+
+#biography .image img {
+	width:511px;
+	height:auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

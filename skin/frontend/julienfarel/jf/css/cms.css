@@ -1,0 +1,201 @@
+/* CMS Specific Pages */
+
+/* Hair Concerns */
+.cms-hair-concerns .content-generic {
+	margin: 0px auto 20px auto;
+}
+
+.cms-hair-concerns {
+	font-size: 22px;
+	line-height: 28px;
+	color: #58585a;
+}
+
+.cms-hair-concerns p {
+	clear: both;
+	letter-spacing: -0.03em;
+	padding-bottom: 9px;
+	font-size:14px;
+}
+
+.cms-hair-concerns h1 {
+	color: #58585a;
+	text-transform: uppercase;
+	font-family: 'Gotham A', 'Gotham B';
+	font-weight: 700;
+	font-size: 28px;
+	line-height: 50px;
+	letter-spacing: -0.07em;
+	margin-bottom: 0;	
+}
+
+.cms-hair-concerns h1:before,
+.cms-hair-concerns h1:after {
+	display: none;
+}
+
+.cms-hair-concerns h1 span {
+	font-family: arial;
+	font-size: 20px;
+}
+
+.cms-hair-concerns h2 {
+	color: #58585a;
+	text-transform: uppercase;
+	font-family: 'Gotham SSm A', 'Gotham SSm B'; 
+	font-weight: 300;
+	font-size: 28px;
+	line-height: 50px;
+	letter-spacing: -0.13em;
+	padding: 0 0 0 0;
+	margin-top:-15px;
+}
+
+.cms-hair-concerns h2 span {
+	color: #ef4923;
+	text-transform: uppercase;	
+	font-family: 'Gotham A', 'Gotham B'; 
+	font-weight: 700;
+	font-size: 28px;
+	padding-left: 3px;
+	letter-spacing: -0.06em;
+}
+
+.cms-hair-concerns h2 span span {
+	font-family: arial;
+	font-size: 20px;
+	padding-left: 6px;
+}
+
+.cms-hair-concerns .column {
+	float: left;
+	max-width: 300px;
+	width: 30%;
+	margin: 22px 5.6% 5px 0;
+}
+
+.cms-hair-concerns .column.last {
+	margin-right: 0;
+}
+
+.cms-hair-concerns .column img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+}
+
+.cms-hair-concerns .column h3 {
+	color: #58585a;
+	text-transform: uppercase;
+	font-family: 'Gotham SSm A', 'Gotham SSm B'; 
+	font-weight: 400;
+	font-size: 18px;
+	letter-spacing: -0.07em;
+	margin-bottom: 5px;
+}
+
+.cms-hair-concerns .column h3:before, 
+.cms-hair-concerns .column h3:after {
+	display: none;
+}
+
+.cms-hair-concerns .column p {
+	padding: 0 0 20px 0;
+	letter-spacing: -0.06em;
+	text-align: justify;
+	font-size:14px;
+}
+
+.cms-hair-concerns .bottom {
+	padding-top: 15px;
+	text-align:center;
+}
+
+.cms-hair-concerns .bottom h1 {
+	padding-left: 46px;
+}
+
+.cms-hair-concerns .bottom h2 {
+	padding-left: 46px;
+	margin-top: -15px;
+	text-align:left;
+}
+
+.cms-hair-concerns .bottom h2 span {
+	color: #58585a;
+	text-transform: uppercase;
+	font-family: arial;
+	font-size: 20px;
+	padding-left: 8px;
+}
+.cms-hair-concerns .bottom img {
+	width:70%;
+}
+
+body.cms-subscribe-mobile {
+	background:url(../images/mobile-popup-background.png) repeat-x 0 -40px;
+}
+.subscrible-mobile-container {
+	width:300px;
+	height:600px;
+}
+/***** iPad Smaller than 959px *****/
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	.subscrible-mobile-container {
+		width:500px;
+		height:600px;
+	}
+	body.cms-subscribe-mobile {
+		background:url(../images/mobile-popup-background.png) repeat-x 0 24px;
+	}
+}
+@media only screen and (min-width: 959px) and (max-width: 1100px) {
+	.subscrible-mobile-container {
+		width:330px;
+		height:600px;
+	}
+	body.cms-subscribe-mobile {
+		background:url(../images/mobile-popup-background.png) repeat-x 0 -30px;
+	}
+}
+
+body.cms-julien-farel-us-open {
+	background: url(../images/USOpenBackground.jpg) no-repeat 0 0;
+    background-size: 100%;
+	background-attachment: fixed;
+}
+.cms-julien-farel-us-open .content-generic {
+	background-color: white;
+}
+
+.ysl-new span{
+	position:relative;
+}
+
+.ysl-new span:after {
+	content: "*NEW*!";
+	position:absolute;
+	top:-5px;
+	right:-45px;
+	font-weight:bold;
+    -ms-transform: rotate(20deg);
+    -webkit-transform: rotate(20deg); 
+    transform: rotate(20deg);	
+	width:50px;
+	height:22px;
+	font-size:14px;
+}
+
+.us-open-menu li {
+	line-height:1.4;
+}
+
+@media only screen and (max-width:768px) {
+	.us-open-collapse {
+		width:300px !important;
+	}
+	.us-open-collapse ul {
+		padding:0 !important;
+		margin-bottom:0;
+	}
+}

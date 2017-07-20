@@ -1,0 +1,43 @@
+<div id="julienreviews-success-page" class="success-review-description">
+    <div class="page-title"><h1>Thank you</h1></div>
+	<p>Thank you for your submitting your review. Julien Farel respects and values our customers' opinions and appreciate your taking the time to share yours.</p>
+
+	<div class="description">
+		Please allow 3 to 5 business days for your review to appear online. Please note that submissions are subject to the terms of our <div class="review-guideline-tooltip-container success-review-guideline">
+			<span style="color:#ef4923; cursor:pointer;" id="reviews-guidelines-span">Review Guidelines</span>.
+		</div>
+	</div>
+	
+	<br /> <br /><br />
+    
+    <a div class="button button-gray" href="<?php echo $this->product_url; ?>"><span><span>Back to Product</span></span></a><a div class="button" href="<?php echo Mage::getUrl('shop'); ?>"><span><span>Continue Shopping</span></span></a>
+    
+</div>
+
+<!-- popup start -->
+<div class="overlay-bg">
+	<div class="overlay-content">
+		<span style="float: right; margin-top: 4px; text-transform: uppercase; font-weight: bold; font-size:12px; margin-right:5px;" id="closereviewguidelines">close</span>
+		<div class="review-guideline-tooltip">
+			<div class="inner-tooltip">
+				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('review_guidelines')->toHtml(); ?> 
+			</div>
+		</div>
+	</div>
+</div>
+<!-- popup start -->
+
+<script>
+jQuery(document).ready(function() {
+	jQuery("#reviews-guidelines-span").click(function(){
+	var productname = jQuery(this).parent().find("div.name").text();
+	jQuery('.overlay-content .product-name').text(productname);
+	  jQuery('.overlay-content').css('display','block');
+	  jQuery('.overlay-bg').css('display','block');
+	});
+	jQuery("#closereviewguidelines").click(function(){
+	  jQuery('.overlay-content').css('display','none');
+	  jQuery('.overlay-bg').css('display','none');
+	});
+});
+</script>

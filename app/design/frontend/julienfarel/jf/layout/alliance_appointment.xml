@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <appointment_index_index>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+
+        <reference name="head">
+            <block type="core/text" name="appointment.google.cdn.jquery.ui.css">
+                <action method="setText">
+                    <text><![CDATA[<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">]]></text>
+                </action>
+            </block>
+            <block type="core/text" name="appointment.google.cdn.jquery.ui.js">
+                <action method="setText">
+                    <text><![CDATA[<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>]]></text>
+                </action>
+            </block>
+            <block type="core/text" name="appointment.datepicker.js">
+                <action method="setText">
+                    <text><![CDATA[<script>jQuery(function() {jQuery( "#appt-date" ).datepicker({ minDate: 2 });});</script>]]></text>
+                </action>
+            </block>
+        </reference>
+
+        <reference name="content">
+            <block type="appointment/form" name="appointment.form" template="appointment/form.phtml"></block>
+        </reference>
+
+        <reference name="left">
+            <remove name="left.newsletter"></remove>
+        </reference>
+
+    </appointment_index_index>
+
+    <appointment_index_success>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+
+        <reference name="content">
+            <block type="core/template" name="appointment.success" template="appointment/success.phtml"></block>
+        </reference>
+
+        <reference name="left">
+            <remove name="left.newsletter"></remove>
+        </reference>
+
+    </appointment_index_success>
+
+</layout>

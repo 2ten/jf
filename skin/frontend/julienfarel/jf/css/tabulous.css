@@ -1,0 +1,112 @@
+#tabs-container {
+	margin: 10px;
+	padding: 5px 10px;
+}
+
+.tabs-menu {
+    height: 38px;
+    float: left;
+    clear: both;
+	margin:0;
+}
+
+.tabs-menu li {
+    height: 39px;
+    line-height: 40px;
+    float: left;
+	padding:0;
+    margin-right: 10px;
+    background-color: #ccc;
+    border-top: 1px solid #dbdbdb;
+    border-left: 1px solid #dbdbdb;
+}
+
+.tabs-menu li.current {
+    position: relative;
+    background-color: white;
+    border-bottom: 1px solid white;
+    z-index: 5;
+	border-top:2px solid #ef4923;
+}
+
+.tabs-menu li a {
+    padding: 9px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none; 
+}
+
+.tabs-menu .current a {
+    color: #4f4f4f;
+	border-right:1px solid #ddd;
+}
+
+.tab {
+    border: 1px solid #d4d4d1;
+    background-color: white;
+    float: left;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.tab-content {
+    width: auto;
+    padding: 20px;
+    display: none;
+}
+
+.tab-content p:last-child {
+	padding-bottom:0;
+}
+
+#tab-1 {
+ display: block;   
+}
+
+span.bioactives-icons { 
+	width:100%; 
+	float:left; 
+}
+
+span.bioactives-icons span {
+	width:20%;
+	float:left;
+	text-align:center;
+}
+
+span.bioactives-icons span img {
+	padding:10%;
+	width:80%;
+	height:auto;
+}
+
+span.bioactives-icons span strong {
+	width:100%;
+	font-size:12px;
+	font-weight:normal;
+	margin:0 !important;
+	text-transform:uppercase;
+	float:left;
+	cursor:pointer;
+	color:#4f4f4f;
+}
+
+span.bioactives-icons span p {
+	width:80%;
+	padding: 5px 10% 5px 10% !important;
+}
+
+#tabs_container div p { 
+	padding:15px 20px 0 20px;
+}
+
+#tabs_container div p.key-bioactive-desc {
+	padding-bottom:20px;
+}
+
+.product-description-tab #tabs_container strong {
+	font-weight:normal;
+	color:#ef4923;
+	margin: 0 10px 5px 0; 
+}
+

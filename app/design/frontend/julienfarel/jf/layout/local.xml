@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+ 
+    <!-- ############# GLOBAL LAYOUT UPDATES ############# -->
+ 
+    <default>
+     
+        <!-- Remove unwanted blocks entirely -->
+        <remove name="right.poll"/>
+        <remove name="right.permanent.callout"/>
+        <remove name="left.permanent.callout"/>
+        <remove name="paypal.partner.right.logo"/>
+        <remove name="tags_popular"/>
+        <remove name="catalog.compare.sidebar"/>
+
+		
+        <!-- remove name="cart_sidebar"/ -->
+
+ 
+        <!-- Default Head -->         
+        <reference name="head">
+         	
+         	<!-- Remove Magento's default assets -->
+			<action method="removeItem">
+				<type>skin_css</type>
+				<name>css/print.css</name>
+			</action>
+			<action method="removeItem">
+				<type>skin_css</type>
+				<name>css/styles-ie.css</name>
+			</action>
+			<action method="removeItem">
+				<type>skin_css</type>
+				<name>css/styles.css</name>
+			</action>
+			<action method="removeItem">
+				<type>skin_css</type>
+				<name>css/widgets.css</name>
+			</action>
+			<action method="removeItem">
+				<type>skin_js</type>
+				<name>js/ie6.js</name>
+			</action>
+			<action method="removeItem">
+				<type>js</type>
+				<name>lib/ds-sleight.js</name>
+			</action>
+			<action method="removeItem">
+				<type>js</type>
+				<name>varien/menu.js</name>
+			</action>
+			
+			
+            <!-- Add global stylesheets -->
+            <action method="addCss">
+				<stylesheet>css/style.css</stylesheet>
+			</action> 
+			<action method="addCss">
+                <stylesheet>css/flexnav.css</stylesheet>
+            </action>     
+            <action method="addCss">
+                <stylesheet>css/jquery.maximage.css</stylesheet>
+            </action>
+            <action method="addCss">
+                <stylesheet>css/global.css</stylesheet>
+            </action>
+			<action method="addCss">
+                <stylesheet>css/magnificPopup.css</stylesheet>
+            </action> 
+            <action method="addCss">
+                <stylesheet>css/accordion.css</stylesheet>
+            </action> 
+            <action method="addCss">
+                <stylesheet>css/idangerous.swiper.css</stylesheet>
+            </action>
+            
+            
+            <!-- Page specific stylesheets --> 
+            <action method="addCss">
+                <stylesheet>css/home.css</stylesheet>
+            </action> 
+            <action method="addCss">
+                <stylesheet>css/destinations.css</stylesheet>
+            </action> 
+            <action method="addCss">
+                <stylesheet>css/meet-julien.css</stylesheet>
+            </action> 
+            <action method="addCss">
+                <stylesheet>css/forms.css</stylesheet>
+            </action> 
+            <action method="addCss">
+                <stylesheet>css/wordpress.css</stylesheet>
+            </action> 
+            <action method="addCss">
+                <stylesheet>css/faq.css</stylesheet>
+            </action> 
+            <action method="addCss">
+                <stylesheet>css/catalog.css</stylesheet>
+            </action> 
+            <action method="addCss">
+                <stylesheet>css/press.css</stylesheet>
+            </action>  
+            <action method="addCss">
+                <stylesheet>css/shopping-cart.css</stylesheet>
+            </action>     
+            <action method="addCss">
+                <stylesheet>css/my-account.css</stylesheet>
+            </action>        
+            <action method="addCss">
+                <stylesheet>css/product-details.css</stylesheet>
+            </action>  
+            <action method="addCss">
+                <stylesheet>css/tabulous.css</stylesheet>
+            </action> 
+            <action method="addCss">
+                <stylesheet>css/onestepcheckout.css</stylesheet>
+            </action>  			
+            <action method="addCss">
+                <stylesheet>css/reviews.css</stylesheet>
+            </action> 
+            <action method="addCss">
+                <stylesheet>css/minicart.css</stylesheet>
+            </action> 
+            <action method="addCss">
+                <stylesheet>css/chosen.css</stylesheet>
+            </action>
+            <action method="addCss">
+                <stylesheet>css/cms.css</stylesheet>
+            </action> 	
+            <action method="addCss">
+                <stylesheet>css/jf-blog.css</stylesheet>
+            </action>
+            <action method="addCss">
+                <stylesheet>css/restore.css</stylesheet>
+            </action>			
+            <!-- Add javascript -->
+            
+            <!-- responsive nav -->
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/hoverIntent.min.js</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.flexnav.min.js</name>
+                <params/>
+            </action>
+                        
+            <!-- video background slider -->
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.cycle.all.js</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.maximage.js</name>
+                <params/>
+            </action>
+            
+            <!-- lightbox -->
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/magnificPopup.min.js</name>
+                <params/>
+            </action>
+            
+            <!-- slider / drag bar -->
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/idangerous.swiper.js</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/idangerous.swiper.scrollbar.js</name>
+                <params/>
+            </action>          
+            
+            <!-- gallery slideshow & lightbox (destinations) -->
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.tosrus.min.all.js</name>
+                <params/>
+            </action>
+            <action method="addCss">
+                <stylesheet>css/jquery.tosrus.all.css</stylesheet>
+            </action>  
+                                   
+            <!-- misc custom js -->
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/custom.js</name>
+                <params/>
+            </action>
+
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.youtube.js</name>
+                <params/>
+            </action>			
+
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/tabulous.js</name>
+                <params/>
+            </action>				
+
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/event.simulate.js</name>
+                <params/>
+            </action>	
+			
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/minicart.js</name>
+                <params/>
+            </action>	
+
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.equalHeights-min.js</name>
+                <params/>
+            </action>
+			
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/readmore.js</name>
+                <params/>
+            </action>	
+
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.chosen.js</name>
+                <params/>
+            </action>				
+			
+            <!-- call responsive css last -->
+            <action method="addCss">
+                <stylesheet>css/responsive.css</stylesheet>
+            </action>
+          
+			<!-- Share this -->
+			<block type="core/text" name="share_this">
+			<action method="setText">
+             <text>
+                	<![CDATA[
+                		<script type="text/javascript" src="//ws.sharethis.com/button/buttons.js"></script>
+                		<script type="text/javascript">stLight.options({publisher: "55af799e-a9a1-4840-83ba-af5834162c98", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+					]]>
+                </text>
+            </action>
+			</block> 
+        </reference>
+         
+        <!-- Default Header -->         
+        <reference name="header">
+            <!-- Example of adding search form and mini cart to the header 
+            <block type="core/template" name="top.search" as="topSearch" template="catalogsearch/form.mini.phtml"/>
+            <block type="checkout/cart_sidebar" name="topCart" template="checkout/cart/sidebar.phtml"/> -->
+        </reference>
+         
+        <!-- Default Footer -->         
+        <reference name="footer">
+        </reference>
+         
+        <!-- Default Root - Add blocks to your layout phtml files (1,2,3 cols etc) -->                
+        <reference name="root">
+        </reference>
+         
+        <!-- Default Left Column -->    
+        <reference name="left">
+            <!-- Remove certain elements from Left only 
+            <remove name="left.reports.product.viewed"/>
+            <action method="unsetChild"><name>sale.reorder.sidebar</name></action> -->
+        </reference>
+     
+        <!-- Default Right Column -->    
+        <reference name="right">
+            <!-- Example of adding an additional navigation block to right column 
+            <block type="catalog/navigation" as="sidenav" template="catalog/navigation/sidenav.phtml" /> -->
+        </reference>
+         
+        <!-- When Customer is Logged out -->
+        <customer_logged_out>
+            <reference name="top.links">
+                <action method="removeLinkByUrl"><url helper="customer/getLoginUrl"/></action>
+            </reference>
+        </customer_logged_out>
+         
+        <!-- When Customer is Logged in -->
+        <customer_logged_in>
+            <reference name="top.links">
+                <action method="removeLinkByUrl"><url helper="customer/getLogoutUrl"/></action>
+            </reference>
+        </customer_logged_in>
+         
+    </default>  
+    
+    <catalogsearch_result_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </catalogsearch_result_index> 
+	
+	
+	<!-- Ajaxcart fixes -->
+	<categoryfilter_index_index>
+		<reference name="head">
+			<action method="addItem" ifconfig="alliance_ajaxcart/ajaxcart_config/enabled"><type>skin_js</type><file>js/alliance_ajaxcart/list.js</file></action>
+		</reference>
+	</categoryfilter_index_index>
+    <quickview_product_view>
+        <reference name="head">
+            <action method="addItem" ifconfig="alliance_ajaxcart/ajaxcart_config/enabled"><type>skin_js</type><file>js/alliance_ajaxcart/view.js</file></action>
+        </reference>
+    </quickview_product_view>
+     
+</layout>

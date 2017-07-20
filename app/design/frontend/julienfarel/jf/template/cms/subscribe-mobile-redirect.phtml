@@ -1,0 +1,70 @@
+<div class="subscrible-mobile-container" style="float:none; margin:0 auto; padding-top:20px;">
+
+	<img style="width:100%; height:auto;" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN)."frontend/julienfarel/jf/images/mobile-popup-banner.png";?>" label="top-banner"/>
+
+	<div style="padding:10px 0px 0px 0px; width:100%; float:left; background-color:#404040;">
+		<p style="padding-bottom:8px; text-transform:uppercase; color:white; font-size:16px; width:100%; text-align:center;">Sign up to be notified when</p>
+		<p style="padding-bottom:8px; text-transform:uppercase; color:white; font-size:16px; width:100%; text-align:center;">JF.com launches for mobile</p>
+	    <p style="padding-bottom:8px; text-transform:uppercase; color:#ef4923; font-size:28px; width:100%; text-align:center; font-weight:bold">Get 20% off</p>
+		<p style="padding-bottom:8px; text-transform:uppercase; color:white; font-size:16px; width:100%; text-align:center;">Your next order over $75</p>
+		<p style="padding-bottom:18px; border-bottom:1px solid white; text-transform:uppercase; color:#b5b5b5; font-size:8px; width:100%; text-align:center;">*valid on jf.com desktop only - one per household</p>
+	</div>	
+		
+	<div id="subscribe-mobile-content" style="padding:20px; width:100%; float:left; background-color:#404040;">	
+		<input  style="border:0; width:100%;" class="subscribe-mobile-ele subscribe-mobile-input" type="email" name="email" autocomplete="off" placeholder="Email Address">			
+		<button style="height:30px; width:100%; margin-top:15px; margin-bottom:50px;" class="subscribe-mobile-ele subscribe-mobile-submit" type="submit">Submit</button>
+	</div>
+	
+	<div id="subscribe-mobile-thankyou" style="padding:20px; width:100%; float:left; background-color:#404040;">	
+		<p style="padding-bottom:5px; text-transform:uppercase; color:white; font-size:24px; width:100%; text-align:center;">merci beaucoup!</p>
+		<p style="padding-bottom:0px; text-transform:uppercase; color:white; font-size:16px; width:100%; text-align:center;">find us on</p>
+		<div class="subscribe-mobile-social" style="margin-bottom:50px;"><div class="social"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('social-nav')->toHtml(); ?></div></div>		
+	</div>	
+	
+</div>
+
+
+<script>
+
+	var subscribeMobileError = function () {
+			jQuery('.subscribe-mobile-ele').removeAttr('disabled');
+			jQuery('.subscribe-mobile-input').select();
+			alert("Please enter a valid email address and try again");
+	}
+	
+	var subscribeMobileSuccess = function () {
+		jQuery('#subscribe-mobile-content').hide();
+		jQuery('#subscribe-mobile-thankyou').show();		
+	}
+
+	var subscribeMobileSubmit = function () {
+		jQuery('.subscribe-mobile-error').hide();
+		jQuery('.subscribe-mobile-ele').attr('disabled', 'disabled');
+		jQuery.ajax({
+			url: '/emailcapture/ajax/subscribe',
+			type: 'post',
+			dataType: 'json',
+			data: {'email': jQuery('.subscribe-mobile-input').val()}
+		}).done(function (data) {
+			if (data.status == 'error') {
+				subscribeMobileError();
+			} else if (data.status == 'success') {
+				subscribeMobileSuccess();
+			}
+		}).fail(function (data) {
+			subscribeMobileError();
+		});
+	}
+
+	jQuery(document).ready(function () {
+		jQuery('#subscribe-mobile-thankyou').hide();
+		jQuery('.subscribe-mobile-submit').click(subscribeMobileSubmit);
+		jQuery('.subscribe-mobile-input').bind('keypress', function (event) {
+			if (event.which == 13) {
+				subscribeMobileSubmit();
+			}
+		});
+	});
+	
+	
+</script>

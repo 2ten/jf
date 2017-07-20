@@ -1,0 +1,56 @@
+<div class="locations-nav">
+	<div class="content-contained">
+		<ul>
+			<?php
+			$pages = $this->getNavPages();
+			foreach($pages as $onePage) {
+			?>
+			<li<?php if($onePage['selected']) echo ' class="current"';?>><a href="<?php echo $onePage['url-key'];?>"<?php if($onePage['external']) echo ' rel="external"';?>><?php echo $onePage['description'];?></a></li>
+			<?php }?>
+			<li><a class="destination-gallery-link" href="#restore-gallery">Gallery</a></li>
+		</ul>
+	</div>
+</div>
+
+<?php 
+	
+	// gallery include for restore pages
+	$varUrl = $_SERVER['REQUEST_URI'];	
+	if (strpos($varUrl,'restore-salon-and-spa')) {
+		echo '<div class="destination-gallery" id="restore-gallery">';	
+			echo $this->getLayout()->createBlock('cms/block')->setBlockId('destinations_restore_gallery')->toHtml();
+		echo '</div>';	
+	} elseif (strpos($varUrl,'jf-men')) {
+		echo '<div class="destination-gallery" id="restore-gallery">';	
+			echo $this->getLayout()->createBlock('cms/block')->setBlockId('destinations_jf_men_gallery')->toHtml();
+		echo '</div>';			
+	}
+	
+?>
+		
+		
+<script type="text/javascript">
+jQuery(function() {
+	// External links.
+	jQuery('a[rel="external"]').attr('target', "_blank");
+	
+	// lightbox slider gallery for restore pages
+	jQuery('.destination-gallery-link').click(function (event) {
+		event.preventDefault();
+		
+		var tos = jQuery(jQuery(this).attr('href')+' a').tosrus({
+			slides     : {
+				scale      : "fill"
+			},
+			pagination : {
+				add        : true,
+				type       : "thumbnails"
+			},
+			buttons    : true
+		});
+		
+		tos.trigger("open");
+
+	})
+});
+</script>

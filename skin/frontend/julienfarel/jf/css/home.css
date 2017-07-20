@@ -1,0 +1,353 @@
+/* Home Page  */
+body.cms-home {
+	max-width: 100%;
+    overflow-x: hidden;
+}
+
+.cms-home .wrapper {
+	position: relative;
+	max-width: 1450px;
+	max-height: 1000px;
+	min-width: 1024px;
+	min-height: 706px;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.cms-home .page {
+	position: absolute;
+	width: 100%;
+    padding-bottom: 68.97%;
+}
+
+.cms-home .home-logo {
+	position: absolute;
+	width: 36.48%;
+	top: 5.2%;
+	left: 3.24%;
+}
+
+.cms-home .home-logo img {
+	width: 100%;
+}
+
+.cms-home .home-tagline {
+	position: absolute;
+	width: 9.86%;
+	top: 7.8%;
+	right: 15.93%;
+}
+
+.cms-home .home-tagline img {
+	width: 100%;
+}
+
+/* position action boxes; all other box code is in global.css */
+.cms-home .action-pos-1 {
+	top: 40%;
+	left: 3.79%;
+}
+
+.cms-home .action-pos-2 {
+	top: 40%;
+	right: 3.79%;
+}
+
+.cms-home .action-pos-3 {
+	top: 57%;
+	right: 39.1%;
+}
+
+
+
+
+/*
+.cms-home .footer-container {
+	border: none;
+}
+
+.cms-home .footer-center {
+	position: relative;
+	display: table;
+	margin: 0 auto;
+	z-index: 3;
+}
+
+.cms-home #search_mini_form {
+	margin: 4px 28px 0 28px;
+}
+
+.cms-home #search_mini_form input[type="text"] {
+	height: 22px;
+}
+
+*/
+
+/* ie9 and greater */
+/*
+@media screen and (min-width:0\0) {
+	.cms-home #search_mini_form input[type="text"] {
+		height: 12px;
+		line-height: 12px;
+	}
+}
+*/
+/*
+.cms-home .more-btn {
+	background: url(../images/nav-top-more-less.png) no-repeat;
+	background-position: 0 0;
+	height: 48px;
+	width: 69px;
+	text-indent: 99999px;
+	cursor: pointer;
+}
+
+@-moz-document url-prefix() { 
+  .cms-home .more-btn.open {
+  	height: 102px;
+  }
+}
+
+.cms-home ul.menu-list li.item-with-ul:hover, 
+.cms-home ul.menu-list li.item-with-ul a:hover {
+	background: url(../images/nav-arrow-home.png) no-repeat center top;
+}
+
+.cms-home ul.menu-list li.item-with-ul:hover > ul, 
+.cms-home ul.menu-list li.item-with-ul a:hover > ul {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.cms-home ul.menu-list li > ul {
+	bottom: -48px;
+	margin-bottom: 48px;
+	border: 0;
+	border-top: 2px solid #ef4923;
+}
+
+@-moz-document url-prefix() { 
+  .cms-home ul.menu-list li > ul {
+     margin-bottom: 96px;
+  }
+}
+
+
+.cms-home .quick-access-dropdown {
+	top: -34px;
+	right: 0;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+
+.cms-home .footer-container .social a.facebook {
+	display: block;
+	background: url(../images/social-fb-home.png) no-repeat;
+	text-indent: -9999px;
+	width: 22px;
+	height: 48px;
+}
+
+.cms-home .footer-container .social a.twitter {
+	display: block;
+	background: url(../images/social-twitter-home.png) no-repeat;
+	text-indent: -9999px;
+	width: 36px;
+	height: 48px;
+}
+
+.cms-home .footer-container .social a.instagram {
+	display: block;
+	background: url(../images/social-instagram-home.png) no-repeat;
+	text-indent: -9999px;
+	width: 37px;
+	height: 48px;
+}
+
+.cms-home .footer-container .social a.subscribe-home {
+	display: block;
+	background: url(../images/social-email-home.png) no-repeat;
+	text-indent: -9999px;
+	width: 38px;
+	height: 48px;
+}
+
+
+.cms-home .footer-container .subscribe-box {
+	position: absolute;
+	width: auto;
+	height: 0;
+	top: -60px;
+	left: 20px;
+	background: transparent;
+	z-index: 1;
+	margin: 0 0 60px 0;
+}
+	
+.cms-home .footer-container .subscribe-box #firstname {
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+
+.cms-home .footer-container .subscribe-box input {
+	padding-left: 4px;
+	margin-top: 35px;
+}
+
+.cms-home .footer-container .subscribe-box button {
+	margin-top: 35px;
+}
+
+.cms-home .footer-container .subscribe-box .validation-advice {
+	top: 0;
+}
+
+.cms-home .footer-container .subscribe-box #advice-placeholder {
+	position: absolute;
+	top: 0;
+	background: transparent;
+}
+
+.cms-home .footer-container .subscribe-box .success {
+	position: absolute;
+	bottom: 15px;
+	left: 165px;
+	z-index: 1000;
+}
+
+.cms-home .footer-container .social .telephone {
+	display: block;
+	background: url(../images/social-phone-home.png) no-repeat;
+	text-indent: -9999px;
+	width: 31px;
+	height: 48px;
+}
+
+.cms-home .telephone-container {
+	position: relative;
+}
+
+.cms-home .footer-container .social .telephone-popup {
+	position: absolute;
+	width: 125px;
+	background: #fff;
+	overflow: hidden;
+	height: 0;
+	top: 0;
+	left: -10px;
+	opacity: 0;
+	line-height: 34px;
+	padding: 0 10px;
+	-webkit-box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.2);
+	box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.2);
+	-webkit-border-top-right-radius: 2px;
+	-webkit-border-top-left-radius: 2px;
+	-moz-border-radius-topright: 2px;
+	-moz-border-radius-topleft: 2px;
+	border-top-right-radius: 2px;
+	border-top-left-radius: 2px;
+	-webkit-transition: all ease-in-out .6s;
+	-moz-transition: all ease-in-out .6s;
+	transition: all ease-in-out .6s;
+	z-index: 2;
+	text-indent: 0;
+}
+
+.cms-home .footer-container .social .telephone-popup:hover,
+.cms-home .footer-container .social .telephone:hover + .telephone-popup {
+	height: 34px;
+	opacity: 1;
+	top: -34px;
+}
+
+.cms-home .footer-container .social .telephone:hover {
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+.cms-home ul.haircare li:first-child  {
+	padding-left: 120px !important;
+}
+
+.cms-home ul.locations li:first-child {
+	padding-left: 170px;
+}
+
+.cms-home .footer-extra {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 30;
+	background: #fff;
+	color: #989898;
+	font-size: 9px;
+	text-transform: uppercase;
+	height: 0;
+	line-height: 55px;
+	border-top: 2px solid #ef4923;
+}
+
+.cms-home .footer-extra .copyright {
+	float: left;
+	padding: 0 0 0 25px;
+}
+
+.cms-home .footer-nav {
+	float: right;
+	padding: 0 25px 0 0;
+}
+
+.cms-home .footer-nav ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.cms-home .footer-nav ul li {
+	margin: 0;
+	padding: 0 0 0 20px;
+	display: inline;
+}
+
+.cms-home .footer-nav ul li a {
+	text-decoration: none;
+	color: #989898;
+} 
+
+.cms-home .footer-nav ul li a:hover {
+	opacity: .7;
+}
+
+*/
+
+.cms-home .pSlide, .cms-locations .pSlide {
+width: 100%;
+height: 100%;
+position: absolute;
+background-size: cover;
+background-position: center; 
+background-repeat: no-repeat;
+}
+.cms-home #pSlideF, .cms-locations #pSlideF {
+z-index: 10;
+}
+
+
+@media screen and (max-width:1449px) {
+	/*
+	.cms-home .footer-left {
+		display: none;
+	}
+	*/
+	
+	.cms-home .action-block,
+	.cms-locations .action-block {
+		font-size: 12px;
+		line-height: 15px;
+	}
+}

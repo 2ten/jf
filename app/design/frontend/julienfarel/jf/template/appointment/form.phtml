@@ -1,0 +1,124 @@
+<script type="text/javascript">
+    //<![CDATA[
+    jQuery(document).ready(function() {
+        jQuery("#appt-service-other").hide();
+        jQuery('#appt-service-other-label').hide();
+        jQuery("#appt-service-other").val('None');
+        jQuery("#appt-services-other").change(function() {
+            if (jQuery(this).is(':checked')) {
+                jQuery("#appt-service-other").val('');
+                jQuery('#appt-service-other').show();
+                jQuery("#appt-service-other-label").show();
+                jQuery("#appt-service-other").addClass('required-entry');
+            }
+            else {
+                jQuery('#appt-service-other').hide();
+                jQuery("#appt-service-other").val('None');
+                jQuery("#appt-service-other-label").hide();
+                jQuery("#appt-service-other").removeClass('required-entry');
+                jQuery("#appt-service-other").removeClass('validation-failed');
+            }
+        });
+    });
+    //]]>
+</script>
+<div class="nav-cover">&nbsp;</div>
+
+<div class="appointmentform clearfix">
+
+	<div class="breadcrumbs">
+	    <ul>
+	        <li class="home"><a href="<?php echo Mage::getBaseUrl(); ?>" title="Go to Home Page">Home</a> <span>/ </span></li>
+	        <li class="cms_page"><strong>Book Appointment</strong></li>
+		</ul>
+	    <div class="breadcrumb-tab">&nbsp;</div>
+	</div>
+	
+	
+	<form action="<?php echo $this->getUrl( 'appointment/index/submit' );?>" method="POST" id="appointment-form">
+	
+		<h2>REQUEST AN APPOINTMENT</h2>
+		
+		<div class="appt-top clearfix">
+
+            <label for="appt-fullname"><em>*</em><?php echo Mage::helper('appointment')->__('Full Name') ?></label>
+		    <input type="text" name="appt-fullname" id="appt-fullname" class="required-entry">
+		    
+		    <label for="appt-email"><em>*</em><?php echo Mage::helper('appointment')->__('Email Address') ?></label>
+		    <input type="email" name="appt-email" id="appt-email" class="required-entry validate-email">
+
+		    <label class="appt-phone" for="appt-phone"><em>*</em><?php echo Mage::helper('appointment')->__('Phone') ?></label>
+		    <input type="text" name="appt-phone" id="appt-phone" class="validate-phoneLax required-entry">
+		</div>
+		<div class="appt-bottom clearfix">
+            <div> <!-- wrapper div is required to make VarienForm validation message display correctly -->
+                <label for="appt-services"><em>*</em><?php echo Mage::helper('appointment')->__('Services') ?></label>
+                <!-- inline styles added temporarily to keep checkboxes paired with labels on same line -->
+                <div class="checkbox1" style="display: inline-block"><input type="checkbox" name="appt-services[aesthetics]" id="appt-services-aesthetics" value="Aesthetics"> Aesthetics</div>
+                <div class="checkbox2" style="display: inline-block"><input type="checkbox" name="appt-services[haircolor]" id="appt-services-haircolor" value="Hair Color"> Hair Color</div>
+                <div class="checkbox3" style="display: inline-block"><input type="checkbox" name="appt-services[makeup]" id="appt-services-makeup" value="Makeup"> Makeup</div>
+                <div class="checkbox4" style="display: inline-block"><input type="checkbox" name="appt-services[nails]" id="appt-services-nails" value="Nails"> Nails</div>
+                <div class="checkbox5" style="display: inline-block"><input type="checkbox" name="appt-services[eyelashes]" id="appt-services-eyelashes" value="Eyelashes"> Eyelashes</div>
+                <div class="checkbox6" style="display: inline-block"><input type="checkbox" name="appt-services[haircut]" id="appt-services-haircut" value="Haircut & Style"> Haircut &amp; Style</div>
+                <div class="checkbox7" style="display: inline-block"><input type="checkbox" name="appt-services[other]" id="appt-services-other" value="Other" class="validate-one-nested-checkbox-required"> Other</div>
+            </div>
+
+            <label for="appt-service-other" id="appt-service-other-label"><em>*</em><?php echo Mage::helper('appointment')->__('Other Service') ?></label>
+            <input type="text" name="appt-service-other" id="appt-service-other" class="">
+		    
+		    <label for="appt-technician"><?php echo Mage::helper('appointment')->__('Technician') ?></label>
+            <input type="text" name="appt-technician" id="appt-technician">
+		    
+		    <div class="appt-date-box">
+		    	<label for="appt-date"><em>*</em><?php echo Mage::helper('appointment')->__('Date') ?></label>
+				<input type="text" name="appt-date" id="appt-date" class="required-entry validate-date">
+				
+				<div class="appt-time-box">
+				    <label class="appt-time" for="appt-time"><em>*</em><?php echo Mage::helper('appointment')->__('Time') ?></label>
+				    <select name="appt-time" id="appt-time" class="required-entry">
+				        <option value=""></option>
+				        <option value="Morning"><?php echo Mage::helper('appointment')->__('Morning') ?></option>
+				        <option value="Afternoon"><?php echo Mage::helper('appointment')->__('Afternoon') ?></option>
+				        <option value="Evening"><?php echo Mage::helper('appointment')->__('Evening') ?></option>
+				    </select>
+			    </div>
+		    
+		    </div>
+		    
+		    
+		</div>
+		    
+	    <div class="contact-privacy">
+			<em>*</em>Fields are mandatory</p>
+		</div>
+	    
+	    <input class="button appt-submit" type="submit">
+		
+		<div class="go-back"><a onclick="history.back(-1)">&lt; GO BACK</a></div>
+	</form>
+	
+	<div id="appointmentRight">
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('appointment-form-sidebar')->toHtml(); ?>
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('contact-form-sidebar-bottom')->toHtml(); ?>	
+	</div>
+</div>
+	
+<script type="text/javascript">
+    //<![CDATA[
+    var theForm = new VarienForm('appointment-form', true);
+
+    Validation.add('validate-one-nested-checkbox-required','Please select one of the above options.', function(the_field_value) {
+        if(document.getElementById('appt-services-aesthetics').checked
+            || document.getElementById('appt-services-haircolor').checked
+            || document.getElementById('appt-services-makeup').checked
+            || document.getElementById('appt-services-nails').checked
+            || document.getElementById('appt-services-eyelashes').checked
+            || document.getElementById('appt-services-haircut').checked
+            || document.getElementById('appt-services-other').checked)
+        {
+            return true;
+        }
+        return false;
+    });
+    //]]>
+</script>

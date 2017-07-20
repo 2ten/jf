@@ -1,0 +1,35 @@
+<div class="nav-cover">&nbsp;</div>
+
+<div class="appointmentform clearfix">
+
+	<div class="breadcrumbs">
+	    <ul>
+	        <li class="home"><a href="<?php echo Mage::getBaseUrl(); ?>" title="Go to Home Page">Home</a> <span>/ </span></li>
+	        <li class="cms_page"><strong>Book Appointment</strong></li>
+		</ul>
+	    <div class="breadcrumb-tab">&nbsp;</div>
+	</div>
+	
+	
+	<div class="appointment-success">
+		
+		<h2>Thank You</h2>
+		
+		<p>Thank you for requesting your appointment online! We will e-mail you with your confirmed day & time!</p>
+
+        <p><a href="<?php echo Mage::getBaseUrl() . 'meet-julien' ?>">Meet Julien Farel</a></p>
+		
+		<br /><br /><br />		
+	</div>
+	
+	<div id="appointmentRight">
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('appointment-form-sidebar')->toHtml(); ?>
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('contact-form-sidebar-bottom')->toHtml(); ?>	
+	</div>
+</div>
+	
+<script type="text/javascript">
+    //<![CDATA[
+    var theForm = new VarienForm('appointment-form', true);
+    //]]>
+</script>

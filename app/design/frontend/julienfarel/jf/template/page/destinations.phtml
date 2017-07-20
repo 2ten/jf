@@ -1,0 +1,463 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+
+<?php
+	// test url for page; assign proper page var 
+	$varUrl = $_SERVER['REQUEST_URI'];
+
+	// assign overall destination variable
+	if (strpos($varUrl,'fifth-avenue')) {
+	    $varPage = "destinations-fifth-avenue";
+	    $varSelected = "FIFTH AVENUE (NYC)";
+	    $varLocation = "5th Avenue";
+	    $locationID = 25; 						// couldn't figure out how to pull from label name, these are hard-coded
+	} elseif (strpos($varUrl,'restore-salon-and-spa')) {
+	    $varPage = "destinations-restore-salon-and-spa";
+	    $varSelected = "RESTORE SALON &amp; SPA (NYC)";
+	    $varLocation = "Restore";
+	    $locationID = 26;
+	} elseif (strpos($varUrl,'us-open')) {
+	    $varPage = "julien-farel-us-open";
+	    $varSelected = "US OPEN POP UP SALON";
+	    $varLocation = "US Open";
+	    $locationID = 153;
+	} else {
+		$varPage = "destinations-jf-men";
+		$varSelected = "JF Men";
+		$varLocation = "jfmen";
+		$locationID = 85;						// this # could change, check when adding attribute
+	}
+	
+	// assign background static block name
+	$varBackground = "background-" . $varPage;
+	
+	// assign page nav variables
+	$varPageOverview = $varPage . "-overview";
+	$varPageServices = $varPage . "-services";
+	$varPageStaff = $varPage . "-staff";
+	$varPageAppointments = "/appointment";
+	
+	// assign current section
+	if (strpos($varUrl,'overview')) {
+	    $varSection = "overview";
+	} elseif (strpos($varUrl,'services')) {
+	    $varSection = "services";
+	} elseif (strpos($varUrl,'staff')) {
+	    $varSection = "staff";
+	} else {
+		$varSection = "appointments";
+	}
+?>
+        
+        
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->getLang() ?>" lang="<?php echo $this->getLang() ?>">
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<?php echo $this->getChildHtml('after_body_start') ?>
+<div class="wrapper">
+    <div class="page">
+    	<?php 
+    	
+    	// only show background on overview page
+    	if ($varSection == "overview") {
+    		// echo $varBackground;
+	    	echo $this->getLayout()->createBlock('cms/block')->setBlockId($varBackground)->toHtml(); 
+		}
+    	?>
+ 
+        <?php echo $this->getChildHtml('header') ?>
+        
+        <div class="locations-nav-cover">&nbsp;</div>
+        
+	<?php
+	$destinations = $this->getLayout()->createBlock('stafffilter/destinationsNav');
+	echo $destinations->toHtml();
+	?>	  
+	  
+        <div class="destination-body clearfix">
+		    <?php echo $this->getChildHtml('breadcrumbs') ?>
+            
+            <?php if ($varSection == "overview") { ?>
+            		<div class="destination-overview">
+            			<?php echo $this->getChildHtml('global_notices') ?>
+						<?php echo $this->getChildHtml('global_messages') ?>
+            			<?php echo $this->getChildHtml('content') ?>
+            		</div>
+            <?php } elseif ($varSection == "services") {  ?>
+            		<div class="destination-services">
+	            		<div class="block-left">
+	            		
+	            			<!-- Nav for 5th Ave -->
+	            			<?php if ($varPage == "destinations-fifth-avenue") { ?>
+		            		<div class="table">
+		            			<div class="table-row">
+		            				 <div class="table-cell haircut"><a class="toggle" href="#haircut">haircut &amp; style</a></div>
+								</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell color"><a class="toggle" href="#color">color</a></div>
+		            			</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell treatments"><a class="toggle" href="#treatments">hair treatments</a></div>
+		            			</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell nails"><a class="toggle" href="#nails">manicure &amp; pedicure</a></div>
+		            			</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell waxing"><a class="toggle" href="#waxing">waxing &amp; tweezing</a></div>
+		            			</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell makeup"><a class="toggle" href="#makeup">make-up</a></div>
+		            			</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell eyelashes"><a class="toggle" href="#eyelashes">eyelashes</a></div>
+		            			</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell express"><a class="toggle" href="#express">express menu</a></div>
+								</div>
+							</div>
+		            		<? } ?>
+		            		
+		            		<!-- Nav for Restore -->
+	            			<?php if ($varPage == "destinations-restore-salon-and-spa") { ?>
+		            		<div class="table">
+		            			<div class="table-row">
+		            				 <div class="table-cell power"><a class="toggle" href="#power">power beauty</a></div>
+								</div>
+								<div class="table-row">
+		            				 <div class="table-cell haircut"><a class="toggle" href="#haircut">haircut &amp; style</a></div>
+								</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell color"><a class="toggle" href="#color">color</a></div>
+		            			</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell style"><a class="toggle" href="#style">Extensions &amp; Wigs</a></div>
+		            			</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell treatments"><a class="toggle" href="#treatments">Hair &amp; Scalp Treatments</a></div>
+		            			</div>
+		            			<!-- <div class="table-row">
+		            				 <div class="table-cell massage"><a class="toggle" href="#massage">anti-aging massages</a></div>
+		            			</div> -->
+		            			<div class="table-row">
+		            				 <div class="table-cell facials"><a class="toggle" href="#facials">anti-aging facials</a></div>
+		            			</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell body"><a class="toggle" href="#body">anti-aging massages &amp; body treatments</a></div>
+		            			</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell nails"><a class="toggle" href="#nails">manicure &amp; pedicure</a></div>
+		            			</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell makeup"><a class="toggle" href="#makeup">make-up</a></div>
+		            			</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell waxing"><a class="toggle" href="#waxing">waxing &amp; tweezing</a></div>
+		            			</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell packages"><a class="toggle" href="#packages">Spa &amp; Fitness Packages</a></div>
+								</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell bridal"><a class="toggle" href="#bridal">Bridal</a></div>
+								</div>
+		            		</div>
+		            		<? } ?>
+		            		
+		            		<!-- Nav for Cabo -->
+	            			<?php if ($varPage == "destinations-jf-men") { ?>
+		            		<div class="table">
+		            			<div class="table-row">
+		            				 <div class="table-cell haircut"><a class="toggle" href="#cutandcolor">cut &amp; color</a></div>
+								</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell treatments"><a class="toggle" href="#grooming">grooming</a></div>
+								</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell massage"><a class="toggle" href="#massage">massage</a></div>
+		            			</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell power"><a class="toggle" href="#powermenue">power menu</a></div>
+		            			</div>
+		            		</div>
+		            		<? } ?>
+		            		
+	            		</div>
+	            
+						<div class="block-right">
+							<?php echo $this->getChildHtml('global_notices') ?>
+							<?php echo $this->getChildHtml('global_messages') ?>
+							<?php echo $this->getChildHtml('content') ?>
+						</div>
+						
+						<script type="text/javascript">
+						//<![CDATA[
+						
+							jQuery(function($) {
+								// set up for tertiary nav &amp; content
+								$('.slide').hide();
+								$('.table-cell a').removeClass('clicked');
+								
+								// Show the first element or the indicated in the tag.
+								if(window.location.hash && $(window.location.hash).length > 0) {
+									_toggleContent($('.block-left .table-cell a[href="'+window.location.hash+'"]'));
+									setTimeout(function() {window.scrollTo(0, 0);}, 1);
+								} else {
+									_toggleContent($('.block-left .table-cell a').first());
+								}
+								
+								$(window).on('hashchange', function() {
+									_toggleContent($('.block-left .table-cell a[href="'+window.location.hash+'"]'));
+								});
+								$('.toggle').click(function(e) {
+									e.preventDefault();
+									_toggleContent($(this));
+								});
+								
+								
+								function _toggleContent(currentClick) {
+									$('.table-cell a').removeClass('clicked');
+									currentClick.addClass('clicked');
+								
+									var $toggled = currentClick.attr('href');
+									
+									$('.slide').hide();
+									$($toggled).delay(400).fadeIn('slow');
+								}
+								
+							}); // jquery end	
+	 
+						//]]>
+						</script>
+            		</div>
+            <?php } elseif ($varSection == "staff") {  ?>
+            		<div class="destination-staff">
+            			<div class="block-left">            			
+	            			<div class="table">
+		            			<div class="table-row">
+		            				 <div class="table-cell stylists">
+		            				 	<a class="toggle" href="#haircut">stylists</a>
+		            				 	<div class="subcats">
+			            				 <?php 
+			            				 	$attribute = Mage::getSingleton('eav/config')->getAttribute('catalog_product', 'stylist_specialty');
+											if ($attribute->usesSource()) {
+											    $options = $attribute->getSource()->getAllOptions(false);
+											} 
+	
+											foreach ($options as $subcat) {
+												echo '<div class="subcat"><a href="#">' . $subcat['label'] . '</a></div>';
+											}
+										 ?>
+		            				 	</div>
+		            				 </div>
+								</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell colorists">
+		            				 	<a class="toggle" href="#color">colorists</a>
+		            				 	<div class="subcats">
+			            				 <?php 
+			            				 	$attribute = Mage::getSingleton('eav/config')->getAttribute('catalog_product', 'colorist_specialty');
+											if ($attribute->usesSource()) {
+											    $options = $attribute->getSource()->getAllOptions(false);
+											} 
+	
+											foreach ($options as $subcat) {
+												echo '<div class="subcat"><a href="#">' . $subcat['label'] . '</a></div>';
+											}
+										 ?>
+		            				 	</div>
+		            				 </div>
+		            			</div>								
+		            			<div class="table-row">
+		            				 <div class="table-cell nails">
+		            				 	<a class="toggle" href="#nails">nail technicians</a>
+		            				 	<div class="subcats">
+			            				 <?php 
+			            				 	$attribute = Mage::getSingleton('eav/config')->getAttribute('catalog_product', 'nail_services');
+											if ($attribute->usesSource()) {
+											    $options = $attribute->getSource()->getAllOptions(false);
+											} 
+	
+											foreach ($options as $subcat) {
+												echo '<div class="subcat"><a href="#">' . $subcat['label'] . '</a></div>';
+											}
+										 ?>
+		            				 	</div>
+		            				 </div>
+		            			</div>
+								
+		            			<div class="table-row">
+		            				 <div class="table-cell aestheticians">
+		            				 	<a class="toggle" href="#waxing">aestheticians</a>
+		            				 	<div class="subcats">
+			            				 <?php 
+			            				 	$attribute = Mage::getSingleton('eav/config')->getAttribute('catalog_product', 'aesthetician_service');
+											if ($attribute->usesSource()) {
+											    $options = $attribute->getSource()->getAllOptions(false);
+											} 
+	
+											foreach ($options as $subcat) {
+												echo '<div class="subcat"><a href="#">' . $subcat['label'] . '</a></div>';
+											}
+										 ?>
+		            				 	</div>
+		            				 </div>
+		            			</div>
+		            			<div class="table-row">
+		            				 <div class="table-cell makeup">
+		            				 	<a class="toggle" href="#makeup">make-up artists</a>
+		            				 	<div class="subcats">
+			            				 <?php 
+			            				 	$attribute = Mage::getSingleton('eav/config')->getAttribute('catalog_product', 'makeup_services');
+											if ($attribute->usesSource()) {
+											    $options = $attribute->getSource()->getAllOptions(false);
+											} 
+	
+											foreach ($options as $subcat) {
+												echo '<div class="subcat"><a href="#">' . $subcat['label'] . '</a></div>';
+											}
+										 ?>
+		            				 	</div>
+		            				 </div>
+		            			</div>
+		            		</div>
+						</div>
+	            
+						<div class="block-right">
+            				<?php echo $this->getChildHtml('global_notices') ?>
+							<?php echo $this->getChildHtml('global_messages') ?>
+							<?php // echo $this->getChildHtml('content') ?>
+							
+							<?php 
+								// pull all staff for current location 
+								$collection = Mage::getModel('catalog/product')->getCollection();
+							
+								// fetch specific data
+								$collection->addAttributeToSelect('name');
+								$collection->addAttributeToSelect('url_key');
+								$collection->addAttributeToSelect('small_image');
+								$collection->addAttributeToSelect('staff_title');
+								$collection->addAttributeToSelect('stylist_specialty');		
+								$collection->addAttributeToSelect('colorist_specialty');	
+								$collection->addAttributeToSelect('nail_services');	
+								$collection->addAttributeToSelect('makeup_services');	
+								$collection->addAttributeToSelect('aesthetician_service');	
+								$collection->addAttributeToSelect('location');
+								
+								// filter
+								$collection->addAttributeToFilter('status', 1);
+								$collection->addAttributeToFilter('visibility', 4);
+								$collection->addAttributeToFilter('location', array('finset'=>$locationID));
+
+								foreach ($collection as $product) {
+									
+									echo '<div class="person">';
+										echo '<div class="person-img"><img width="292" src="'.$this->helper('catalog/image')->init($product, 'small_image')->resize(292).'" /></div>';
+									
+										echo '<div class="person-on" id="' . $product->getUrlKey() . '">';
+											echo '<div class="person-name">' . $product->getData('name') . '</div>';
+											
+											echo '<div class="person-speciality">';
+												echo '<div class="person-line"></div>';
+											
+												if ($product->getData('stylist_specialty')) {
+													echo '<div class="person-icon"><img src="' . $this->getSkinUrl('images/staff/stylists-sm.png') . '" width="50" /></div>';
+												}
+												if ($product->getData('colorist_specialty')) {
+													echo '<div class="person-icon"><img src="' . $this->getSkinUrl('images/staff/colorists-sm.png') . '" width="50" /></div>';
+												}
+												if ($product->getData('nail_services')) {
+													echo '<div class="person-icon"><img src="' . $this->getSkinUrl('images/staff/nails-sm.png') . '" width="50" /></div>';
+												}
+												if ($product->getData('makeup_services')) {
+													echo '<div class="person-icon"><img src="' . $this->getSkinUrl('images/staff/makeup-sm.png') . '" width="50" /></div>';
+												}
+												if ($product->getData('aesthetician_service')) {
+													echo '<div class="person-icon"><img src="' . $this->getSkinUrl('images/staff/aestheticians-sm.png') . '" width="50" /></div>';
+												}
+												echo '<div class="person-line"></div>';
+											echo '</div>';
+											
+											echo '<div class="person-title">' . $product->getData('staff_title') . '</div>';
+										
+										echo '</div>';
+									echo '</div>';
+								}
+							?>
+						</div>
+						
+						<script type="text/javascript">
+						//<![CDATA[
+						
+							jQuery(function($) {
+							
+								$(document).ready(function(){
+									
+									// link to individual staff page
+									$('.person-on').click(function(e) {
+										e.preventDefault();
+										alert(this.id);
+									});
+									
+									// set up for tertiary nav 
+									$('.table-cell a').removeClass('clicked');
+									$('.subcats').css({'display':'none'});
+									
+									$('.toggle').click(function(e) {
+										e.preventDefault();
+										
+										$('.table-cell a').removeClass('clicked');
+										$(this).addClass('clicked');
+										
+										$('.subcats').css({'display':'none'});
+										$(this).next('.subcats').css({'display':'block', 'opacity':0}).animate({'opacity':1}, 800);
+							
+									});
+									
+								}); // document ready end
+								
+							}); // jquery end	
+	 
+						//]]>
+						</script>
+            		</div>
+            <?php } ?>
+		</div>
+
+        <?php echo $this->getChildHtml('footer') ?>
+        <?php echo $this->getChildHtml('before_body_end') ?>
+    </div>
+</div>
+<?php echo $this->getAbsoluteFooter() ?>
+</body>
+</html>

@@ -1,0 +1,172 @@
+#header {
+	width: 300px;
+	z-index: 100;
+	position:fixed;
+	top:16px;
+	right:220px;
+}
+ 
+#header .page-header-container {
+	display:none;
+	top:20px;
+} 
+
+#header .block-cart {
+	display:none;
+} 
+ 
+a.close {
+	text-decoration:none;
+}
+
+a.cart-link{
+	float:left;
+	margin-left:22%;
+	margin-bottom:10px;
+}
+
+.block-cart .subtotal {
+    border: 0;
+    border-radius: 0;
+    color: #4f4f4f;
+    padding: 4px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+ul.minicart {
+	width:50px;
+	float:left;
+	margin-bottom:10px;
+} 
+
+ ul.minicart li {
+	padding:0;
+}
+
+input.cart-item-quantity {
+	width:90px;
+}
+
+.minicart-wrapper .block .btn-remove, .block .btn-edit {
+	float:left;
+}
+
+.minicart-wrapper .btn-edit {
+    display: block;
+    width: 65px;
+    height: auto;
+    font-size: 12px;
+    line-height: 20px;
+    background: none;
+    text-indent: 0 !important;
+    overflow: hidden;
+}
+
+/* ============================================ *
+ * Skip Links
+ * ============================================ */
+.skip-links {
+  clear: both;
+  overflow: hidden;
+  border-top: 1px solid #EDEDED;
+  border-bottom: 1px solid #EDEDED;
+}
+
+@media only screen and (min-width: 771px) {
+  .skip-links {
+    border: 0;
+  }
+}
+/* -------------------------------------------- *
+ * Skip - Link
+ */
+.skip-link {
+  position: relative;
+  float: left;
+  width: 20%;
+  height: 44px;
+  background: #FFFFFF;
+  color: #636363;
+  line-height: 42px;
+  text-align: center;
+}
+
+a.skip-link {
+  text-decoration: none;
+}
+
+.skip-link:not(.skip-active):hover {
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 770px) {
+  .skip-link {
+    border-right: 1px solid #EDEDED;
+  }
+
+  .skip-link:last-child {
+    border-right: 0;
+  }
+}
+@media only screen and (min-width: 500px) {
+  .skip-link {
+    width: 25%;
+  }
+}
+/* -------------------------------------------- *
+ * Skip Link - Active
+ */
+@media only screen and (max-width: 770px) {
+  .skip-link.skip-active {
+    background: #f5f5f5;
+    color: inherit;
+  }
+
+  .skip-link.skip-active span {
+    color: inherit;
+  }
+}/* -------------------------------------------- *
+ * Skip Link - Label
+ */
+.skip-link .label {
+  display: none;
+}
+
+@media only screen and (min-width: 500px) {
+  .skip-link .label {
+    display: inline;
+  }
+}
+/* ============================================ *
+ * Skip Content
+ * ============================================ */
+.skip-content {
+  display: none;
+}
+
+.skip-content.skip-active {
+  display: block;
+  background: #f5f5f5;
+  width:100%;
+  float:left;
+}
+
+#topCartContent p.subtotal {
+	width: 100%;
+	float: left;
+	height: 46px;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 10px;	
+}
+#topCartContent p.subtotal .label {
+	float: left;
+	text-transform:uppercase;
+	margin-left:15px;
+	line-height:26px;
+}
+#topCartContent p.subtotal .price {
+	float: right;
+	color:#ef4923;
+	margin-right:15px;
+}

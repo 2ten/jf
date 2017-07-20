@@ -1,0 +1,1075 @@
+/* locations Landing Page */
+body.cms-locations {
+	max-width: 100%;
+    overflow-x: hidden;
+}
+
+.cms-locations .wrapper {
+	position: relative;
+	max-width: 1450px;
+	max-height: 1000px;
+	min-width: 1024px;
+	min-height: 706px;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.cms-locations .page {
+	position: absolute;
+	width: 100%;
+    padding-bottom: 68.97%;
+}
+
+/* position action boxes; all other box code is in global.css */
+.cms-locations .action-pos-1 {
+	top: 40%;
+	left: 3.79%;
+}
+
+.cms-locations .action-pos-2 {
+	top: 40%;
+	right: 3.79%;
+}
+
+.cms-locations .action-pos-3 {
+	top: 57%;
+	right: 39.1%;
+}
+
+/* Destination Internal Pages */
+.destination-body {
+	padding-bottom: 100px;
+}
+
+
+/* Destination top nav */
+.locations-nav-cover {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: white;
+	height: 100px;
+	z-index: 10;
+	width: 100%;
+	
+}
+
+.locations-nav {
+	position: relative;
+	top: 0;
+	left: 0;
+	margin-top: 48px;
+	background: white;
+	height: 172px;
+	width: 100%;
+	z-index: 2;
+}
+
+.locations-nav ul {
+	position: relative;
+	float: left;
+	list-style-type: none;
+	margin: 0;
+	padding: 128px 0 0 24px;
+}
+
+.locations-nav ul li {
+	float: left;
+	padding: 0 13px;
+	margin: 0 65px 0 0;
+	background: url(../images/header-line-grey.png) repeat-x left center;
+	font-size: 13px;
+	line-height: 13px;
+}
+
+.locations-nav ul li:last-child {
+	margin-right: 0;
+}
+
+.locations-nav ul li.current {
+	background: url(../images/header-line-red.png) repeat-x left center;
+}
+
+.locations-nav ul li a {
+	text-transform: uppercase;
+	color: #4f4f4f;
+	text-decoration: none;
+	background: white;
+	padding: 0 4px;
+}
+
+.locations-nav ul li a:hover {
+	color: #000;
+}
+
+.locations-nav ul li.dropdown {
+	width: 270px;
+	margin: -14px 53px 0 0;
+	background: none;
+	padding: 0;
+}
+
+.locations-nav ul li.dropdown ul {
+	position: absolute;
+	width: 270px;
+	height: 0;
+	overflow: hidden;
+	float: none;
+	padding: 0;
+	
+	-webkit-transition: all ease-in-out .6s;
+	-moz-transition: all ease-in-out .6s;
+	transition: all ease-in-out .6s;
+}
+
+.locations-nav ul li.dropdown ul li {
+	float: none;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: #292929;
+	border-bottom: 1px solid #6e6e6e;
+	font-size: 12px;
+	line-height: 12px;
+}
+
+.locations-nav ul li.dropdown ul li a {
+	color: #a1a1a1;
+	background: transparent;
+	padding: 13px 10px;
+	display: block;
+}
+
+.locations-nav ul li.dropdown ul li a:hover {
+	color: #fff;
+}
+
+.locations-nav ul li.dropdown .locations-header {
+	border: 1px solid #dbdbdb;
+	padding: 13px 10px 10px 10px;
+	color: #4f4f4f;
+	cursor: pointer;
+	background: url(../images/dropdown-down.png) no-repeat right center;
+	text-transform: uppercase;
+	font-size: 12px;
+	line-height: 12px;
+}
+
+.locations-nav ul li.dropdown .locations-header:hover,
+.locations-nav ul li.dropdown .locations-header.hoverClass {
+	background: url(../images/dropdown-up.png) no-repeat right center;
+}
+
+.locations-nav ul li.dropdown .locations-header:hover + ul,
+.locations-nav ul li.dropdown ul:hover {
+	height: 210px;
+}
+
+
+
+/* Destination overview pages */
+.destination-overview {
+	max-width: 1154px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+.destination-overview h1 {
+	color: #fff;
+	display: inline-block;
+	padding: 0 0 6px 0;
+	margin-bottom: 40px;
+}
+
+.destination-overview h3 {
+	color: #dadada;
+}
+
+.destination-overview .block-left {
+	float: left;
+	width: 53.4%; /* 616px; */
+	margin-top: 40px;
+}
+
+/* mmc 2ten added */
+.destination-overview .block-bottom{
+	clear:both;
+	margin-top:30px;
+}
+.destination-overview .block-bottom:before,
+.destination-overview .block-bottom:after{
+	display:table;
+	content:'';
+	clear:both;
+}
+.destination-overview .block-left .block-grey,
+.destination-overview .block-bottom .block-grey {
+	background: #292929;
+	color: #fff;
+	padding: 24px 34px 30px 34px;
+}
+
+.destination-overview .block-left ul {
+	list-style-type: none;
+	column-count: 2;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-gap: 40px;
+	-webkit-column-gap: 40px;
+	-moz-column-gap: 40px;
+	text-transform: uppercase;
+	padding: 0;
+	margin: 0;
+}
+
+.destination-overview .block-left ul li {
+	background: url(../images/arrow-red.png) no-repeat left center;
+	padding: 2px 0 2px 26px;
+}
+
+.destination-overview .block-left ul li .hours {
+	float: right;
+}
+
+.destination-overview .block-left .experience {
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+.destination-overview .block-right {
+	float: right;
+	margin-top: 40px;
+	width: 400px;
+}
+
+.destination-overview .block-right .tagline {
+	padding-top: 10px;
+	text-align: right;
+}
+
+.destination-overview .block-right .block-grey {
+	background: #292929;
+	color: #fff;
+	padding: 24px;
+}
+
+.destination-overview .block-right .block-grey a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.destination-overview .block-right .block-grey a:hover {
+	opacity: 0.7;
+}
+
+
+.destination-overview .block-right .map {
+	clear: both;
+	padding-top: 12px;
+}
+
+.destination-overview .block-right .button-grey a {
+	display: block;
+	color: #fff;
+	background: #606060;
+	font-size: 10px;
+	line-height: 36px;
+	width: 100%;
+	text-decoration: none;
+	text-align: center;
+}
+
+.destination-overview .block-right .button-grey span {
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;    
+}
+
+
+.destination-overview .block-right .button-grey a:hover {
+	background: #ef4923;
+	opacity: 1;
+}
+
+.destination-overview .block-right ul {
+	list-style-type: none;
+	column-count: 2;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-gap: 12px;
+	-webkit-column-gap: 12px;
+	-moz-column-gap: 12px;
+	padding: 0;
+	margin: 0;
+}
+
+.destination-overview .block-right ul li {
+	padding: 0 0 12px 0;
+}
+
+.destination-overview .block-right ul.button-wide {
+	column-count: 1;
+	-webkit-column-count: 1;
+	-moz-column-count: 1;
+	column-gap: 0;
+	-webkit-column-gap: 0;
+	-moz-column-gap: 0;
+}
+
+
+
+/* Destination service pages */
+.destination-services {
+	position: relative;
+}
+
+.destination-services .block-left {
+	position: absolute;
+	left: 0;
+	z-index: 1;
+}
+
+.destination-services .block-left .table {
+	border-top: 1px solid #dbdbdb;
+	padding: 0;
+	margin: 0 0 80px 0;
+	display: table;	
+	border-right: 1px solid #dbdbdb;
+}
+
+.destination-services .block-left .table-row {
+	display: table-row;
+}
+
+.destination-services .block-left .table-cell {
+	border-bottom: 1px solid #dbdbdb;
+}
+
+.destination-services .block-left .table-cell a {
+	color: #4f4f4f;
+	text-transform: uppercase;
+	font-size: 13px;
+	line-height: 20px;
+	text-decoration: none;
+	padding-left: 95px;
+	padding-right: 20px;
+	display: table-cell;
+	height: 92px;
+	vertical-align: middle;
+	width: 233px;
+	
+	-webkit-transition: background-image 0.4s ease-in-out;
+	-moz-transition: background-image 0.4s ease-in-out;
+	-ms-transition: background-image 0.4s ease-in-out;
+	-o-transition: background-image 0.4s ease-in-out;
+	transition: background-image 0.4s ease-in-out;
+}
+
+
+.destination-services .block-left .power a {
+	background: url(../images/services/power-off.png) no-repeat left center;
+}
+
+.destination-services .block-left .power a:hover,
+.destination-services .block-left .power a.clicked {
+	background: url(../images/services/power-on.png) no-repeat left center;
+}
+
+
+.destination-services .block-left .haircut a {
+	background: url(../images/services/haircut-off.png) no-repeat left center;
+}
+
+.destination-services .block-left .haircut a:hover,
+.destination-services .block-left .haircut a.clicked {
+	background: url(../images/services/haircut-on.png) no-repeat left center;
+}
+
+.destination-services .block-left .color a {
+	background: url(../images/services/color-off.png) no-repeat left center;
+}
+
+.destination-services .block-left .color a:hover,
+.destination-services .block-left .color a.clicked {
+	background: url(../images/services/color-on.png) no-repeat left center;
+}
+
+.destination-services .block-left .style a {
+	background: url(../images/services/style-off.png) no-repeat left center;
+}
+
+.destination-services .block-left .style a:hover,
+.destination-services .block-left .style a.clicked {
+	background: url(../images/services/style-on.png) no-repeat left center;
+}
+
+.destination-services .block-left .treatments a {
+	background: url(../images/services/treatments-off.png) no-repeat left center;
+}
+
+.destination-services .block-left .treatments a:hover,
+.destination-services .block-left .treatments a.clicked {
+	background: url(../images/services/treatments-on.png) no-repeat left center;
+}
+
+.destination-services .block-left .massage a {
+	background: url(../images/services/massage-off.png) no-repeat left center;
+}
+
+.destination-services .block-left .massage a:hover,
+.destination-services .block-left .massage a.clicked {
+	background: url(../images/services/massage-on.png) no-repeat left center;
+}
+
+
+.destination-services .block-left .facials a {
+	background: url(../images/services/facials-off.png) no-repeat left center;
+}
+
+.destination-services .block-left .facials a:hover,
+.destination-services .block-left .facials a.clicked {
+	background: url(../images/services/facials-on.png) no-repeat left center;
+}
+
+
+.destination-services .block-left .body a {
+	background: url(../images/services/body-off.png) no-repeat left center;
+}
+
+.destination-services .block-left .body a:hover,
+.destination-services .block-left .body a.clicked {
+	background: url(../images/services/body-on.png) no-repeat left center;
+}
+
+
+.destination-services .block-left .nails a {
+	background: url(../images/services/nails-off.png) no-repeat left center;
+}
+
+.destination-services .block-left .nails a:hover,
+.destination-services .block-left .nails a.clicked {
+	background: url(../images/services/nails-on.png) no-repeat left center;
+}
+
+.destination-services .block-left .waxing a {
+	background: url(../images/services/waxing-off.png) no-repeat left center;
+}
+
+.destination-services .block-left .waxing a:hover,
+.destination-services .block-left .waxing a.clicked {
+	background: url(../images/services/waxing-on.png) no-repeat left center;
+}
+
+.destination-services .block-left .men a {
+	background: url(../images/services/men4-off.png) no-repeat left center;
+}
+
+.destination-services .block-left .men a:hover,
+.destination-services .block-left .men a.clicked {
+	background: url(../images/services/men4-on.png) no-repeat left center;
+}
+
+.destination-services .block-left .makeup a {
+	background: url(../images/services/makeup-off.png) no-repeat left center;
+}
+
+.destination-services .block-left .makeup a:hover,
+.destination-services .block-left .makeup a.clicked {
+	background: url(../images/services/makeup-on.png) no-repeat left center;
+}
+
+.destination-services .block-left .eyelashes a {
+	background: url(../images/services/eyelashes-off.png) no-repeat left center;
+}
+
+.destination-services .block-left .eyelashes a:hover,
+.destination-services .block-left .eyelashes a.clicked {
+	background: url(../images/services/eyelashes-on.png) no-repeat left center;
+}
+
+.destination-services .block-left .express a {
+	background: url(../images/services/express-off.png) no-repeat left center;
+}
+
+.destination-services .block-left .express a:hover,
+.destination-services .block-left .express a.clicked {
+	background: url(../images/services/express-on.png) no-repeat left center;
+}
+
+
+.destination-services .block-left .packages a {
+	background: url(../images/services/packages-off.png) no-repeat left center;
+}
+
+.destination-services .block-left .packages a:hover,
+.destination-services .block-left .packages a.clicked {
+	background: url(../images/services/packages-on.png) no-repeat left center;
+}
+
+.destination-services .block-left .bridal a {
+	background: url(../images/services/bridal-off.png) no-repeat left center;
+}
+
+.destination-services .block-left .bridal a:hover,
+.destination-services .block-left .bridal a.clicked {
+	background: url(../images/services/bridal-on.png) no-repeat left center;
+}
+
+.destination-services .block-right {
+	width: 592px;
+	color: #4f4f4f;
+	margin: 0 auto;
+}
+
+.destination-services .block-right h3 {
+	clear: both;
+	margin-bottom: 15px;
+}
+
+.destination-services .block-right ul {
+	clear: both;
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 25px 0;
+}
+
+.destination-services .block-right ul:before, 
+.destination-services .block-right ul:after {
+	content: " ";
+	display: table;
+}
+
+.destination-services .block-right ul li {
+	clear: both;
+	background: url(../images/header-line-dashed.png) repeat-x 0 13px;
+	font-size: 14px;
+	line-height: 36px;
+	height: 36px;
+	padding: 0;
+}
+
+.destination-services .block-right ul li .service {
+	float: left;
+	background: white;
+	padding: 0 8px 0 0;
+}
+
+.destination-services .block-right ul li .price {
+	float: right;
+	background: white;
+	padding: 0 0 0 8px;
+}
+
+.destination-services .block-right ul li.no-line {
+	background: none;
+	line-height: 22px;
+}
+
+.destination-services p {
+	padding: 0 0 10px 0;
+}
+
+.destination-services p {
+	line-height: normal;
+}
+
+
+/* Destination staff pages */
+.stafffilter-index-view .content-generic,
+.stafffilter-index-index .content-generic {
+	width: auto;
+	margin: 0;
+	padding: 0;
+	max-width: none;	
+}
+
+.destination-staff {
+	position: relative;
+}
+
+.destination-staff .block-left {
+	position: absolute;
+	left: 0;
+	z-index: 1;
+}
+
+.destination-staff .block-left .table {
+	border-top: 1px solid #dbdbdb;
+	padding: 0;
+	margin: 0 0 80px 0;
+	display: table;	
+	border-right: 1px solid #dbdbdb;
+}
+
+.destination-staff .block-left .table-row {
+	display: table-row;
+}
+
+.destination-staff .block-left .table-cell {
+	border-bottom: 1px solid #dbdbdb;
+}
+
+.destination-staff .block-left .table-cell a.toggle {
+	color: #4f4f4f;
+	text-transform: uppercase;
+	font-size: 13px;
+	line-height: 20px;
+	text-decoration: none;
+	padding-left: 95px;
+	padding-right: 20px;
+	display: table-cell;
+	height: 92px;
+	vertical-align: middle;
+	width: 233px;
+	
+	-webkit-transition: background-image 0.4s ease-in-out;
+	-moz-transition: background-image 0.4s ease-in-out;
+	-ms-transition: background-image 0.4s ease-in-out;
+	-o-transition: background-image 0.4s ease-in-out;
+	transition: background-image 0.4s ease-in-out;
+}
+
+.destination-staff .block-left .stylist a.toggle {
+	background: url(../images/staff/stylist-off.png) no-repeat left center;
+}
+
+.destination-staff .block-left .stylist a.toggle:hover,
+.destination-staff .block-left .stylist a.toggle.clicked {
+	background: url(../images/staff/stylist-on.png) no-repeat left center;
+}
+
+.destination-staff .block-left .colorist a.toggle {
+	background: url(../images/staff/colorist-off.png) no-repeat left center;
+}
+
+.destination-staff .block-left .colorist a.toggle:hover,
+.destination-staff .block-left .colorist a.toggle.clicked {
+	background: url(../images/staff/colorist-on.png) no-repeat left center;
+}
+
+.destination-staff .block-left .nails a.toggle {
+	background: url(../images/staff/nails-off.png) no-repeat left center;
+}
+
+.destination-staff .block-left .nails a.toggle:hover,
+.destination-staff .block-left .nails a.toggle.clicked {
+	background: url(../images/staff/nails-on.png) no-repeat left center;
+}
+
+.destination-staff .block-left .aesthetician a.toggle {
+	background: url(../images/staff/aesthetician-off.png) no-repeat left center;
+}
+
+.destination-staff .block-left .aesthetician a.toggle:hover,
+.destination-staff .block-left .aesthetician a.toggle.clicked {
+	background: url(../images/staff/aesthetician-on.png) no-repeat left center;
+}
+
+.destination-staff .block-left .massage_therapist a.toggle {
+	background: url(../images/staff/massage2-off.png) no-repeat left center;
+}
+
+.destination-staff .block-left .massage_therapist a.toggle:hover,
+.destination-staff .block-left .massage_therapist a.toggle.clicked {
+	background: url(../images/staff/massage2-on.png) no-repeat left center;
+}
+
+.destination-staff .block-left .makeups a.toggle {
+	background: url(../images/staff/makeups-off.png) no-repeat left center;
+}
+
+.destination-staff .block-left .makeups a.toggle:hover,
+.destination-staff .block-left .makeups a.toggle.clicked {
+	background: url(../images/staff/makeups-on.png) no-repeat left center;
+}
+
+.destination-staff .block-left .eyelash a.toggle {
+	background: url(../images/staff/eyelash-off.png) no-repeat left center;
+}
+
+.destination-staff .block-left .eyelash a.toggle:hover,
+.destination-staff .block-left .eyelash a.toggle.clicked {
+	background: url(../images/staff/eyelash-on.png) no-repeat left center;
+}
+
+.destination-staff .block-left .experience a.toggle {
+	background: url(../images/staff/experience-off.png) no-repeat left center;
+}
+
+.destination-staff .block-left .experience a.toggle:hover,
+.destination-staff .block-left .experience a.toggle.clicked {
+	background: url(../images/staff/experience-on.png) no-repeat left center;
+}
+
+.destination-staff .block-left .massage a.toggle {
+	background: url(../images/staff/massage-off.png) no-repeat left center;
+}
+
+.destination-staff .block-left .massage a.toggle:hover,
+.destination-staff .block-left .massage a.toggle.clicked {
+	background: url(../images/staff/massage-on.png) no-repeat left center;
+}
+
+.destination-staff .block-left .men_grooming a.toggle {
+	background: url(../images/staff/men_grooming-off.png) no-repeat left center;
+}
+
+.destination-staff .block-left .men_grooming a.toggle:hover,
+.destination-staff .block-left .men_grooming a.toggle.clicked {
+	background: url(../images/staff/men_grooming-on.png) no-repeat left center;
+}
+
+.destination-staff .subcats {
+	text-align: right;
+	padding: 0 30px 10px 0;
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #4f4f4f;
+	background: none;
+}
+
+.destination-staff .subcats a {
+	color: #4f4f4f;
+	text-decoration: none;
+}	
+
+.destination-staff .subcats a:hover {
+	color: #ef4923;
+}
+
+.destination-staff .block-right {
+	position: relative;
+	padding-left: 234px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.destination-staff .person {
+	float: left;
+	position: relative;
+	z-index: 1;
+}
+
+.destination-staff .person-img {
+	width: 290px;
+	height: 290px;
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+.destination-staff .person-img:hover + .person-on,
+.destination-staff .person-on:hover {
+	display: block;
+}
+
+
+.destination-staff .person-on {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 290px;
+	height: 290px;
+	z-index: 2;
+	background: #000;
+	background-color: rgba(0, 0, 0, 0.75);
+	z-index: 2;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+}
+
+
+.destination-staff .person-name {
+	font-size: 17px;
+	text-transform: uppercase;
+	margin: 85px 0 10px 0;
+}
+
+.destination-staff  .person-speciality {
+	line-height: 50px;
+	margin: 0 auto;
+
+}
+
+.destination-staff .person-line {
+	display: inline-block;
+	height: 11px;
+	background: url(../images/header-line-drkgrey.png) repeat-x left top;
+	margin: 0 5px;
+}
+
+.icon-1 .person-line {
+	width: 30%; 
+}
+
+.icon-2 .person-line {
+	width: 19%; 
+}
+
+.icon-3 .person-line {
+	width: 8%; 
+}
+
+.icon-4 .person-line {
+	display: none; 
+}
+
+.destination-staff .person-icon {
+	display: inline-block;
+	line-height: 50px;
+	margin: 0 5px;
+	width: 50px;
+}
+
+.destination-staff .person-title {
+	margin-top: 15px;
+	color: #ef4923;
+	font-size: 16px;
+}
+
+
+
+/* preload all staff section images */
+body:after{
+    display:none;
+    content: 
+    url(../images/services/power-on.png) 
+    url(../images/services/haircut-on.png) 
+    url(../images/services/color-on.png)
+    url(../images/services/style-on.png) 
+    url(../images/services/treatments-on.png) 
+    url(../images/services/massage-on.png) 
+    url(../images/services/facials-on.png) 
+    url(../images/services/body-on.png) 
+    url(../images/services/nails-on.png) 
+    url(../images/services/waxing-on.png) 
+    url(../images/services/makeup-on.png) 
+    url(../images/services/eyelashes-on.png) 
+    url(../images/services/packages-on.png) 
+	url(../images/services/express-on.png) 
+    url(../images/services/bridal-on.png) 
+    url(../images/staff/stylist-on.png) 
+    url(../images/staff/colorist-on.png)
+    url(../images/staff/nails-on.png)
+    url(../images/staff/aesthetician-on.png)
+    url(../images/staff/makeups-on.png)
+    url(../images/staff/eyelash-on.png)
+    url(../images/staff/experience-on.png)
+    url(../images/staff/massage-on.png)
+    url(../images/staff/men_grooming-on.png);
+}
+
+.staff-list-empty {
+	padding: 50px;
+}
+
+
+/* individual staff pages */
+.staff-left {
+	position: relative;
+	width: 505px;
+	height: 580px;
+	background-repeat: no-repeat !important;
+	background-position: center top;
+	float: left;
+	margin-right: 10px;
+}
+
+.staff-quote {
+	position: absolute;
+	left: 25px;
+	bottom: 25px;
+	margin-right: 25px;
+	padding: 18px 10px;
+	font-size: 14px;
+	background: #ef4923;
+	color: #fff; 
+}
+
+.staff-right {
+	float: left;
+	width: 503px;
+	margin-top: 50px;
+	margin-bottom: 25px;
+	margin-left: 25px;
+}
+
+.staff-name {
+	float: left;
+	color: #4f4f4f;
+	font-size: 22px;
+	line-height: 22px;
+	text-transform: uppercase;
+	background: url(../images/staff-slash.png) no-repeat right center;
+	padding-right: 46px;
+}
+
+.staff-title {
+	float: left;
+	font-size: 18px;
+	color: #ef4923;
+	line-height: 22px;
+}
+
+.staff-bio {
+	clear: both;
+	padding: 25px 0;
+}
+
+.staff-specialties ul {
+	list-style-type: none;
+	column-count: 2;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	text-transform: uppercase;
+	padding: 0;
+	margin: 0;
+}
+
+.staff-specialties ul li {
+	padding: 0 0 0 18px;
+	margin: 0;
+	background: url(../images/staff-arrow.png) no-repeat 0 5px;
+}
+
+.staff-work {
+	clear: both;
+	background: #292929;
+	height: 130px;
+	width: 100%;
+	padding-right: 110px;
+}
+
+.staff-work-view {
+	padding: 22px 0 8px 0;
+	font-size: 14px;
+	color: #999;	
+}
+
+.staff-work ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	float: right;
+}
+
+.staff-work ul li {
+	float: left;
+	padding: 16px 0 0 14px;
+	text-align: right;
+	font-size: 12px;
+	line-height: 130%;
+}
+
+.staff-work ul li img {
+	border: 4px solid #fff;
+}
+
+.staff-work ul li a {
+	text-decoration: none;
+}
+
+.staff-work ul li a:hover {
+	color: #4f4f4f;
+}
+
+/* pop-up lightbox */
+.stafffilter-index-view .mfp-bottom-bar{
+	display: none;
+}
+
+.stafffilter-index-view .mfp-figure img {
+	border: 25px solid #fff;
+	padding: 0;
+}
+
+.stafffilter-index-view .mfp-image-holder .mfp-close, 
+.stafffilter-index-view .mfp-iframe-holder .mfp-close {
+	background: url(../images/close.png) no-repeat;
+	width: 42px;
+	height: 42px;
+	text-indent: -9999em;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	opacity: 1;
+	cursor: pointer;
+}
+
+.stafffilter-index-view button.mfp-arrow {
+	display: none;
+}
+
+
+/* gallery lightbox slider */
+.destination-gallery {
+	display: none;
+}
+
+.tos-prev,
+.tos-next {
+	background: url(../images/tos-arrows.png) no-repeat !important;
+	width: 97px !important;
+	height: 327px !important;
+	text-indent: -9999em;
+	margin: -163px 0 0 0 !important;
+	cursor: pointer;
+}
+
+.tos-prev {
+	background-position: 0 0 !important;
+}
+
+.tos-next {
+	  background-position: -97px 0 !important;
+}
+
+.tos-prev:hover {
+	background-position: 0 -327px !important;
+}
+
+.tos-next:hover {
+	  background-position: -97px -327px !important;
+}
+
+.tos-wrapper.tos-has-thumbnails .tos-pagination {
+	height: 100px !important;
+}
+
+.tos-wrapper.tos-has-thumbnails .tos-pagination a {
+	width: 70px !important;
+	height: 70px !important;
+	border: 1px solid #606060 !important;
+}
+
+@media screen and (max-width:770px) {
+	.tos-prev,
+	.tos-next {
+		background-size: 100px;
+	}
+}
+
+.tos-close {
+	background: url(../images/tos-close.png) no-repeat !important;
+	width: 42px !important;
+	height: 42px !important;
+	text-indent: -9999em;
+	cursor: pointer;
+	opacity: 1 !important;
+}
+
+.tos-prev span,
+.tos-next span,
+.tos-close span,
+.tos-disabled {
+	display: none !important;
+}
+
+.tos-wrapper.tos-fill .tos-slide.tos-image > img {
+	min-height: inherit !important;
+	width: 100% !important;
+	height: auto !important;
+}

@@ -1,0 +1,205 @@
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+<script type="text/javascript">
+	var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+</script>
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<div class="product-view">
+	<div class="product-essential">
+		<form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+			<?php echo $this->getBlockHtml('formkey') ?>
+			<div class="no-display">
+				<input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+				<input type="hidden" name="related_product" id="related-products-field" value="" />
+			</div>
+
+			<div class="product-shop">
+				<div class="product-name">
+					<h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+				</div>
+				<!-- these are unwanted child htmls -->
+				<?php /*
+            <?php if ($this->canEmailToFriend()): ?>
+                <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
+            <?php endif; ?>
+            <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+            <?php echo $this->getChildHtml('alert_urls') ?>
+            <?php echo $this->getChildHtml('product_type_data') ?>
+            <?php echo $this->getTierPriceHtml() ?>
+            <?php echo $this->getChildHtml('extrahint') ?>
+			*/ ?>
+				<!-- unwanted end -->
+
+				<?php if (!$this->hasOptions()):?>
+					<div class="add-to-box">
+
+							<div class="size-option">
+								<label><?php echo $this->__('Size:') ?></label>
+								<div><?php print_r($_product->getAttributeText("size")); ?></div>
+							</div>
+							<?php echo $this->getPriceHtml($_product) ?>
+							<?php /* echo $this->getChildHtml('product_type_data') */ ?>
+
+							<?php echo $this->getChildHtml('addtocart') ?>
+							<!-- the or span has been deleted -->
+							<?php /* if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
+                            <span class="or"><?php echo $this->__('OR') ?></span>
+                        <?php endif; */ ?>
+							<!-- the or span end -->
+
+					</div>
+
+					<?php  echo $this->getChildHtml('extra_buttons')  ?>
+
+				<?php elseif (!$_product->isSaleable()): ?>
+					<div class="add-to-box">
+						<?php echo $this->getChildHtml('addto') ?>
+					</div>
+				<?php endif; ?>
+
+				<?php if ($_product->isSaleable() && $this->hasOptions()):?>
+					<div class="configure-product">
+						<?php echo $this->getChildHtml('product_type_data') ?>
+						<?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+					</div>
+				<?php endif;?>
+				
+				<?php $highlight_review = $_product->getResource()->getAttribute('highlight_review');
+				$exist03 = $highlight_review ? $highlight_review->getFrontend()->getValue($_product) : false; ?>
+				<?php if (!empty($exist03)) { ?>
+					<div class="short-description">
+						<?php echo $highlight_review->getFrontend()->getValue($_product); ?>
+					</div>
+				<?php }else{ ?>
+					<div class="short-description-empty"></div>
+				<?php } ?>
+
+				<?php echo $this->getChildHtml('other');?>
+
+				<?php if ($_product->isSaleable() && $this->hasOptions()):?>
+					<?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+				<?php endif;?>
+
+			</div>
+
+			<div class="product-img-box">
+				<?php echo $this->getChildHtml('media') ?>
+			</div>
+			<div class="clearer"></div>
+		</form>
+		<script type="text/javascript">
+			//<![CDATA[
+			var productAddToCartForm = new VarienForm('product_addtocart_form');
+			productAddToCartForm.submit = function(button, url) {
+				if (this.validator.validate()) {
+					var form = this.form;
+					var oldUrl = form.action;
+
+					if (url) {
+						form.action = url;
+					}
+					var e = null;
+					try {
+						this.form.submit();
+					} catch (e) {
+					}
+					this.form.action = oldUrl;
+					if (e) {
+						throw e;
+					}
+
+					if (button && button != 'undefined') {
+						button.disabled = true;
+					}
+				}
+			}.bind(productAddToCartForm);
+
+			productAddToCartForm.submitLight = function(button, url){
+				if(this.validator) {
+					var nv = Validation.methods;
+					delete Validation.methods['required-entry'];
+					delete Validation.methods['validate-one-required'];
+					delete Validation.methods['validate-one-required-by-name'];
+					// Remove custom datetime validators
+					for (var methodName in Validation.methods) {
+						if (methodName.match(/^validate-datetime-.*/i)) {
+							delete Validation.methods[methodName];
+						}
+					}
+
+					if (this.validator.validate()) {
+						if (url) {
+							this.form.action = url;
+						}
+						this.form.submit();
+					}
+					Object.extend(Validation.methods, nv);
+				}
+			}.bind(productAddToCartForm);
+			//]]>
+		</script>
+	</div>
+</div>
+
+<script type="text/javascript">
+	//<![CDATA[
+	jQuery(document).ready(function () {
+		jQuery('.super-attribute-select').hide();
+		jQuery('.super-attribute-select').each(function () {
+			var drop_down = jQuery(this);
+			var lowest_price_option = null;
+			var lowest_price_option_isset = false;
+			jQuery('option', drop_down).each(function () {
+				var option = jQuery(this);
+				if (!option.val()) {
+					option.remove();
+					return true;
+				}
+				if (lowest_price_option === null) {
+					lowest_price_option = option;
+					lowest_price_option_isset = true;
+				}
+				if (lowest_price_option.attr('price') > option.attr('price')) {
+					lowest_price_option = option;
+				}
+				jQuery("<a></a>")
+					.attr('id', 'configurable-option-anchor-' + drop_down.attr('id') + '-value-' + option.val())
+					.attr('value', option.val())
+					.addClass('configurable-option-anchor')
+					.click(function () {
+						drop_down.val(option.val());
+						$(drop_down.attr('id')).simulate('change');
+						jQuery('[id^=configurable-option-anchor-' + drop_down.attr('id') + ']')
+							.removeClass('configurable-option-anchor-active');
+						jQuery('#configurable-option-anchor-' + drop_down.attr('id') + '-value-' + option.val())
+							.addClass('configurable-option-anchor-active');
+					})
+					.text(option.text().replace(/((\+|\-)\$[0-9,]+(\.[0-9]+)?)/, '').trim())
+					.appendTo(drop_down.parent());
+			});
+
+			var default_configuration_value = lowest_price_option.val();
+
+			<?php
+			if ($_product->getDefaultConfigurationId()) { ?>
+			var default_configuration_options_array = [];
+			<?php
+				$attributes = $_product->getTypeInstance(true)->getConfigurableAttributesAsArray($_product);
+				$child = Mage::getModel('catalog/product')->load($_product->getDefaultConfigurationId());
+				foreach ($attributes as $attribute) { ?>
+			default_configuration_options_array['<?php echo 'attribute' . $attribute['attribute_id']; ?>'] = <?php echo $child->getData($attribute['attribute_code']); ?>;
+			<?php } ?>
+			default_configuration_value = default_configuration_options_array[drop_down.attr('id')];
+			<?php } ?>
+
+			drop_down.val(default_configuration_value);
+
+			jQuery('#configurable-option-anchor-' + drop_down.attr('id') + '-value-' + default_configuration_value)
+				.addClass('configurable-option-anchor-active');
+			$(drop_down.attr('id')).simulate('change');
+
+		});	
+	});
+	//]]>
+</script>
+

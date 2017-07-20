@@ -1,0 +1,176 @@
+<div id="julienreviews-main-display">
+
+    <h3><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN)."frontend/julienfarel/jf/images/reviews.png";?>" label="upsell"/><?php echo $this->__('What people are saying') ?><span></span></h3>
+    <div class="write-your-own">
+    	<div style="float:right;" class="button-sets">
+	    <?php if ($this->total_count > 0) { ?>
+	        <a class="button button-gray" href="<?php echo Mage::getUrl('julienreviews/write/index/id/'.$this->product_id); ?>"><span><span>Write A Review</span></span></a>
+	    <?php } else { ?>
+	        <a class="button button-gray" href="<?php echo Mage::getUrl('julienreviews/write/index/id/'.$this->product_id); ?>"><span><span>Be the first to review this product</span></span></a>
+	    <?php } ?>
+		<?php if ($this->total_count > 3) { ?>
+			<a class="button button-gray"  href="<?php echo Mage::getUrl('julienreviews/view/index/id/'.$this->product_id); ?>">more reviews</a>
+		<?php } ?>   
+    	</div>
+    </div>
+	<?php if($this->total_count==0){ ?>
+		<div class="no-reviews"><?php echo $this->__('There are no reviews for this product. Please feel free to be the first to review this product!') ?></div>
+	<?php }else{ ?> 
+		<?php $reviewcounter = 1; ?>
+		<?php $customers = array(); ?>
+		<?php foreach ($this->_collection as $review) { ?>
+			<?php if (!in_array($review->getCustomerId(), $customers)) { ?>
+				<?php $customers[] = $review->getCustomerId(); ?>
+				<?php $helpful = $this->getHelpfuls($review->getId()); ?>
+				<div class="single-review">
+					<div class="left-review">
+						<?php // echo date("d/m/Y", strtotime($review->getDate())); ?>
+						<?php // echo $review->getPurchasedAt() ?>
+						<?php // echo $review->getAgeRange() ?>
+						<?php // echo $review->getMemberStatus() ?>              
+						
+						<?php if ($review->getSkinConcern()) { ?>
+						<label>Skin Concern</label>
+						<div class="label-content"><?php echo $review->getSkinConcern() ?></div>
+						<?php } ?>
+						
+						 <?php if ($review->getOwnedFor()) { ?>
+						<label>Owned this product</label>
+						<div class="label-content"><?php echo $review->getOwnedFor() ?></div>
+						<?php } ?>
+						
+						<?php if ($review->getOftenUsed()) { ?>
+						<label>Uses this Product</label>
+						<div class="label-content"><?php echo $review->getOftenUsed() ?></div>
+						<?php } ?>
+						
+						<?php /* if ($review->getRecommended()) { ?>
+						<label>Would you recommend this product to a friend?</label>
+						<div class="label-content"><?php echo $review->getRecommended() ?></div>
+						<?php } */ ?>
+					</div>
+				
+					<div class="right-review">
+						<h2><?php echo htmlentities($review->getReviewHeadline()) ?></h2>
+						<?php
+							$avg = $review->getStarRating(); 
+							$avgWidth = $avg/5;
+							$percent = round((float)$avgWidth * 100 ) . '%';
+						?>
+						<div class="rating-outside">
+							<div class="rating-box">
+								<div class="rating" style="width:<?php echo $percent; ?>"></div>
+							</div>
+							<div class="rating-num"><?php echo number_format($avg,1); ?></div>
+						</div>
+						<div class="txt-review">
+						<?php if ($review->getReviewText()) { ?>
+							<div class="readmorewrap">
+								<div class="readmorereviews">
+									<?php echo nl2br(htmlentities($review->getReviewText())) ?>
+								</div>
+								<span class="border"></span>
+							</div>
+						<?php } ?>
+							<div class="customer-info">
+								<?php if ($review->fetchCustomerName()) { ?>
+									<label><?php echo $review->fetchCustomerName() ?></label>
+								<?php } ?>
+								<?php if ($review->getLocation()) { ?>
+									<div class="label-content"><?php echo $review->getLocation() ?></div>
+								<?php } ?>  
+							</div>
+						</div>
+						
+						<?php if ($this->customerLoggedIn()) { ?>
+							<div class="helpful-review">
+							<?php if ($helpful['customer_helpful'] == 'Null') { ?>
+								<div id="found-review-helpful-input-<?php echo $reviewcounter; ?>">
+									Did you find this review helpful? <div id="Helpful-Yes-AJAX-<?php echo $reviewcounter; ?>" style="margin-right:15px; margin-left:0px; display: inline-block; cursor: pointer;"><img src='<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN)."frontend/julienfarel/jf/images/yes.png";?>' label="yes"></div><div id="Helpful-No-AJAX-<?php echo $reviewcounter; ?>" style="margin-right:11px; margin-left:7px; display: inline-block; cursor: pointer;"><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN)."frontend/julienfarel/jf/images/no.png";?>" label="no"></div>
+								</div>
+								<div id="found-review-helpful-<?php echo $reviewcounter; ?>" class="found-review-helpful" style="display: none;">
+									You found this review helpful!
+								</div>
+								<div id="found-review-unhelpful-<?php echo $reviewcounter; ?>" class="found-review-unhelpful" style="display: none;">
+									You did not find this review helpful.
+								</div>
+							<?php } else { ?>
+								<?php if ($helpful['customer_helpful'] == 'Yes') { ?>
+									<div class="found-review-helpful">
+										You found this review helpful!
+									</div>
+								<?php } elseif ($helpful['customer_helpful'] == 'No') { ?>
+									<div class="found-review-unhelpful">
+										You did not find this review helpful.
+									</div>
+								<?php } ?>
+							<?php } ?>
+							</div>
+						<?php } else { ?>
+							<div class="helpful-review">
+								<div>
+									Did you find this review helpful?
+									<div style="margin-right:15px; margin-left:0px; display: inline-block; cursor: pointer;">
+										<a href="<?php echo Mage::getUrl('customer/account/login', array('referer' => Mage::helper('core')->urlEncode(Mage::helper('core/url')->getCurrentUrl()))) ?>" style="cursor: pointer; display: inline-block;">
+											<img src='<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . "frontend/julienfarel/jf/images/yes.png"; ?>' label="yes">
+										</a>
+									</div>
+									<div style="margin-right:11px; margin-left:7px; display: inline-block; cursor: pointer;">
+										<a href="<?php echo Mage::getUrl('customer/account/login', array('referer' => Mage::helper('core')->urlEncode(Mage::helper('core/url')->getCurrentUrl()))) ?>" style="cursor: pointer; display: inline-block;">
+											<img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . "frontend/julienfarel/jf/images/no.png"; ?>" label="no">
+										</a>
+									</div>
+								</div>
+							</div>
+						<?php } ?>
+						<div class="helpful-review">
+						<?php if ($helpful['helpful_total'] > 0) { 
+							$helpfulno = $helpful['helpful_total'] - $helpful['helpful_yes'];
+							echo 'Found this helpful:  
+							<div style="margin-left:0px; display: inline-block;"><img style="margin-right:5px" src="' . Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN)."frontend/julienfarel/jf/images/yes.png" . '" label="yes">'. $helpful['helpful_yes'] .'</div>
+							<div style="margin-left:7px; display: inline-block;"><img style="margin-right:5px" src="' . Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN)."frontend/julienfarel/jf/images/no.png" . '" label="no">'. $helpfulno .'</div>';
+						 } ?>
+						</div>
+					</div>	
+				</div>
+				<?php $reviewcounter++; ?>
+			<?php } ?>
+		<?php } ?>
+	<?php } ?>
+</div>
+
+<script>
+		jQuery(".readmorereviews").readmore({
+			maxHeight: 90,
+			speed:300,
+			moreLink: '<a href="#">Read more</a>',
+			lessLink: '<a href="#">Read less</a>'
+		});
+
+		jQuery(window).load(function(){
+			jQuery(function() {
+		    	jQuery('.txt-review').equalHeights();
+		    	jQuery('.readmorereviews').equalHeights();
+			});
+		});
+
+    <?php $reviewcounter = 1; ?>
+    <?php foreach ($this->_collection as $review) { ?>
+        jQuery('#Helpful-Yes-AJAX-<?php echo $reviewcounter; ?>').click(function() {
+            jQuery.ajax({
+                url: '/julienreviews/submit/helpyes/customerid/<?php echo $this->customer_id; ?>/reviewid/<?php echo $review->getId(); ?>'
+            });
+            jQuery('#found-review-helpful-input-<?php echo $reviewcounter; ?>').hide();
+            jQuery('#found-review-helpful-<?php echo $reviewcounter; ?>').show();
+        });
+
+        jQuery('#Helpful-No-AJAX-<?php echo $reviewcounter; ?>').click(function() {
+            jQuery.ajax({
+                url: '/julienreviews/submit/helpno/customerid/<?php echo $this->customer_id; ?>/reviewid/<?php echo $review->getId(); ?>'
+            });
+            jQuery('#found-review-helpful-input-<?php echo $reviewcounter; ?>').hide();
+            jQuery('#found-review-unhelpful-<?php echo $reviewcounter; ?>').show();
+        });
+        <?php $reviewcounter++; ?>
+    <?php } ?>
+</script>

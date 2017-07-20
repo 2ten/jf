@@ -1,0 +1,22 @@
+<div class="table categoryfilter-attributes">
+	<?php
+	$attributes = $this->getAttributes();
+	$_helper = $this->helper('catalog/output');
+	$_category = Mage::getModel('catalog/category')->load($this->getCategory()->getId());
+	$_description = $_category->getDescription(); 
+	
+	foreach($attributes as $oneAttribute) {
+	?>
+	<div class="table-row">
+		<div class="table-cell <?php echo $oneAttribute['code'];?>">
+			<a class="toggle" href="#" data-sort="<?php echo $oneAttribute['sort'];?>"><?php echo $oneAttribute['label'];?></a>
+			<div class="subcats service-options" data-attribute="<?php echo $oneAttribute['code'];?>" style="display: none;">
+				<?php foreach($oneAttribute['options'] as $optionKey => $optionDescription) {?>
+				<div class="subcat"><a href="#" data-option="<?php echo $optionKey;?>"><?php echo $optionDescription;?></a></div>
+				<?php }?>
+			</div>
+		</div>
+	</div>
+	<?php }?>
+	<div class="nav-banner"><?php echo $_helper->categoryAttribute($_category, $_description, 'description'); ?></div>
+</div>

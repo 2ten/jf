@@ -1,0 +1,111 @@
+.main-container {
+	padding:0;
+}
+
+.catalog-product-view .content-generic {
+	max-width:1000px;
+	margin:0 auto 0 auto;
+}
+
+.product-view .product-shop .add-to-box .size-option label,
+.product-view .product-shop .add-to-box .add-to-cart label {
+	width:150px;
+}
+
+.configure-product .product-options dt {
+	width:70px;
+}
+
+.configure-product .product-options-bottom .add-to-cart label {
+	width:70px;
+}
+
+.tabs-menu li {
+	font-size:9px;
+}
+
+.tabs-menu li a {
+	padding:13px 9px;
+}
+
+.product-view .product-shop .add-to-box .add-to-cart button,
+.configure-product .product-options-bottom .add-to-cart  {
+	margin: 10px 0 10px 150px;
+}
+.product-view .product-shop .add-to-box .add-to-cart a.waitlist {
+	margin:10px 0 10px 150px;
+}
+.product-essential .product-img-box .more-views ul li:nth-child(odd),
+.product-essential .product-img-box .more-views ul li:nth-child(even) {
+	width:22%;
+	padding:0;
+	margin:1%;
+}
+
+.product-essential .product-img-box .more-views ul li:nth-child(odd) a.selected img,
+.product-essential .product-img-box .more-views ul li:nth-child(even) a.selected img {
+    border: 1px solid #4F4F4F !important;
+}
+.gallery_vedio {
+	background-size: 175% !important; 
+	padding: 11% !important;
+	background-position-y:-7px !important;
+}
+.product-img-box .more-views .player-layer {
+	width:15px;
+	height:15px;
+	top:20px;
+	left:20px;
+}
+
+.product-view .product-shop .short-description p.reviews {
+	width:75%;
+}
+
+.fixed_vedio {
+	padding:17px 50% !important;
+}
+
+.product-img-box .social-icons label {
+	margin:0px 5px 0px 0px !important;
+}
+
+.product-view .product-shop {
+	margin-top:20px;
+	margin-bottom:0;
+}
+
+.product-img-box .social-icons {
+	margin-top:15px !important;
+	margin-bottom:0 !important;
+}
+
+.product-essential .product-shop {
+	width:65% !important;
+}
+
+.product-essential .product-img-box {
+	width:30% !important;
+}
+
+.fixed-vedio {
+	display:none;
+}
+.product-view .product-shop .short-description-empty {
+	width: 100% ;
+	float: left;
+	margin: 10px;
+	padding: 5px 10px;
+	border-top: none;
+	border-bottom: 1px solid #dbdbdb !important;
+	vertical-align:middle;
+}
+.product-view .product-shop .short-description {
+	width: 100% ;
+	float: left;
+	margin: 10px;
+	padding: 5px 10px;
+	border-top: 1px solid #dbdbdb !important;
+	border-bottom: 1px solid #dbdbdb !important;
+	vertical-align:middle;
+}

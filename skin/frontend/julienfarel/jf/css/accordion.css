@@ -1,0 +1,171 @@
+/**/
+/* basic styles */
+/**/
+.pcss3-accordion {
+	overflow: hidden;
+	border: 5px solid #fff;
+	box-shadow: 0 5px 15px #808080;
+}
+.pcss3-accordion-item {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	width: 100%;
+	background: #f2f2f2;
+	box-shadow: 0 0 0 1px #fff;
+	transition: all 0.3s linear;
+	-o-transition: all 0.3s linear;
+	-ms-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	-webkit-transition: all 0.3s linear;   
+}
+.pcss3-accordion-item:first-child {
+	position: relative;
+	left: 0 !important;
+	width: 70%;
+}
+.pcss3-accordion-pic {
+	position: relative;
+	display: block;
+	width: 100%;
+	opacity: 0.8;
+	transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	-ms-transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-webkit-transition: opacity 0.2s;
+}
+.pcss3-accordion-input {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	cursor: pointer;
+	opacity: 0;
+}
+.pcss3-accordion-input:checked {
+	width: 0;
+}
+.pcss3-accordion-input:hover ~ .pcss3-accordion-pic {
+	opacity: 1;
+}
+.pcss3-accordion-input:checked ~ .pcss3-accordion-pic {
+	opacity: 1;
+}
+.pcss3-accordion-input:checked ~ .pcss3-accordion-item {
+	left: 100%;
+}
+
+
+/**/
+/* styles for different images number */
+/**/
+.pcss3-accordion2 .pcss3-accordion-item {
+	left: 43%;	
+}
+.pcss3-accordion3 .pcss3-accordion-item {
+	left: 22%;	
+}
+.pcss3-accordion4 .pcss3-accordion-item {
+	left: 15%;	
+}
+.pcss3-accordion5 .pcss3-accordion-item {
+	left: 10.7%;	
+}
+.pcss3-accordion6 .pcss3-accordion-item {
+	left: 8.6%;	
+}
+.pcss3-accordion7 .pcss3-accordion-item {
+	left: 7.2%;	
+}
+.pcss3-accordion8 .pcss3-accordion-item {
+	left: 6.2%;	
+}
+.pcss3-accordion9 .pcss3-accordion-item {
+	left: 5.4%;	
+}
+
+
+/**/
+/* caption styles */
+/**/
+.pcss3-accordion-caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(0,0,0,0.7);
+	text-align: left;
+	opacity: 0;
+	transition: opacity 0.3s linear;
+	-o-transition: opacity 0.3s linear;
+	-ms-transition: opacity 0.3s linear;
+	-moz-transition: opacity 0.3s linear;
+	-webkit-transition: opacity 0.3s linear;
+	color: #fff;
+}
+.pcss3-accordion-caption-top {
+	top: 0;
+	bottom: auto;
+}
+.pcss3-accordion-caption-right {
+	top: 0;
+	right: 0;
+	left: auto;
+	width: 40%;
+}
+.pcss3-accordion-caption-left {
+	top: 0;
+	width: 40%;
+}
+.pcss3-accordion-caption dl {
+	margin: 0;
+	padding: 20px;
+}
+.pcss3-accordion-caption dt {
+	margin: 0 0 12px;
+	padding: 0;
+	font: 400 24px/32px Oswald, Helvetica, Arial, sans-serif;
+}
+.pcss3-accordion-caption dd {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	line-height: 16px;
+}
+.pcss3-accordion-input:checked ~ .pcss3-accordion-caption {
+	opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+	.pcss3-accordion-caption dl {
+		padding: 15px;
+	}
+	.pcss3-accordion-caption dt {
+		font-size: 18px;
+		line-height: 26px;
+	}
+	.pcss3-accordion-caption dd {
+		font-size: 11px;
+		line-height: 15px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.pcss3-accordion-caption dl {
+		padding: 10px;
+	}
+	.pcss3-accordion-caption dt {
+		font-size: 16px;
+		line-height: 20px;
+	}
+	.pcss3-accordion-caption dd {
+		font-size: 10px;
+		line-height: 14px;
+	}
+}

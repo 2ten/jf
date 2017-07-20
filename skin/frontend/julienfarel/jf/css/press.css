@@ -1,0 +1,398 @@
+/* These are WordPress styles */
+
+/* Press top background & box area */
+.press {
+	overflow-x: hidden;
+	margin-bottom: 150px;
+}
+
+.press .full-width {
+	background-image: url(../images/press-bkgd.jpg);
+	height: 847px; 
+	background-size: cover;
+	background-position: center center;
+	overflow: hidden;
+}
+
+.press .press-bkgd {
+	position: relative;
+	max-width: 1450px;
+	min-width: 1024px;
+	margin: 0 auto;
+	height: 847px;
+}
+
+.press .press-bkgd-center {
+	position: absolute;
+	width: 100%;
+    padding-bottom: 68.97%;
+}
+
+.press .static-block.pos-2 {
+	display: none;
+}
+
+.press .action-pos-1 {
+	top: 23%;
+	right: 27.31%;
+}
+
+.press .action-pos-2 {
+	top: 40%;
+	left: 3.79%;
+}
+
+.press .action-pos-3 {
+	top: 40%;
+	right: 3.79%;
+}
+
+.press .action-pos-4 {
+	top: 57%;
+	right: 39.1%;
+}
+
+.press .action-pos-1 .center,
+.press .action-pos-2 .center,
+.press .action-pos-3 .center,
+.press .action-pos-4 .center {
+	top: 43%;
+	padding: 0 5px;
+}
+
+.press .press-intro {
+	clear: both;
+	width: 1154px;
+	margin: 68px auto 0 auto;
+}
+
+.press .press-intro .txt {
+	float: left;
+	width: 643px;
+	padding: 15px 72px 50px 0;
+}
+
+.press .press-intro .quote {
+	float: left;
+	width: 410px;
+	margin-top: -45px;
+}
+
+.press .press-recent {
+	background: #2a2a2a;
+	clear: both;
+}
+
+.press .press-recent-inside {
+	width: 1154px;
+	margin: 68px auto 0 auto;
+	padding: 45px 0 20px 0;
+}
+
+.press h3:before,
+.press h3:after {
+	border: none;
+	min-width: inherit;
+	background: none;
+}
+
+
+/* Slider */
+.swiper-relative {
+	position: relative;	
+	margin: 40px 0 20px 0;
+}
+
+.swiper-container {
+	width: 1200px;
+	height: 320px;
+}
+
+.swiper-slide {
+	font-size: 12px;
+	line-height: 14px;
+	color: #ef4923;
+}
+
+.swiper-center {
+	width: 186px;
+	margin: 0 auto;
+}
+
+.swiper-slide a {
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;	
+}
+
+.swiper-slide a:hover {
+	opacity: 0.7;
+}
+
+.swiper-slide .thumb {
+	border: 8px solid #fff;
+	margin-bottom: 10px;
+}
+
+.swiper-scrollbar {
+	position:relative;
+	-ms-touch-action:none;
+	height: 31px;
+	background: url(../images/slider-bkgd.png) repeat-x;
+	width: 1200px;
+}
+
+.swiper-scrollbar-drag {
+	height: 31px;
+	width: 100%;
+	position:relative;
+	background: url(../images/slider-handle-full.png) repeat-x;
+	/* background: url(../images/slider-handle.png) no-repeat center center; */
+}
+
+.swiper-scrollbar-cursor-drag {
+	cursor:move;
+}
+
+.arrow-left {
+	background:url(../images/slider-left.png) no-repeat left top;
+	position:absolute;
+	left: -20px;
+	top: 120px;
+	width:32px;
+	height:32px;
+}
+
+.arrow-right {
+	background:url(../images/slider-right.png) no-repeat left top;
+	position:absolute;
+	right: -65px;
+	top: 120px;
+	width:32px;
+	height:32px;
+}
+
+
+
+/* Single Press page */
+.press-single .block-right img {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.press-single .entry-meta,
+.press-single .attachment-post-thumbnail,
+.press-single footer {
+	display: none;
+}
+
+.cms-no-route .entry-content, 
+.press-single .entry-content {
+	padding-top: 40px;
+}
+
+.press-single .entry-content p {
+	width: 700px;
+	float:left;
+}
+
+.press-single article {
+	position: relative;
+}
+
+.press-single h1 {
+	border: none;
+	font-size: 22px;
+	color: #ef4923;
+	text-transform: uppercase;
+}
+
+.press-single h1 a {
+	color: #ef4923;
+	cursor: text;
+}
+
+.press-single .post-edit-link,
+.blog-single .post-edit-link {
+	display: none;
+}
+
+.press-single .author {
+	font-size: 14px;
+	color: #828283;
+}
+
+.press-single .author:before  {
+	/* content:'\0062\0079\0020'; */
+}
+
+.press-single .author a {
+	color: #828283;
+	cursor: text;
+	text-decoration: none;
+}
+
+.press-single .meta-sep {
+	display: none;
+}
+
+.press-single .entry-date {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #404040;
+	width: 100px;
+	color: #fff;
+	padding: 10px 2px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+
+/* Press archive page */
+.press-archive-entry {
+	position: relative;
+	float: left;
+	width: 200px;
+	margin: 0 10px 30px 10px; 
+	font-size: 12px;
+	line-height: 14px;
+	color: #ef4923;
+}
+
+.press-archive-entry:nth-child(4n+1) {
+	clear: both;
+}
+
+.press-archive-entry .thumb {
+	border: 8px solid #fff;
+	box-shadow: 0 1px 2px #bbb;
+	background: #fff;	
+}
+
+.press-archive-entry .title {
+	color: #828283;
+	text-transform: uppercase;
+	margin: 8px 0 2px 0;
+}
+
+
+.press-archive-entry .title a {
+	text-decoration: none;
+}
+
+.press-archives .block-right .date {
+	position: relative;
+	top: auto;
+	right: auto;
+	background: none;
+	color: #ef4923;
+	padding: 0;
+	text-align: left;
+	text-transform: none;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+
+/* press category list */
+.press-archives .press-archive-entry .box {
+	width: 186px;
+    height: 262px;
+	border: 7px solid #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center center;
+	overflow: hidden;
+}
+
+.press-archives .press-archive-entry .box .overlay {  
+	background:rgba(0,0,0,.5);
+	text-align:center;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	-webkit-transition: opacity .25s ease;
+	display: table;
+}
+
+.press-archives .press-archive-entry .box:hover .overlay {
+	opacity: 1;
+}
+
+.press-archives .press-archive-entry .box .overlay span {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.press-archives .press-archive-entry .box .overlay span a {
+	background: #ef4923;
+	color: #fff;
+	font-size: 14px;
+	line-height: 14px;
+	text-transform: uppercase;
+	padding: 15px 22px;
+	text-decoration: none;
+} 
+
+
+
+
+
+/* press nav */
+.wordpress .block-left .press-top a.no-toggle {
+	background: url(../images/blog/press-top-off.png) no-repeat 20px center;
+}
+
+.wordpress .block-left .press-top a.no-toggle:hover,
+.wordpress .block-left .press-top a.no-toggle.clicked {
+	background: url(../images/blog/press-top-on.png) no-repeat 20px center;
+}
+
+.wordpress .block-left .press-print a.no-toggle {
+	background: url(../images/blog/press-print-off.png) no-repeat 20px center;
+}
+
+.wordpress .block-left .press-print a.no-toggle:hover,
+.wordpress .block-left .press-print a.no-toggle.clicked {
+	background: url(../images/blog/press-print-on.png) no-repeat 20px center;
+}
+
+.wordpress .block-left .press-tv a.no-toggle {
+	background: url(../images/blog/press-tv-off.png) no-repeat 20px center;
+}
+
+.wordpress .block-left .press-tv a.no-toggle:hover,
+.wordpress .block-left .press-tv a.no-toggle.clicked {
+	background: url(../images/blog/press-tv-on.png) no-repeat 20px center;
+}
+
+.wordpress .block-left .press-online a.no-toggle {
+	background: url(../images/blog/press-online-off.png) no-repeat 20px center;
+}
+
+.wordpress .block-left .press-online a.no-toggle:hover,
+.wordpress .block-left .press-online a.no-toggle.clicked {
+	background: url(../images/blog/press-online-on.png) no-repeat 20px center;
+}
+
+
+/* press archives pagination */
+.lcp_paginator {
+	clear: both;
+	text-align: center;
+	font-size: 0.8em;
+}
+
+.lcp_paginator ul {
+	padding: 0;
+}
+
+.lcp_paginator li {
+	display: inline;
+	padding: 0 5px;
+}

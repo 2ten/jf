@@ -1,0 +1,63 @@
+<div class="categoryfilter-categories">
+	<ul>
+		<?php
+		$categories = $this->getCategories();
+		$urlRequest = Mage::app()->getFrontController()->getRequest();
+		$urlPart = $urlRequest->getOriginalPathInfo();
+		$urlPart=preg_split('/\//',$urlPart);
+		foreach($categories as $_category) {
+			$currentcategories = 0;
+			$updatedtitle;
+			if($urlPart[2]==null){
+				$currentcategories = 1;
+			}else{
+				foreach($_category['childs'] as $key => $label){
+					if($urlPart[2]==$key){
+						$currentcategories = 2;
+						$updatedtitle = $label;
+					}
+				}
+				if($currentcategories==1){
+					$currentcategories=3;
+				}
+			}
+			?>	
+			<?php if($currentcategories==1){ ?>
+				<li class="dropdown">
+					<div class="shopbycategory"><?php echo $_category['title'];?></div>
+					<ul class="choices">
+						<?php
+						foreach($_category['childs'] as $key => $label) {
+						?>
+						<li><a href="<?php echo $this->moduleUrl().$key;?>"><?php echo $label;?></a></li>
+						<?php }?>
+					</ul>
+				</li>
+			<?php }else{ ?>
+				<?php if($currentcategories==2){ ?>
+					<li class="dropdown">
+						<div class="shopbycategory"><?php echo $updatedtitle; ?></div>
+						<ul class="choices">
+							<?php
+							foreach($_category['childs'] as $key => $label) {
+							?>
+							<li><a href="<?php echo $this->moduleUrl().$key;?>"><?php echo $label;?></a></li>
+							<?php }?>
+						</ul>
+					</li>
+				<?php }else{ ?>
+					<li class="dropdown">
+						<div class="shopbycategory"><?php echo $_category['title'];?></div>
+						<ul class="choices">
+							<?php
+							foreach($_category['childs'] as $key => $label) {
+							?>
+							<li><a href="<?php echo $this->moduleUrl().$key;?>"><?php echo $label;?></a></li>
+							<?php }?>
+						</ul>
+					</li>			
+				<?php } ?>
+			<?php } ?>
+		<?php } ?>
+	</ul>
+</div>

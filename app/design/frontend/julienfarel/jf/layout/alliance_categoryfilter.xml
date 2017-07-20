@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<categoryfilter_index_index>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+		
+		<reference name="head">
+			<action method="addItem"><type>skin_css</type><file>css/categoryfilter.css</file></action>
+			<action method="addItem"><type>skin_js</type><file>js/jquery.shuffle.min.js</file></action>
+			<action method="addItem"><type>skin_js</type><file>js/categoryfilter.js</file></action>
+		</reference>
+		
+		<reference name="content">
+			<block type="categoryfilter/categoryFilter" name="categoryfilter" template="categoryfilter/category.phtml">
+				<block type="categoryfilter/attributesNav" name="attributes.nav" as="attributes.nav"/>
+				<block type="categoryfilter/categoriesNav" name="categories.nav" as="categories.nav"/>
+			</block>
+		</reference>
+		
+		<reference name="left">
+			<remove name="left.newsletter"></remove>
+		</reference>
+	</categoryfilter_index_index>
+</layout>

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	
+	<stafffilter_index_index>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+		
+		<reference name="head">
+			<action method="addItem"><type>skin_css</type><file>css/stafffilter.css</file></action>
+			<action method="addItem"><type>skin_js</type><file>js/jquery.shuffle.min.js</file></action>
+			<action method="addItem"><type>skin_js</type><file>js/stafffilter.js</file></action>
+		</reference>
+		
+		<reference name="content">
+			<block type="stafffilter/staffFilter" name="stafffilter" template="stafffilter/staff.phtml">
+				<block type="stafffilter/destinationsNav" name="destinations.nav" as="destinations.nav"/>
+				<block type="stafffilter/destinationsAttributes" name="destinations.attributes" as="destinations.attributes"/>
+			</block>
+		</reference>
+		
+		<reference name="left">
+			<remove name="left.newsletter"></remove>
+		</reference>
+	</stafffilter_index_index>
+	
+	<stafffilter_index_view>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+		
+		<reference name="head">
+			<action method="addItem"><type>skin_css</type><file>css/jquery.fancybox.css</file></action>
+			<action method="addItem"><type>skin_css</type><file>css/stafffilter.css</file></action>
+			<action method="addItem"><type>skin_js</type><file>js/stafffilter_view.js</file></action>
+			<action method="addItem"><type>skin_js</type><file>js/jquery.fancybox.pack.js</file></action>
+		</reference>
+		
+		<reference name="content">
+			<block type="stafffilter/staffView" name="staffview" template="stafffilter/view.phtml">
+				<block type="stafffilter/destinationsNav" name="destinations.nav" as="destinations.nav"/>
+				<block type="stafffilter/destinationsAttributes" name="destinations.attributes" as="destinations.attributes"/>
+			</block>
+		</reference>
+		
+		<reference name="left">
+			<remove name="left.newsletter"></remove>
+		</reference>
+	</stafffilter_index_view>
+</layout>

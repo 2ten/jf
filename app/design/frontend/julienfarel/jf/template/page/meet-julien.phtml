@@ -1,0 +1,379 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->getLang() ?>" lang="<?php echo $this->getLang() ?>">
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<?php echo $this->getChildHtml('after_body_start') ?>
+<div class="wrapper">
+    <div class="page">
+        <?php echo $this->getChildHtml('header') ?>
+        <div class="nav-cover">&nbsp;</div>
+		<div class="main meet-julien clearfix">
+        	<?php echo $this->getChildHtml('breadcrumbs') ?>
+            <div class="full-width">
+            	<div class="jf-intro">
+            		<div class="jf-intro-center">
+	            	<!-- static blocks (left to right, top to bottom) -->
+			        <div class="static-block pos-1"><img src="<?php echo $this->getSkinUrl('images/box-40.png'); ?>" alt="" /></div>
+			        <div class="static-block pos-2"><img src="<?php echo $this->getSkinUrl('images/box-20.png'); ?>" alt="" /></div>
+			        <div class="static-block pos-3"><img src="<?php echo $this->getSkinUrl('images/box-20.png'); ?>" alt="" /></div>
+			        <div class="static-block pos-4"><img src="<?php echo $this->getSkinUrl('images/box-40.png'); ?>" alt="" /></div>
+			        <div class="static-block pos-5"><img src="<?php echo $this->getSkinUrl('images/box-40.png'); ?>" alt="" /></div>
+			        <div class="static-block pos-6"><img src="<?php echo $this->getSkinUrl('images/box-40.png'); ?>" alt="" /></div>
+			        <div class="static-block pos-7"><img src="<?php echo $this->getSkinUrl('images/box-20.png'); ?>" alt="" /></div>
+			        <div class="static-block pos-8"><img src="<?php echo $this->getSkinUrl('images/box-20.png'); ?>" alt="" /></div>
+			        <div class="static-block pos-9"><img src="<?php echo $this->getSkinUrl('images/box-40.png'); ?>" alt="" /></div>
+			        <div class="static-block pos-10"><img src="<?php echo $this->getSkinUrl('images/box-40.png'); ?>" alt="" /></div>
+			        <div class="static-block pos-11"><img src="<?php echo $this->getSkinUrl('images/box-20.png'); ?>" alt="" /></div>
+			        <div class="static-block pos-12"><img src="<?php echo $this->getSkinUrl('images/box-40.png'); ?>" alt="" /></div>
+			        <div class="static-block pos-13"><img src="<?php echo $this->getSkinUrl('images/box-20.png'); ?>" alt="" /></div>
+			        
+			        <!-- action blocks -->
+			        <div class="action-block action-pos-1">
+			        	<a id="slide_03" class="slide" href="#timeline"><img src="<?php echo $this->getSkinUrl('images/box-100.png'); ?>" alt="Timeline" /></a>
+						<a id="slide_03" class="slide" href="#timeline"><div class="center"><span>Timeline</span></div></a>
+					</div>
+					<div class="action-block action-pos-2">
+						<a id="slide_01" class="slide" href="#philosophy"><img src="<?php echo $this->getSkinUrl('images/box-100.png'); ?>" alt="Philosophy" /></a>
+						<a id="slide_01" class="slide" href="#philosophy"><div class="center"><span>Philosophy</span></div></a>
+					</div>
+					<div class="action-block action-pos-3">
+						<a id="slide_02" class="slide" href="#jf-group"><img src="<?php echo $this->getSkinUrl('images/box-100.png'); ?>" alt="Julien Farel Group" /></a>
+						<a id="slide_02" class="slide" href="#jf-group"><div class="center">Julien Farel <span>Group</span></div></a>
+					</div>
+					<div class="action-block action-pos-4">
+						<a id="slide_02" class="slide" href="#biography"><img src="<?php echo $this->getSkinUrl('images/box-100.png'); ?>" alt="Biography" /></a>
+						<a id="slide_02" class="slide" href="#biography"><div class="center"><span>Biography</span></div></a>
+					</div>
+					
+	                <?php // echo $this->getChildHtml('content') ?>
+	                
+            		</div>
+            	</div>
+            </div>
+            
+            <div class="jf-about" id="biography">
+            	<div class="txt">
+            		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('meet-julien-biography')->toHtml(); ?>
+            	</div>
+            	<div class="image">
+            		<img src="<?php echo $this->getSkinUrl('images/meet-julien-quote.gif'); ?>" alt="Julien Farel" />
+            	</div>
+            </div>
+            
+            <div class="jf-group clearfix" id="jf-group">
+            	<div class="jf-group-container">
+	            	<div class="txt">
+	            		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('meet-julien-group')->toHtml(); ?>
+	            	</div>
+            	</div>
+            </div>
+            
+			<div class="jf-timeline clearfix" id="timeline">
+				<div class="timeline-header txt">
+					<h1><span>THE MOMENTS IN TIME THAT SHAPED US INTO WHO WE ARE TODAY</span></h1>
+				</div>
+				
+				<div class="grid-container">
+					<div class="item thumb-container" id="item-1968">
+						<div class="image grid-img"><div class="date">1968</div></div>
+						<div class="txt quote-container">
+							<div class="date">1968</div>
+							<p>Julien Farel was born in Montfaucon-en-Velay, Auvergne, France</p>
+						</div>
+					</div>
+					<div class="item thumb-container" id="item-1987">
+						<div class="image grid-img"><div class="date">1987</div></div>
+						<div class="txt quote-container">
+							<div class="date">1987</div>
+							<p>Farel joined styling icon Jacque Dessange’s team in Lyon, France</p>
+						</div>
+					</div>
+					<div class="item thumb-container" id="item-1992">
+						<div class="image grid-img"><div class="date">1992</div></div>
+						<div class="txt quote-container">
+							<div class="date">1992</div>
+							<p>Farel moved to New York City on behalf of Jacque Dessange to set up a training school</p>
+						</div>
+					</div>
+					<div class="item thumb-container" id="item-1994">
+						<div class="image grid-img"><div class="date">1994</div></div>
+						<div class="txt quote-container">
+							<div class="date">1994</div>
+							<p>Frédéric Fekkai recruited Farel in New York City</p>
+						</div>
+					</div>
+					<div class="item thumb-container" id="item-2001">
+						<div class="image grid-img"><div class="date">2001</div></div>
+						<div class="txt quote-container">
+							<div class="date">2001</div>
+							<p>Julien Farel Group was born</p>
+						</div>
+					</div>
+					<div class="item thumb-container" id="item-2001b">
+						<div class="image grid-img"><div class="date">2001</div></div>
+						<div class="txt quote-container">
+							<div class="date">2001</div>
+							<p>Julien Farel Flagship opened on Madison Ave, New York City</p>
+						</div>
+					</div>					
+					<div class="item thumb-container" id="item-2004">
+						<div class="image grid-img"><div class="date">2004</div></div>
+						<div class="txt quote-container">
+							<div class="date">2004</div>
+							<p>Farel married Suelyn Bogdanoff</p>
+						</div>
+					</div>
+					<div class="item thumb-container" id="item-2006">
+						<div class="image grid-img"><div class="date">2006</div></div>
+						<div class="txt quote-container">
+							<div class="date">2006</div>
+							<p>The research and development of Julien Farel Anti-Aging Haircare began</p>
+						</div>
+					</div>
+					<div class="item thumb-container" id="item-2007">
+						<div class="image grid-img"><div class="date">2007</div></div>
+						<div class="txt quote-container">
+							<div class="date">2007</div>
+							<p>The first US Open ‘Style Suite’ Salon opened by Farel in New York City</p>
+						</div>
+					</div>
+					<div class="item thumb-container" id="item-2007b">
+						<div class="image grid-img"><div class="date">2007</div></div>
+						<div class="txt quote-container">
+							<div class="date">2007</div>
+							<p>Suelyn Farel joined the Julien Farel Group as the CEO</p>
+						</div>
+					</div>
+					<div class="item thumb-container" id="item-2008">
+						<div class="image grid-img"><div class="date">2008</div></div>
+						<div class="txt quote-container">
+							<div class="date">2008</div>
+							<p>JF Gymnastique Luxury Wellness & Fitness opened in New York City</p>
+						</div>
+					</div>
+					<div class="item thumb-container" id="item-2009">
+						<div class="image grid-img"><div class="date">2009</div></div>
+						<div class="txt quote-container">
+							<div class="date">2009</div>
+							<p>Julien Farel Salon opened in Cabo San Lucas</p>
+						</div>
+					</div>
+					<div class="item thumb-container" id="item-2010">
+						<div class="image grid-img"><div class="date">2010</div></div>
+						<div class="txt quote-container">
+							<div class="date">2010</div>
+							<p>Julien Farel Salon opened on Fifth Ave, New York City</p>
+						</div>
+					</div>
+					<div class="item thumb-container" id="item-2011">
+						<div class="image grid-img"><div class="date">2011</div></div>
+						<div class="txt quote-container">
+							<div class="date">2011</div>
+							<p>Julien Farel Anti-Aging Haircare launched</p>
+						</div>
+					</div>
+					<div class="item thumb-container" id="item-2012">
+						<div class="image grid-img"><div class="date">2012</div></div>
+						<div class="txt quote-container">
+							<div class="date">2012</div>
+							<p>Julien Farel Salon & Spa opened in Miami, Florida</p>
+						</div>
+					</div>
+					<div class="item thumb-container" id="item-2013">
+						<div class="image grid-img"><div class="date">2013</div></div>
+						<div class="txt quote-container">
+							<div class="date">2013</div>
+							<p>Julien Farel Anti-Aging Haircare launches Globally</p>
+						</div>
+					</div>
+					<div class="item thumb-container" id="item-2014">
+						<div class="image grid-img"><div class="date">2014</div></div>
+						<div class="txt quote-container">
+							<div class="date">2014</div>
+							<p>The Julien Farel Salon, Spa & Fitness and JF Men opening at the Loews Regency Hotel in New York City</p>
+						</div>
+					</div>
+					<div class="item thumb-container" id="item-2014b">
+						<div class="image grid-img"><div class="date">2014</div></div>
+						<div class="txt quote-container">
+							<div class="date">2014</div>
+							<p>The launch of the hotel amenities line and the entrance into the hair tools category with a Julien Farel Blowdryer</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="jf-philosophy" id="philosophy">
+				<div class="txt">
+					<h1><span>PHILOSOPHY: THE HABITS & BELIEFS THAT DEFINE JF</span></h1>
+				</div>
+				
+				<div class="pcss3-accordion pcss3-accordion5">
+					<div class="pcss3-accordion-item">
+						<input type="radio" name="pcss3-accordion" checked class="pcss3-accordion-input">
+						<img src="<?php echo $this->getSkinUrl('images/philosophy_01.png'); ?>" alt="" class="pcss3-accordion-pic" />
+						<div class="pcss3-accordion-caption pcss3-accordion-caption-right">
+							<dl>
+								<dt>Styling: "I strive to bring out those subtle intricacies and give a bold cut that is based on the architecture of the face and silhouette as well as reveal personality."</dt>
+							</dl>
+						</div>
+						<div class="pcss3-accordion-item">
+							<input type="radio" name="pcss3-accordion" class="pcss3-accordion-input">
+							<img src="<?php echo $this->getSkinUrl('images/philosophy_02.png'); ?>" alt="" class="pcss3-accordion-pic" />
+							<div class="pcss3-accordion-caption pcss3-accordion-caption-right">
+								<dl>
+									<dt>Nutrition: "My mother always said 'An apple a day keeps the doctor away.' I've been eating an apple every day for 30 yrs."</dt>
+								</dl>
+							</div>
+
+							
+							<div class="pcss3-accordion-item">
+								<input type="radio" name="pcss3-accordion" class="pcss3-accordion-input">
+								<img src="<?php echo $this->getSkinUrl('images/philosophy_03.png'); ?>" alt="" class="pcss3-accordion-pic" />
+								<div class="pcss3-accordion-caption pcss3-accordion-caption-right">
+									<dl>
+										<dt>Haircare: "Grass does not grow in sand. Likewise, hair cannot grow in a dry or damaged scalp. The only products that actually work are those that reach the follicle, scalp and hair shaft."</dt>
+									</dl>
+								</div>
+
+								
+								<div class="pcss3-accordion-item">
+									<input type="radio" name="pcss3-accordion" class="pcss3-accordion-input">
+									<img src="<?php echo $this->getSkinUrl('images/philosophy_04.png'); ?>" alt="" class="pcss3-accordion-pic" />
+									<div class="pcss3-accordion-caption pcss3-accordion-caption-right">
+										<dl>
+											<dt>Fitness: "I start my morning every day with a 5-8 mile run to keep my energy levels up."</dt>
+										</dl>
+									</div>
+
+									
+									<div class="pcss3-accordion-item">
+										<input type="radio" name="pcss3-accordion" class="pcss3-accordion-input">
+										<img src="<?php echo $this->getSkinUrl('images/philosophy_05.png'); ?>" alt="" class="pcss3-accordion-pic" />
+										<div class="pcss3-accordion-caption pcss3-accordion-caption-right">
+											<dl>
+												<dt>Anti-Aging: "Anti-Aging is more than skin deep. Confidence knows no age."</dt>
+											</dl>
+										</div>
+
+									</div><!--/ item5 -->
+								
+								</div><!--/ item4 -->
+							
+							</div><!--/ item3 -->
+						
+						</div><!--/ item2 -->
+						
+					</div><!--/ item1 -->
+				</div>
+            </div>
+            
+			<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery.gridquote.min.js'); ?>"></script>
+
+			<script type="text/javascript">
+			//<![CDATA[
+			
+				jQuery(function($) {
+				
+					$(document).ready(function(){
+						
+						// smooth scroll with offset 
+						var headerHeight = 99;
+						
+						$('.action-block a').bind('click', function(e) {
+						    e.preventDefault();
+									
+						    var target = this.hash; //Get the target
+						    var scrollToPosition = $(target).offset().top - headerHeight;
+						
+						    $('html,body').animate({'scrollTop': scrollToPosition }, 600, function(){
+						        window.location.hash = '' + target;
+						        // This hash change will jump the page to the top of the div with the same id
+						        // so we need to force the page to back to the end of the animation
+						        $('html').animate({ 'scrollTop': scrollToPosition }, 0);
+						    });
+						   
+						});
+						
+						// check offset if coming from different page
+						$(window).load(function(e){
+							if(window.location.hash) {
+								// alert (window.location.hash);
+								if ($(window.location.hash).length) {
+									// alert("exists");
+									$(document).scrollTop( $(window.location.hash).offset().top -99 );
+								}
+							}
+						});
+	
+	
+						// timeline grid
+						$('.grid-container').gridQuote({
+							slideshow: false,
+							autoScroll: false,
+							initOpen: false
+						});						
+						
+						// timeline onclick stuff
+						$('.jf-timeline .item').click(function(e) {
+							e.preventDefault();
+							
+							// unstyle all
+							$('.jf-timeline .item').removeClass('clicked');
+							$('.jf-timeline .image').css({'background-position-y':'-170'});
+							
+							// style selected
+							$(this).addClass('clicked');
+							$(this).find('.image').css({'background-position-y':'0'});
+								
+						});
+									
+									
+					}); // document ready end
+					
+				}); // jquery end	
+
+			//]]>
+			</script>
+
+        </div>
+        <?php echo $this->getChildHtml('footer') ?>
+        <?php echo $this->getChildHtml('before_body_end') ?>
+    </div>
+</div>
+<?php echo $this->getAbsoluteFooter() ?>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<?php
+	$avg = $this->getStarAverage;
+	$avgWidth = $avg/5;
+	$percent = round((float)$avgWidth * 100 ) . '%';
+    $product = Mage::getModel('catalog/product')->load($this->product_id);
+?>
+<div id="julienreviews-product-summary">
+    <div class="rating-box">
+    	<div class="rating" style="width:<?php echo $percent; ?>"></div>
+    </div>
+</div>

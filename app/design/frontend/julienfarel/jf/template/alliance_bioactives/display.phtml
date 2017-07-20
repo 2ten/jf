@@ -1,0 +1,41 @@
+<?php
+$key_bioactives = $this->getKeyBioactives();
+?>
+    <p style="color:#ef4923; text-transform:uppercase;">Ingredients:</p>
+    <span class="bioactives-icons">
+        <?php $first = TRUE; ?>
+        <?php foreach ($key_bioactives as $bioactive) { ?>
+            <span id="bioactive-icon-id-<?php echo $bioactive->getId(); ?>" class="bioactive-icon">
+                <img class="key-bioactive-image" src="<?php echo $bioactive->getImageUrl(); ?>" title="<?php echo $bioactive->getTitle(); ?>" alt="<?php echo $bioactive->getTitle(); ?>">
+                <strong><?php echo $bioactive->getTitle(); ?></strong>
+                <div id="bioactive-icon-indicator-<?php echo $bioactive->getId(); ?>"><img style="width:50px; height:auto; padding: 10px 0 20px 0;" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN)."frontend/julienfarel/jf/images/arrow-down.png"; ?>" label="category_top_banner"/></div>
+            </span>
+        <?php } ?>
+    </span>
+    <?php foreach ($key_bioactives as $bioactive) { ?>
+        <p id="bioactive-desc-id-<?php echo $bioactive->getId(); ?>" class="key-bioactive-desc">
+            <strong style="color:#ef4923; text-transform:uppercase; font-weight:normal;"><?php echo $bioactive->getTitle(); ?></strong><?php echo ", ".$bioactive->getDescription(); ?>
+        </p>
+    <?php } ?>
+	<?php echo $this->getProduct()->getResource()->getAttribute('ingredients')->getFrontend()->getValue($this->getProduct()); ?>
+	
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        <?php $first = TRUE; ?>
+        <?php foreach ($key_bioactives as $bioactive) { ?>
+            <?php if ($first === TRUE) { $first = FALSE; continue; } ?>
+            jQuery('#bioactive-desc-id-<?php echo $bioactive->getId(); ?>').hide();
+            jQuery('#bioactive-icon-indicator-<?php echo $bioactive->getId(); ?>').hide();
+        <?php } ?>
+        <?php foreach ($key_bioactives as $bioactive) { ?>
+            jQuery('#bioactive-icon-id-<?php echo $bioactive->getId(); ?>').click(function () {
+                <?php foreach ($key_bioactives as $hiding) { ?>
+                    jQuery('#bioactive-desc-id-<?php echo $hiding->getId(); ?>').hide();
+                    jQuery('#bioactive-icon-indicator-<?php echo $hiding->getId(); ?>').hide();
+                <?php } ?>
+                jQuery('#bioactive-desc-id-<?php echo $bioactive->getId(); ?>').show();
+                jQuery('#bioactive-icon-indicator-<?php echo $bioactive->getId(); ?>').show();
+            });
+        <?php } ?>
+    });
+</script>

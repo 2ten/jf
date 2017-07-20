@@ -1,0 +1,73 @@
+<?php echo $this->getChildHtml('destinations.nav');?>
+<div class="destination-body clearfix">
+	<div class="destination-staff-header">
+		Filter By
+		<a href="#" id="reset-all-filter">Reset All</a>
+	</div>
+	<div class="destination-staff">
+		<div class="block-left">
+			<?php echo $this->getChildHtml('destinations.attributes');?>
+		</div>
+		
+		<div class="block-right">
+			
+			<div id="staff-list">
+			<?php
+			$request = $this->getRequest();
+			$currentUrl = str_replace('?'.$request->getServer('QUERY_STRING'), '', Mage::helper('core/url')->getCurrentUrl());
+			if(substr($currentUrl, -1) != "/") $currentUrl .= '/';
+			
+			$staff = $this->getStaff();
+			foreach($staff as $people) {
+				$experienceKey = $this->getExperienceCode();
+				
+				// Get Attributes.
+				$attributes = $this->getAttributes();
+				$attributesImgs = "";
+				$dataGroups = "";
+				foreach($attributes as $oneAttribute) {
+					$staffAttribute = $people->getData($oneAttribute['code']);
+					if($staffAttribute) {
+						if($experienceKey != $oneAttribute['code']) {
+							$attributesImgs .= '<div class="person-icon"><img src="'.$this->getSkinUrl('images/staff/'.$oneAttribute['clean-code'].'-sm.png').'" width="50" /></div>'."\n";
+						}
+						
+						$staffAttributeArray = explode(',', $staffAttribute);
+						foreach($staffAttributeArray as $oneStaffAttribute) {
+							$dataGroups .= '"'.$oneAttribute['clean-code'].'-'.$oneStaffAttribute.'", ';
+						}
+					}
+				}
+				
+				// Get Experience.
+				$experience = $this->getAttributePosition($people->getData($experienceKey));
+				
+				// Get url.
+				$staffUrl = $currentUrl.$people->getUrlKey();
+			?>
+			<div class="person" data-url="<?php echo $staffUrl?>"<?php if(! empty($dataGroups)) echo " data-groups='[".substr($dataGroups, 0, -2)."]'"; if(! empty($experience)) echo ' data-experience="'.$experience.'"';?>>
+				<div class="person-img" style="background: url(<?php echo $this->helper('catalog/image')->init($people, 'image')->keepAspectRatio(true)->keepFrame(false)->resize(290,null);?>);"><a href="<?php echo $staffUrl; ?>"></a></div>
+				<div class="person-on">
+					<div class="person-name"><?php echo $this->stripTags($people->getName(), null, true);?></div>
+					
+					<?php //count how many specialties this person has
+						$iconCount = substr_count($attributesImgs, "person-icon");
+					?>
+					 
+					<div class="person-speciality icon-<?php echo $iconCount; ?>">
+						<div class="person-line"></div>
+						<?php echo $attributesImgs;?>
+						<div class="person-line"></div>
+					</div>
+					<div class="person-title"><?php echo $this->stripTags($people->getData('staff_title'), null, true);?></div>
+				</div>
+			</div>
+			<?php }?>
+			</div>
+			<div class="staff-list-empty">
+				<h3><span>Not found</span></h3>
+				<p>Sorry, there were no stylists matching those services</p>
+			</div>
+		</div>
+	</div>
+</div>
