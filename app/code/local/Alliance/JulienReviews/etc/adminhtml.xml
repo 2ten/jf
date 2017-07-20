@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <catalog>
+            <children>
+                <reviews_ratings translate="title" module="alliance_julienreviews">
+                    <disabled>1</disabled>
+                </reviews_ratings>
+                <alliance_julienreviews translate="title" module="alliance_julienreviews">
+                    <title>Product Reviews</title>
+                    <children>
+                        <pending translate="title" module="alliance_julienreviews">
+                            <title>Pending Reviews</title>
+                            <action>adminhtml/julienreviews/pending</action>
+                        </pending>
+                        <all translate="title" module="alliance_julienreviews">
+                            <title>All Reviews</title>
+                            <action>adminhtml/julienreviews/index</action>
+                        </all>
+                    </children>
+                    <sort_order>50</sort_order>
+                </alliance_julienreviews>
+            </children>
+        </catalog>
+        <report>
+            <children>
+                <review translate="title" module="reports">
+                    <disabled>1</disabled>
+                </review>
+                <julienreviews translate="title" module="alliance_julienreviews">
+                    <title>Product Reviews</title>
+                    <sort_order>55</sort_order>
+                    <action>adminhtml/julienreviews/report</action>
+                </julienreviews>
+            </children>
+        </report>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <catalog>
+                        <children>
+                            <alliance_julienreviews>
+                                <title>Julien Product Reviews</title>
+                            </alliance_julienreviews>
+                        </children>
+                    </catalog>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <alliance_julienreviews translate="title" module="alliance_julienreviews">
+                                        <title>Product Review Options</title>
+                                    </alliance_julienreviews>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

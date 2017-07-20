@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <modules>
+        <Alliance_JulienReviews>
+            <version>1.2.3</version>
+        </Alliance_JulienReviews>
+    </modules>
+
+    <global>
+
+        <models>
+            <alliance_julienreviews>
+                <class>Alliance_JulienReviews_Model</class>
+                <resourceModel>alliance_julienreviews_resource</resourceModel>
+            </alliance_julienreviews>
+            <alliance_julienreviews_resource>
+                <class>Alliance_JulienReviews_Model_Resource</class>
+                <entities>
+                    <review>
+                        <table>alliance_julienreviews_reviews</table>
+                    </review>
+                    <contributor>
+                        <table>alliance_julienreviews_contributors</table>
+                    </contributor>
+                    <topcontributor>
+                        <table>alliance_julienreviews_top_contributors</table>
+                    </topcontributor>
+                    <helpful>
+                        <table>alliance_julienreviews_helpful</table>
+                    </helpful>
+                </entities>
+            </alliance_julienreviews_resource>
+        </models>
+
+        <resources>
+            <alliance_julienreviews_setup>
+                <setup>
+                    <module>Alliance_JulienReviews</module>
+                </setup>
+            </alliance_julienreviews_setup>
+        </resources>
+
+        <helpers>
+            <alliance_julienreviews>
+                <class>Alliance_JulienReviews_Helper</class>
+            </alliance_julienreviews>
+        </helpers>
+
+        <blocks>
+            <alliance_julienreviews>
+                <class>Alliance_JulienReviews_Block</class>
+            </alliance_julienreviews>
+        </blocks>
+
+    </global>
+
+    <frontend>
+        <layout>
+            <updates>
+                <alliance_julienreviews>
+                    <file>alliance_julienreviews.xml</file>
+                </alliance_julienreviews>
+            </updates>
+        </layout>
+        <routers>
+            <julienreviews>
+                <use>standard</use>
+                <args>
+                    <module>Alliance_JulienReviews</module>
+                    <frontName>julienreviews</frontName>
+                </args>
+            </julienreviews>
+        </routers>
+    </frontend>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <alliance_julienreviews>
+                    <file>alliance/julienreviews.xml</file>
+                </alliance_julienreviews>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Alliance_JulienReviews before="Mage_Adminhtml">Alliance_JulienReviews_Adminhtml</Alliance_JulienReviews>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <default>
+        <alliance_julienreviews>
+            <customer_notification_settings>
+                <enable_customer_notification>1</enable_customer_notification>
+            </customer_notification_settings>
+        </alliance_julienreviews>
+    </default>
+
+</config>

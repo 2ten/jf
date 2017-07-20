@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Alliance_CategoryFilter>
+			<version>0.1.0</version>
+		</Alliance_CategoryFilter>
+	</modules>
+	
+	<global>
+		<blocks>
+			<categoryfilter>
+				<class>Alliance_CategoryFilter_Block</class>
+			</categoryfilter>
+		</blocks>
+		<helpers>
+			<categoryfilter>
+				<class>Alliance_CategoryFilter_Helper</class>
+			</categoryfilter>
+		</helpers>
+		<rewrite>
+			<categoryfilter_main>
+				<from><![CDATA[#^/shop/?$#]]></from>
+				<to>/categoryfilter/index/index</to>
+				<complete>1</complete>
+			</categoryfilter_main>
+			<categoryfilter_category>
+				<from><![CDATA[#^/shop/([a-z\-]*)/?$#]]></from>
+				<to>/categoryfilter/index/index/category/$1</to>
+				<complete>1</complete>
+			</categoryfilter_category>
+		</rewrite>
+	</global>
+
+	<frontend>
+		<routers>
+			<categoryfilter>
+				<use>standard</use>
+				<args>
+					<module>Alliance_CategoryFilter</module>
+					<frontName>categoryfilter</frontName>
+				</args>
+			</categoryfilter>
+		</routers>
+		
+		<layout>
+			<updates>
+				<categoryfilter>
+					<file>alliance_categoryfilter.xml</file>
+				</categoryfilter>
+			</updates>
+		</layout>
+	</frontend>
+</config>

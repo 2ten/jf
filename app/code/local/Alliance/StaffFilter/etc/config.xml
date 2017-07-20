@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Alliance_StaffFilter>
+			<version>0.1.0</version>
+		</Alliance_StaffFilter>
+	</modules>
+	
+	<global>
+		<blocks>
+			<stafffilter>
+				<class>Alliance_StaffFilter_Block</class>
+			</stafffilter>
+		</blocks>
+		<helpers>
+			<stafffilter>
+				<class>Alliance_StaffFilter_Helper</class>
+			</stafffilter>
+		</helpers>
+		<rewrite>
+			<stafffilter_url>
+				<from><![CDATA[#^/locations-([a-z0-9\-]*)-staff/?$#]]></from>
+				<to>/stafffilter/index/index/</to>
+				<complete>1</complete>
+			</stafffilter_url>
+			<stafffilter_view_url>
+				<from><![CDATA[#^/locations-([a-z0-9\-]*)-staff/([a-z0-9\-]*)/?#]]></from>
+				<to>/stafffilter/index/view/key/$2/</to>
+				<complete>1</complete>
+			</stafffilter_view_url>
+			<faq_url>
+				<from><![CDATA[#^/restore-spa-faq/?#]]></from>
+				<to>/faq/index/categoryshow/cat_id/1/ </to>
+				<complete>1</complete>
+			</faq_url>
+			<faq_url2>
+				<from><![CDATA[#^/faq/?#]]></from>
+				<to>/faq/index/categoryshow/cat_id/2/ </to>
+				<complete>1</complete>
+			</faq_url2>
+			<faq_url3>
+				<from><![CDATA[#^/product-faq/?#]]></from>
+				<to>/faq/index/categoryshow/cat_id/3/ </to>
+				<complete>1</complete>
+			</faq_url3>
+		</rewrite>
+	</global>
+
+	<frontend>
+		<routers>
+			<stafffilter>
+				<use>standard</use>
+				<args>
+					<module>Alliance_StaffFilter</module>
+					<frontName>stafffilter</frontName>
+				</args>
+			</stafffilter>
+		</routers>
+		
+		<layout>
+			<updates>
+				<stafffilter>
+					<file>alliance_stafffilter.xml</file>
+				</stafffilter>
+			</updates>
+		</layout>
+	</frontend>
+</config>

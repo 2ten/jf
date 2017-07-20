@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config>
+
+    <modules>
+        <Alliance_Appointment>
+            <version>0.1.0</version>
+        </Alliance_Appointment>
+    </modules>
+
+    <global>
+        <blocks>
+            <appointment>
+                <class>Alliance_Appointment_Block</class>
+            </appointment>
+        </blocks>
+        <helpers>
+            <appointment>
+                <class>Alliance_Appointment_Helper</class>
+            </appointment>
+        </helpers>
+    </global>
+
+    <frontend>
+        <routers>
+            <appointment>
+                <use>standard</use>
+                <args>
+                    <module>Alliance_Appointment</module>
+                    <frontName>appointment</frontName>
+                </args>
+            </appointment>
+        </routers>
+        <layout>
+            <updates>
+                <appointment>
+                    <file>alliance_appointment.xml</file>
+                </appointment>
+            </updates>
+        </layout>
+    </frontend>
+
+</config>

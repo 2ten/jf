@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+
+    <modules>
+        <Alliance_Bioactives>
+            <version>1.0.0</version>
+        </Alliance_Bioactives>
+    </modules>
+
+    <global>
+
+        <blocks>
+            <alliance_bioactives>
+                <class>Alliance_Bioactives_Block</class>
+            </alliance_bioactives>
+        </blocks>
+
+        <helpers>
+            <alliance_bioactives>
+                <class>Alliance_Bioactives_Helper</class>
+            </alliance_bioactives>
+        </helpers>
+
+        <models>
+
+            <alliance_bioactives>
+                <class>Alliance_Bioactives_Model</class>
+                <resourceModel>alliance_bioactives_resource</resourceModel>
+            </alliance_bioactives>
+
+            <alliance_bioactives_resource>
+                <class>Alliance_Bioactives_Model_Resource</class>
+                <entities>
+                    <bioactive>
+                        <table>alliance_bioactives_bioactive</table>
+                    </bioactive>
+                    <relation>
+                        <table>alliance_bioactives_relation</table>
+                    </relation>
+                </entities>
+            </alliance_bioactives_resource>
+
+        </models>
+
+        <resources>
+            <alliance_bioactives_setup>
+                <setup>
+                    <module>Alliance_Bioactives</module>
+                    <class>Alliance_Bioactives_Model_Resource_Setup</class>
+                </setup>
+            </alliance_bioactives_setup>
+        </resources>
+
+    </global>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <alliance_bioactives>
+                    <file>alliance/bioactives.xml</file>
+                </alliance_bioactives>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Alliance_Bioactives before="Mage_Adminhtml">Alliance_Bioactives_Adminhtml</Alliance_Bioactives>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <frontend>
+        <layout>
+            <updates>
+                <alliance_bioactives>
+                    <file>alliance_bioactives.xml</file>
+                </alliance_bioactives>
+            </updates>
+        </layout>
+    </frontend>
+
+</config>

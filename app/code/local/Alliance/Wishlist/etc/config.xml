@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <modules>
+        <Alliance_Wishlist>
+            <version>1.0.0</version>
+        </Alliance_Wishlist>
+    </modules>
+
+    <global>
+
+        <helpers>
+            <alliance_wishlist>
+                <class>Alliance_Wishlist_Helper</class>
+            </alliance_wishlist>
+        </helpers>
+
+    </global>
+
+    <frontend>
+        <routers>
+            <wishlist>
+                <args>
+                    <modules>
+                        <Alliance_Wishlist before="Mage_Wishlist">Alliance_Wishlist</Alliance_Wishlist>
+                    </modules>
+                </args>
+            </wishlist>
+        </routers>
+    </frontend>
+
+</config>

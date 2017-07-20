@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * StoreFront Authorize.Net CIM Tokenized Payment Extension for Magento
+ *
+ * PHP version 5
+ *
+ * LICENSE: This source file is subject to commercial source code license of StoreFront Consulting, Inc.
+ *
+ * @category  SFC
+ * @package   SFC_CimSaved
+ * @author    Garth Brantley <garth@storefrontconsulting.com>
+ * @copyright 2009-2013 StoreFront Consulting, Inc. All Rights Reserved.
+ * @license   http://www.storefrontconsulting.com/media/downloads/ExtensionLicense.pdf StoreFront Consulting Commercial License
+ * @link      http://www.storefrontconsulting.com/authorize-net-cim-saved-credit-cards-extension-for-magento/
+ *
+ */
+-->
+<config>
+    <!-- Module version info -->
+    <modules>
+        <SFC_CimSaved>
+            <version>1.1.0</version>
+        </SFC_CimSaved>
+    </modules>
+
+    <global>
+        <!-- Helper classes -->
+        <helpers>
+            <sfc_cim_saved>
+                <class>SFC_CimSaved_Helper</class>
+            </sfc_cim_saved>
+            <payment>
+                <rewrite>
+                    <data>SFC_CimSaved_Helper_Payment</data>
+                </rewrite>
+            </payment>
+        </helpers>
+
+        <!-- Block classes -->
+        <blocks>
+            <sfc_cim_saved>
+                <class>SFC_CimSaved_Block</class>
+            </sfc_cim_saved>
+        </blocks>
+
+        <!-- Model / entity classes -->
+        <models>
+            <sfc_cim_saved>
+                <class>SFC_CimSaved_Model</class>
+                <resourceModel>sfc_cim_saved_mysql4</resourceModel>
+            </sfc_cim_saved>
+            <sfc_cim_saved_mysql4>
+                <class>SFC_CimCore_Model_Mysql4</class>
+            </sfc_cim_saved_mysql4>
+
+            <!-- Model rewrites -->
+
+        </models>
+
+        <!-- Resources - Install / upgrade scripts -->
+        <resources>
+            <sfc_cim_saved_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </sfc_cim_saved_write>
+            <sfc_cim_saved_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </sfc_cim_saved_read>
+        </resources>
+
+    </global>
+
+    <!-- Frontend layout XML updates -->
+    <frontend>
+        <secure_url>
+            <creditcards>/creditcards</creditcards>
+        </secure_url>
+        <routers>
+            <sfc_cim_saved>
+                <use>standard</use>
+                <args>
+                    <module>SFC_CimSaved</module>
+                    <frontName>creditcards</frontName>
+                </args>
+            </sfc_cim_saved>
+        </routers>
+        <layout>
+            <updates>
+                <sfc_cim_saved module="SFC_CimSaved">
+                    <file>sfc_cim_saved.xml</file>
+                </sfc_cim_saved>
+            </updates>
+        </layout>
+    </frontend>
+
+    <!-- Admin panel routers -->
+    <admin>
+        <routers>
+            <adminhtml>
+				<args>
+					<modules>
+						<sfc_cim_saved before="Mage_Adminhtml">SFC_CimSaved_Adminhtml</sfc_cim_saved>
+					</modules>
+				</args>
+			</adminhtml>
+        </routers>
+    </admin>
+
+    <!-- Admin panel html changes -->
+    <adminhtml>
+        <layout>
+            <updates>
+                <sfc_cim_saved>
+                    <file>sfc_cim_saved.xml</file>
+                </sfc_cim_saved>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <!-- Cron schedules for integration jobs -->
+    <crontab>
+        <jobs>
+        </jobs>
+    </crontab>
+
+    <!-- Default configuration values -->
+
+</config>

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Alliance_Subscribe extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	Alliance
+ * @package		Alliance_Subscribe
+ * @copyright  	Copyright (c) 2013
+ * @license		http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+	<modules>
+		<Alliance_Subscribe>
+			<version>0.0.1</version>
+		</Alliance_Subscribe>
+	</modules>
+	<global>
+		<resources>
+			<alliance_subscribe_setup>
+				<setup>
+					<module>Alliance_Subscribe</module>
+					<!-- <class>Alliance_Subscribe_Model_Resource_Setup</class> -->
+				</setup>
+			</alliance_subscribe_setup>
+		</resources>
+		<blocks>
+			<subscribe>
+				<class>Alliance_Subscribe_Block</class>
+			</subscribe>
+		</blocks>
+		<helpers>
+			<subscribe>
+				<class>Alliance_Subscribe_Helper</class>
+			</subscribe>
+		</helpers>
+		<models>
+			<subscribe>
+				<class>Alliance_Subscribe_Model</class>
+				<resourceModel>subscribe_resource</resourceModel>
+			</subscribe>
+			<subscribe_resource>
+				<class>Alliance_Subscribe_Model_Resource</class>
+				<entities>
+					<subscribe>
+						<table>subscribe_subscribe</table>
+					</subscribe>
+					<subscribe_store>
+						<table>subscribe_subscribe_store</table>
+					</subscribe_store>
+				</entities>
+			</subscribe_resource>
+		</models>
+	</global>
+
+	<frontend>
+		<routers>
+        	<subscribe>
+            	<use>standard</use>
+                <args>
+                	<module>Alliance_Subscribe</module>
+                	<frontName>subscribe</frontName>
+                </args>
+            </subscribe>
+        </routers>
+        </frontend>
+	<default>
+		<subscribe>
+		</subscribe>
+	</default>
+</config>

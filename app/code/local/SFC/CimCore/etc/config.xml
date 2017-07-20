@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * StoreFront Authorize.Net CIM Tokenized Payment Extension for Magento
+ *
+ * PHP version 5
+ *
+ * LICENSE: This source file is subject to commercial source code license of StoreFront Consulting, Inc.
+ *
+ * @category  SFC
+ * @package   SFC_CimCore
+ * @author    Garth Brantley <garth@storefrontconsulting.com>
+ * @copyright 2009-2013 StoreFront Consulting, Inc. All Rights Reserved.
+ * @license   http://www.storefrontconsulting.com/media/downloads/ExtensionLicense.pdf StoreFront Consulting Commercial License
+ * @link      http://www.storefrontconsulting.com/authorize-net-cim-payment-tokenization-extension-for-magento/
+ *
+ */
+-->
+<config>
+    <!-- Module version info -->
+    <modules>
+        <SFC_CimCore>
+            <version>1.1.1</version>
+        </SFC_CimCore>
+    </modules>
+
+    <global>
+        <!-- Helper classes -->
+        <helpers>
+            <sfc_cim_core>
+                <class>SFC_CimCore_Helper</class>
+            </sfc_cim_core>
+            <payment>
+                <rewrite>
+                    <data>SFC_CimCore_Helper_Payment</data>
+                </rewrite>
+            </payment>
+        </helpers>
+
+        <!-- Block classes -->
+        <blocks>
+            <sfc_cim_core>
+                <class>SFC_CimCore_Block</class>
+            </sfc_cim_core>
+        </blocks>
+
+        <!-- Model / entity classes -->
+        <models>
+            <sfc_cim_core>
+                <class>SFC_CimCore_Model</class>
+                <resourceModel>sfc_cim_core_mysql4</resourceModel>
+            </sfc_cim_core>
+            <sfc_cim_core_mysql4>
+                <class>SFC_CimCore_Model_Mysql4</class>
+                <entities>
+                    <cim_payment_profile>
+                        <table>sfc_cim_core_payment_profile</table>
+                    </cim_payment_profile>
+                    <legacy_payment_profile>
+                        <table>sfc_authnettoken_payment_profile</table>
+                    </legacy_payment_profile>
+                </entities>
+            </sfc_cim_core_mysql4>
+
+            <!-- Model rewrites -->
+            <checkout>
+                <rewrite>
+                    <type_onepage>SFC_CimCore_Model_Checkout_Type_Onepage</type_onepage>
+                </rewrite>
+            </checkout>
+            <sales>
+                <rewrite>
+                    <quote_payment>SFC_CimCore_Model_Sales_Quote_Payment</quote_payment>
+                </rewrite>
+            </sales>
+
+        </models>
+
+        <!-- Resources - Install / upgrade scripts -->
+        <resources>
+            <sfc_cim_core_setup>
+                <setup>
+                    <module>SFC_CimCore</module>
+                    <class>Mage_Eav_Model_Entity_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </sfc_cim_core_setup>
+            <sfc_cim_core_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </sfc_cim_core_write>
+            <sfc_cim_core_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </sfc_cim_core_read>
+        </resources>
+
+        <events>
+            <sales_convert_quote_payment_to_order_payment>
+                <observers>
+                    <cim_core_sales_convert_quote_payment_to_order_payment>
+                        <type>singleton</type>
+                        <class>sfc_cim_core/observer</class>
+                        <method>onSalesConvertQuotePaymentToOrderPayment</method>
+                    </cim_core_sales_convert_quote_payment_to_order_payment>
+                </observers>
+            </sales_convert_quote_payment_to_order_payment>
+        </events>
+    </global>
+
+    <!-- Frontend layout XML updates -->
+    <frontend>
+        <layout>
+            <updates>
+                <sfc_cim_core module="SFC_CimCore">
+                    <file>sfc_cim_core.xml</file>
+                </sfc_cim_core>
+            </updates>
+        </layout>
+    </frontend>
+
+    <!-- Admin panel routers -->
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <SFC_CimCore_Override before="Mage_Adminhtml">SFC_CimCore_Override_Admin</SFC_CimCore_Override>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <!-- Admin panel html changes -->
+    <adminhtml>
+        <layout>
+            <updates>
+                <sfc_cim_core>
+                    <file>sfc_cim_core.xml</file>
+                </sfc_cim_core>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <!-- Cron schedules for integration jobs -->
+    <crontab>
+        <jobs>
+        </jobs>
+    </crontab>
+
+    <!-- Default configuration values -->
+    <default>
+        <payment>
+            <sfc_cim_core>
+                <active>0</active>
+                <model>sfc_cim_core/cim</model>
+                <title>Enter a New Credit Card (Authorize.Net CIM by StoreFront Consulting)</title>
+                <allowspecific>0</allowspecific>
+                <debug>0</debug>
+                <test>1</test>
+                <full_transaction_logging_enabled>0</full_transaction_logging_enabled>
+                <duplicate_window>120</duplicate_window>
+                <cctypes>AE,VI,MC,DI</cctypes>
+                <payment_action>authorize_capture</payment_action>
+                <order_status>processing</order_status>
+                <currency>USD</currency>
+                <allow_guest_checkout>1</allow_guest_checkout>
+                <guest_checkout_save_profiles>0</guest_checkout_save_profiles>
+                <transaction_error_message_mode>0</transaction_error_message_mode>
+                <general_error_message_text>Please verify that your billing and credit card information are correct and retry your order!
+                </general_error_message_text>
+            </sfc_cim_core>
+        </payment>
+    </default>
+
+</config>

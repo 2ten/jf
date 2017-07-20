@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <cms>
+            <children>
+                <alliance_bioactives translate="title" module="alliance_bioactives">
+                    <title>Key Bioactives</title>
+                    <action>adminhtml/bioactives</action>
+                </alliance_bioactives>
+            </children>
+        </cms>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <cms>
+                        <children>
+                            <alliance_bioactives>
+                                <title>Key Bioactives</title>
+                            </alliance_bioactives>
+                        </children>
+                    </cms>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
