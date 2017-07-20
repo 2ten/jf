@@ -54,37 +54,71 @@ body.cms-locations {
 	
 }
 
+
+
+/* 
+	mmc fixing locations menu for mobile 
+	code for mobile
+*/
+
 .locations-nav {
-	position: relative;
-	top: 0;
-	left: 0;
-	margin-top: 48px;
-	background: white;
-	height: 172px;
-	width: 100%;
-	z-index: 2;
+    background: white;
+    padding: 115px 24px 24px 24px;
+    text-align: center;
 }
-
+.locations-nav:after{
+	clear:both;
+	display:table;
+	content:'';
+}
 .locations-nav ul {
-	position: relative;
-	float: left;
-	list-style-type: none;
-	margin: 0;
-	padding: 128px 0 0 24px;
+	list-style: none;
+	margin: 0 auto;
+	padding:none;
+    text-align: center;
+    display: inline-block;
 }
-
 .locations-nav ul li {
 	float: left;
+	clear:both;
 	padding: 0 13px;
-	margin: 0 65px 0 0;
 	background: url(../images/header-line-grey.png) repeat-x left center;
 	font-size: 13px;
-	line-height: 13px;
+	line-height: 30px;
 }
 
-.locations-nav ul li:last-child {
-	margin-right: 0;
+/* 
+	mmc fixing locations menu for mobile 
+	original code in media query
+*/
+@media(min-width:740px){
+	.locations-nav {
+		position: relative;
+		top: 0;
+		left: 0;
+		margin-top: 48px;
+		background: white;
+		height: 172px;
+		width: 100%;
+		z-index: 2;
+	}
+	.locations-nav ul {
+		position: relative;
+	}
+	.locations-nav ul li {
+		clear:none;
+		margin: 0 24px 0 0;
+	}
+	.locations-nav ul li:last-child {
+		margin-right: 0;
+	}
 }
+@media(min-width:980px){
+	.locations-nav ul li {
+		margin-right:65px;
+	}
+}
+
 
 .locations-nav ul li.current {
 	background: url(../images/header-line-red.png) repeat-x left center;

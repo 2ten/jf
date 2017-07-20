@@ -652,9 +652,16 @@ ul.destinations li {
 	padding: 163px 0 60px 0;
 }
 
+/* mmc changed to max-width */
 .content-contained {
-	width: 1200px;
+	max-width: 1200px;
 	margin: 0 auto;	
+}
+ /* mmc clearing */
+.content-contained:after{
+	clear:both;
+	display:table;
+	content:'';
 }
 
 .content-pad24 {
