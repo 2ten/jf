@@ -11,7 +11,7 @@ class Alliance_StaffFilter_Helper_Data extends Mage_Core_Helper_Abstract
 	const SECTION_URL_KEY = "locations";
 	const OVERVIEW_URL_KEY = "overview";
 	const PAGE_DESCRIPTIONS = "Overview,Services,Staff,Appointments"; // Separated by commas.
-	const APPOINTMENTS_EXTERNAL_URL = "http://www.secure-booker.com/julienfarel/MakeAppointment/Search.aspx";
+	const APPOINTMENTS_EXTERNAL_URL = "https://go.booker.com/#/location/julienfarel/service-categories";
 	const APPOINTMENTS_LOCAL_URL = "appointment";
 	
 	private $_locations;
