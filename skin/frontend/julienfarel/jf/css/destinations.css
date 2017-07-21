@@ -114,6 +114,9 @@ body.cms-locations {
 	}
 }
 @media(min-width:980px){
+	.locations-nav{
+		text-align: left;
+	}
 	.locations-nav ul li {
 		margin-right:65px;
 	}
