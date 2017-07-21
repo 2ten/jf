@@ -1,0 +1,88 @@
+<div class="booker-pop">
+<div class="booker-pop__wrap">
+<div class="booker-pop__heading">Book Appointment</div>
+<div class="booker-pop__text">You will be leaving JulienFarel.com to book your appointment.</div>
+<div class="booker-pop__buttons">
+	<a class="booker-pop__button" href="https://go.booker.com/#/location/julienfarel/service-categories" target="_blank">Book Appointment</a> 
+	<a class="booker-pop__cancel" href="#" target="_blank">Cancel</a></div>
+</div>
+</div>
+<style>
+.booker-pop{
+	position: fixed;
+    top: 50%;
+    width: 320px;
+    left: 50%;
+    margin-left: -160px;
+    background: white;
+    text-align: center;
+    z-index: 10000;
+    margin-top: -170px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.6);
+    display:none;
+}
+@media(min-width:414px){
+	.booker-pop{
+		width:400px;
+		margin-left:-200px;
+	}
+}
+.booker-pop__wrap{
+    padding: 35px 20px;
+    background: #404040;
+    color: #fff;
+}
+.booker-pop__heading{
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.booker-pop__text{
+	padding: 11px 0 15px 0;
+}
+.booker-pop__button{
+	display: inline-block;
+    background: #ef4923;
+    padding: 4px 15px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.booker-pop__button:hover{
+	text-decoration: none;
+	color:#fff;
+	background: #f15c22;
+}
+.booker-pop__cancel{
+    display: block;
+    color: #fcfcfc;
+    text-decoration: none;
+    padding-top: 15px;
+}
+.booker-pop__cancel:hover{
+	color:#fff;
+}
+.booker-pop__show{
+	display:block;
+}
+</style>
+<script>
+/* mmc booker popover */
+jQuery(document).ready(function() {
+	jQuery('a').each(function() {
+	  var href = jQuery(this).attr('href');
+	  	if(!jQuery(this).hasClass('booker-pop__button')){
+		  if( href.indexOf('booker.com') !== -1) {
+		      jQuery(this).addClass('booker');
+		  }
+		}
+	});
+	jQuery('.booker').on('click',function(e){
+		e.preventDefault();
+		jQuery('.booker-pop').addClass('booker-pop__show');
+	});
+	jQuery('.booker-pop__cancel').on('click',function(e){
+		e.preventDefault();
+		jQuery('.booker-pop').removeClass('booker-pop__show');
+	})
+});
+</script>

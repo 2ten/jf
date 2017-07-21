@@ -268,8 +268,15 @@
          
         <!-- Default Root - Add blocks to your layout phtml files (1,2,3 cols etc) -->                
         <reference name="root">
+
         </reference>
-         
+
+        <!-- mmc 2ten add booker link click popup -->
+        <reference name="after_body_start">
+            <block type="core/template" name="booker" template="2ten/booker.phtml"></block>
+        </reference>
+
+
         <!-- Default Left Column -->    
         <reference name="left">
             <!-- Remove certain elements from Left only 
