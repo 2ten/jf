@@ -253,6 +253,9 @@
 									
 									$('.slide').hide();
 									$($toggled).delay(400).fadeIn('slow');
+
+									/* mmc 2ten add hash to url */
+									window.location.hash = $toggled;
 								}
 								
 							}); // jquery end	
@@ -441,7 +444,6 @@
 										
 										$('.subcats').css({'display':'none'});
 										$(this).next('.subcats').css({'display':'block', 'opacity':0}).animate({'opacity':1}, 800);
-							
 									});
 									
 								}); // document ready end
