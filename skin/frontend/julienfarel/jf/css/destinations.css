@@ -87,10 +87,17 @@ body.cms-locations {
 	line-height: 30px;
 }
 
+
 /* 
 	mmc fixing locations menu for mobile 
 	original code in media query
 */
+@media(min-width:375px){
+	.locations-nav ul li {
+		clear:none;
+		margin-right:15px;
+	}
+}
 @media(min-width:740px){
 	.locations-nav {
 		position: relative;
