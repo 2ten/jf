@@ -350,17 +350,46 @@ body.cms-locations {
 	-moz-column-gap: 0;
 }
 
-
-
-/* Destination service pages */
-.destination-services {
-	position: relative;
+/* mmc 2ten adjust services nav and page */
+.destination-services .block-left .table-row {
+    display: block;
+    float: left;
+    width: 50%;
+}
+.destination-services .block-left .table-cell a, 
+.destination-services .block-left .table-cell a.clicked {
+    background-size: 66px!important;
+    padding: 10px 20px 10px 64px;
+    width: 100%;
+    font-size: 11px;
+    text-transform: capitalize;
+    height: 75px;
+	text-decoration: none;
+	display: table-cell;
+	vertical-align: middle;
+}
+@media(min-width:675px){
+	.destination-services .block-left .table-row {
+	    width: 33.3333%;
+	}	
 }
 
-.destination-services .block-left {
-	position: absolute;
-	left: 0;
-	z-index: 1;
+/* mmc 2ten only use 2cols after 740 */
+/* Destination service pages */
+@media(min-width:740px){
+	.destination-services {
+		position: relative;
+		padding-left:234px;
+	}
+	.destination-services .block-left {
+		position: absolute;
+		left: 0;
+		z-index: 1;
+		width:234px;
+	}
+	.destination-services .block-left .table-row {
+	    width: 100%;
+	}
 }
 
 .destination-services .block-left .table {
@@ -370,33 +399,30 @@ body.cms-locations {
 	display: table;	
 	border-right: 1px solid #dbdbdb;
 }
-
 .destination-services .block-left .table-row {
 	display: table-row;
 }
-
 .destination-services .block-left .table-cell {
 	border-bottom: 1px solid #dbdbdb;
 }
-
 .destination-services .block-left .table-cell a {
-	color: #4f4f4f;
-	text-transform: uppercase;
-	font-size: 13px;
-	line-height: 20px;
-	text-decoration: none;
-	padding-left: 95px;
-	padding-right: 20px;
-	display: table-cell;
-	height: 92px;
-	vertical-align: middle;
-	width: 233px;
-	
+	color: #4f4f4f;	
 	-webkit-transition: background-image 0.4s ease-in-out;
 	-moz-transition: background-image 0.4s ease-in-out;
 	-ms-transition: background-image 0.4s ease-in-out;
 	-o-transition: background-image 0.4s ease-in-out;
 	transition: background-image 0.4s ease-in-out;
+}
+/* mmc 2ten adjusting boxes */
+@media(min-width:740px){
+	.destination-services .block-left .table-cell a,
+	.destination-services .block-left .table-cell a.clicked{ 
+		text-transform: uppercase;
+		font-size: 13px;
+		line-height: 20px;
+		padding-left: 95px;
+		padding-right: 20px;
+	}
 }
 
 
@@ -549,10 +575,14 @@ body.cms-locations {
 	background: url(../images/services/bridal-on.png) no-repeat left center;
 }
 
+/* mmc 2ten adjust services nav and page */
 .destination-services .block-right {
-	width: 592px;
-	color: #4f4f4f;
-	margin: 0 auto;
+	max-width: 800px;
+    color: #4f4f4f;
+    margin: 0 auto;
+    padding-right: 30px;
+    padding-left:30px;
+    float: left;
 }
 
 .destination-services .block-right h3 {
