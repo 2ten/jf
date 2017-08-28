@@ -30,20 +30,13 @@
  *
  * @see Mage_Page_Block_Html_Topmenu
  */
+
+/** mmc 2ten moved all code to header.phtml */
 ?>
+
+
 
 <!-- Toggle button for menu, you can place it anywhere -->
 
 
-<!-- Menu Structure -->
-<div id="menu-nav">
-	<div class="global-cms-block"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('global_cms_block')->toHtml(); ?></div>
-	<div class="menu-table">		
-		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('main-nav')->toHtml(); ?>
-		<?php // $_menu = $this->getHtml('level-top') ?>
-		<?php // if($_menu): ?>
-	    	<?php // echo $_menu ?>
-	    <?php // endif ?> 
-	</div>
-	<div class="menu-button">Menu</div>
-</div>
+

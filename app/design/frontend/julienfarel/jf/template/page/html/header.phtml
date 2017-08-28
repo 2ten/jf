@@ -26,27 +26,50 @@
 /**
  * @var Mage_Page_Block_Html_Header $this
  */
+
+/* mmc 2ten reorganized markup */
 ?>
 		
 <div id="header" class="header-container">
     <div class="header">
-    	<?php echo $this->getChildHtml('topMenu') ?>
-    	
-        <h2 class="logo">
-        	<strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h2>
-        <div class="jf"><img src="<?php echo $this->getSkinUrl('images/julien_farel.png'); ?>" alt="<?php echo $this->getLogoAlt() ?>" /></div>        
-        
-        <div class="quick-access">
-        	<div class="more-btn">MORE</div>
-        	<div class="quick-access-dropdown">
-	            <?php echo $this->getChildHtml('topLinks') ?>
-	            <?php echo $this->getChildHtml('topSearch') ?>
-            </div>
+    	<?php // echo $this->getChildHtml('topMenu') ?>
+
+        <div class="global-cms-block"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('global_cms_block')->toHtml(); ?></div>
+
+        <!-- Menu Structure -->
+        <div id="menu-nav">
+            <div class="menu-nav-wrap">
+
+                <div class="menu-table">        
+                    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('main-nav')->toHtml(); ?>
+                    <?php // $_menu = $this->getHtml('level-top') ?>
+                    <?php // if($_menu): ?>
+                        <?php // echo $_menu ?>
+                    <?php // endif ?> 
+                </div>
+                <div class="menu-button">Menu</div>
+
+                <div class="logo-wrap">
+                    <h2 class="logo">
+                    <strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h2>
+                    <div class="jf"><img src="<?php echo $this->getSkinUrl('images/julien_farel.png'); ?>" alt="<?php echo $this->getLogoAlt() ?>" /></div> 
+                </div>
+
+                <div class="quick-access">
+                    <div class="more-btn">MORE</div>
+                    <div class="quick-access-dropdown">
+                        <?php echo $this->getChildHtml('topLinks') ?>
+                        <?php echo $this->getChildHtml('topSearch') ?>
+                    </div>
+                </div>
+                <div class="my-account-link">
+                    <a href="<?php echo $this->getUrl('customer/account', array('secure'=>true));?>">My Account</a>
+                </div>
+                <?php echo $this->getChildHtml('topCart') ?>
+
+            </div>  
         </div>
-        <div class="my-account-link">
-            <a href="<?php echo $this->getUrl('customer/account', array('secure'=>true));?>">My Account</a>
-        </div>
-		<?php echo $this->getChildHtml('topCart') ?>
+
         <?php echo $this->getChildHtml('topContainer'); ?>
     </div>
 </div>

@@ -21,10 +21,12 @@ body.cms-home {
 }
 
 .cms-home .home-logo {
-	position: absolute;
-	width: 36.48%;
-	top: 5.2%;
-	left: 3.24%;
+    position: fixed;
+    width: 360px;
+    top: 47px;
+    left: 60px;
+	z-index:101;
+	pointer-events:none;
 }
 
 .cms-home .home-logo img {

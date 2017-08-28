@@ -43,7 +43,7 @@ body.cms-locations {
 
 
 /* Destination top nav */
-.locations-nav-cover {
+/*.locations-nav-cover {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -52,7 +52,7 @@ body.cms-locations {
 	z-index: 10;
 	width: 100%;
 	
-}
+}*/
 
 
 
@@ -63,7 +63,7 @@ body.cms-locations {
 
 .locations-nav {
     background: white;
-    padding: 115px 24px 24px 24px;
+    padding: 130px 24px 24px 24px;
     text-align: center;
 }
 .locations-nav:after{
@@ -103,7 +103,6 @@ body.cms-locations {
 		position: relative;
 		top: 0;
 		left: 0;
-		margin-top: 48px;
 		background: white;
 		height: 172px;
 		width: 100%;
@@ -368,8 +367,8 @@ body.cms-locations {
 }
 .destination-services .block-left .table-cell a, 
 .destination-services .block-left .table-cell a.clicked {
-    background-size: 66px!important;
-    padding: 10px 20px 10px 64px;
+    background-size: 50px!important;
+    padding: 10px 20px 10px 48px;
     width: 100%;
     font-size: 11px;
     text-transform: capitalize;
@@ -377,6 +376,7 @@ body.cms-locations {
 	text-decoration: none;
 	display: table-cell;
 	vertical-align: middle;
+	line-height: normal;
 }
 @media(min-width:675px){
 	.destination-services .block-left .table-row {
@@ -399,6 +399,10 @@ body.cms-locations {
 	}
 	.destination-services .block-left .table-row {
 	    width: 100%;
+	}
+	.destination-services .block-left .table-cell a, 
+	.destination-services .block-left .table-cell a.clicked {
+		background-size:auto!important
 	}
 }
 

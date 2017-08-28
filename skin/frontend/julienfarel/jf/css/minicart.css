@@ -1,9 +1,14 @@
 #header {
-	width: 300px;
 	z-index: 100;
 	position:fixed;
-	top:16px;
-	right:220px;
+	right:0;
+  left:0;
+  top:0;
+  padding-bottom:40px;
+  background: white;
+}
+.cms-home #header{
+  background: transparent;
 }
  
 #header .page-header-container {

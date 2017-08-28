@@ -1,3 +1,13 @@
+.top-cart{
+    float: none;
+    /* width: 360px; */
+    position: absolute;
+    padding-left: 0;
+    top:15px;
+    right:110px;
+}
+
+
 /* desktop */
 @media only screen and (max-width: 1400px) {
 
@@ -255,7 +265,9 @@ mmc
     border-top-right-radius: 10em;
 }
 .footer-container .toggleSubscribe{
-    line-height:40px;
+    line-height: 48px;
+    color: #fff;
+    font-size: 15px;
 }
 .footer-container .subscribe-box{
     margin-top:12px;
@@ -368,9 +380,9 @@ mmc
     }
     .top-cart{
         float:none;
-        position:fixed;
+        position:absolute;
         right:70px;
-        top:54px;
+        top:15px;
     }
     .quick-access,
     .quick-access-dropdown{
@@ -749,17 +761,13 @@ mmc
 
 @media only screen and (max-width: 851px) {
 	
-	.global-cms-block { display:none; }
+	.global-cms-block { /* mmc 2ten don't hide display:none;*/  }
 	
     /* global ===================== */
     .main-container {
         padding:130px 0 60px
     }
     .shopping-header {
-        display:none
-    }
-    /* global ===================== */
-    .breadcrumbs {
         display:none
     }
     /* header ===================== */
@@ -779,7 +787,7 @@ mmc
         color:fff
     }
     .top-cart {
-        float:right;
+        float:none;
         position:fixed;
         right:43px;
 		top:15px;
@@ -868,16 +876,13 @@ mmc
         z-index:50;
         margin:0;
         padding:0;
-        border:0
+        border:0;
     }
-    .breadcrumbs {
-        display:none
-    }
-    .content-generic h1, .txt h1, h3,
+/*    .content-generic h1, .txt h1, h3,
     .content-generic h1 span, .txt h1 span, h3 span{
         display:block;
         white-space: normal;
-    }
+    }*/
     /* meet julien ===================== */
     .meet-julien .jf-about .txt,
     .meet-julien .jf-group .txt{
@@ -1415,4 +1420,8 @@ mmc
     text-indent: -9999px;
     width: 36px;
     height: 46px;
+}
+/* global ===================== */
+.breadcrumbs {
+    display:none
 }
